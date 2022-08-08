@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Imagens/Background/Mesa.png" type="Texture" id=1]
+
+[node name="Planejamento" type="Node2D"]
+
+[node name="Background" type="CanvasLayer" parent="."]
+
+[node name="Mesa" type="Sprite" parent="Background"]
+position = Vector2( 513.527, 302.5 )
+scale = Vector2( 0.658953, 0.589815 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}

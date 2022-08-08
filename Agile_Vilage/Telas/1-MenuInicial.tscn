@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Imagens/Background/Background Inicio v2.png" type="Texture" id=1]
+
+[node name="MenuInicial" type="Node2D"]
+
+[node name="Background" type="CanvasLayer" parent="."]
+
+[node name="BackgroundInicioV2" type="Sprite" parent="Background"]
+position = Vector2( 516, 300 )
+scale = Vector2( 0.542708, 0.566667 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}

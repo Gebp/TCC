@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Imagens/Background/mapa.jpg" type="Texture" id=1]
+
+[node name="Execucao" type="Node2D"]
+
+[node name="Background" type="CanvasLayer" parent="."]
+
+[node name="Mapa" type="Sprite" parent="Background"]
+position = Vector2( 578, 302 )
+scale = Vector2( 0.446289, 0.398438 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
