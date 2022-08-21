@@ -1,10 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Imagens/Background/Mesa.png" type="Texture" id=1]
+[ext_resource path="res://Imagens/Cards/Carta_Intro - Copy.png" type="Texture" id=2]
+[ext_resource path="res://Imagens/Btns/Botao_prox.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 36.5, 17.5 )
 
 [node name="Planejamento" type="Node2D"]
 
 [node name="Background" type="CanvasLayer" parent="."]
+layer = -1
 
 [node name="Mesa" type="Sprite" parent="Background"]
 position = Vector2( 513.527, 302.5 )
@@ -13,3 +19,57 @@ texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Mensagem inicial" type="Area2D" parent="."]
+position = Vector2( 227, 226 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mensagem inicial"]
+position = Vector2( 27, 72 )
+shape = SubResource( 1 )
+
+[node name="CartaIntro-Copy" type="Sprite" parent="Mensagem inicial/CollisionShape2D"]
+position = Vector2( -3.5, -3.99999 )
+scale = Vector2( 0.522152, 0.536178 )
+texture = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Mensagem inicial"]
+margin_left = -194.0
+margin_top = -193.0
+margin_right = 233.0
+margin_bottom = 318.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Você foi apontado como novo responsável pelo Vilarejo X. Para provar seu valor e manter sua nova posição, você deverá utilizar as práticas ágeis para que o vilarejo creça e se desenvolva.
+
+Escolha uma das missões propostas para esse fim e informe em quanto tempo você cumprirá seus objetivos.[/center]"
+text = "Você foi apontado como novo responsável pelo Vilarejo X. Para provar seu valor e manter sua nova posição, você deverá utilizar as práticas ágeis para que o vilarejo creça e se desenvolva.
+
+Escolha uma das missões propostas para esse fim e informe em quanto tempo você cumprirá seus objetivos."
+
+[node name="OptionButton" type="OptionButton" parent="."]
+modulate = Color( 1, 0.980392, 0.796078, 1 )
+margin_left = 539.0
+margin_top = 19.0
+margin_right = 996.0
+margin_bottom = 52.0
+text = "- Selecione o Objetivo -"
+flat = true
+
+[node name="SpinBox" type="SpinBox" parent="."]
+margin_left = 784.0
+margin_top = 543.0
+margin_right = 858.0
+margin_bottom = 573.0
+rounded = true
+
+[node name="Btn_prox" type="Area2D" parent="."]
+position = Vector2( 918, 557 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Btn_prox"]
+position = Vector2( 9.5, 2.5 )
+shape = SubResource( 1 )
+
+[node name="CartaIntro-Copy" type="Sprite" parent="Btn_prox/CollisionShape2D"]
+position = Vector2( 1, 0 )
+scale = Vector2( 0.166018, 0.172249 )
+texture = ExtResource( 3 )

@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Agile Village"
-run/main_scene="res://Telas/1-MenuInicial.tscn"
+run/main_scene="res://Telas/2-SelecionarObjetivo.tscn"
 config/icon="res://icon.png"
 
 [physics]

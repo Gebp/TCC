@@ -5,6 +5,7 @@
 [node name="Execucao" type="Node2D"]
 
 [node name="Background" type="CanvasLayer" parent="."]
+layer = -1
 
 [node name="Mapa" type="Sprite" parent="Background"]
 position = Vector2( 578, 302 )

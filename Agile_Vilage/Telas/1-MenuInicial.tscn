@@ -5,6 +5,7 @@
 [node name="MenuInicial" type="Node2D"]
 
 [node name="Background" type="CanvasLayer" parent="."]
+layer = -1
 
 [node name="BackgroundInicioV2" type="Sprite" parent="Background"]
 position = Vector2( 516, 300 )
