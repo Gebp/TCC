@@ -80,6 +80,8 @@ margin_left = 784.0
 margin_top = 543.0
 margin_right = 858.0
 margin_bottom = 573.0
+min_value = 1.0
+value = 1.0
 rounded = true
 
 [node name="TextObj" type="RichTextLabel" parent="Seletor_obj"]
@@ -87,13 +89,14 @@ margin_left = 540.0
 margin_top = 89.0
 margin_right = 997.0
 margin_bottom = 500.0
-text = "Caixa de texto ainda não funcional"
 __meta__ = {
 "_edit_lock_": true
 }
 
-[connection signal="pressed" from="Iniciar_proj" to="Iniciar_proj" method="_on_Reiniciar_pressed"]
-[connection signal="pressed" from="Iniciar_proj" to="Iniciar_proj" method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Iniciar_proj" to="Iniciar_proj" method="_on_Iniciar_proj_pressed"]
+[connection signal="pressed" from="Iniciar_proj" to="Iniciar_proj" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Iniciar_proj" to="Iniciar_proj" method="_on_Reiniciar_pressed"]
 [connection signal="item_selected" from="Seletor_obj/ListaObj" to="Seletor_obj" method="_on_ListaObj_item_selected"]
 [connection signal="item_selected" from="Seletor_obj/ListaObj" to="Seletor_obj/ListaObj" method="_on_ListaObj_item_selected"]
+[connection signal="changed" from="Seletor_obj/QtdSprint" to="Seletor_obj" method="_on_QtdSprint_changed"]
+[connection signal="value_changed" from="Seletor_obj/QtdSprint" to="Seletor_obj" method="_on_QtdSprint_value_changed"]

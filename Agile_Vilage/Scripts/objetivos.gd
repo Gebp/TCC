@@ -29,3 +29,7 @@ func _on_ListaObj_item_selected(index):
 		$TextObj.text = str('Objetivo 3')
 	if i == 3:
 		$TextObj.text = str('Objetivo 4')
+
+func _on_QtdSprint_value_changed(value):
+	GlobalVar.qtd_sprint = value
+	print(GlobalVar.qtd_sprint)

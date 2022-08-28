@@ -43,13 +43,21 @@ __meta__ = {
 script = ExtResource( 5 )
 
 [node name="Tempo_exec" type="Label" parent="Menu_lateral"]
-margin_left = 11.0
-margin_top = 6.0
-margin_right = 97.0
-margin_bottom = 31.0
-text = "60"
+margin_left = 12.0
+margin_top = 48.0
+margin_right = 116.0
+margin_bottom = 73.0
+text = "Tempo: xx seg"
+valign = 1
 
-[node name="Timer" type="Timer" parent="Menu_lateral"]
+[node name="Dia" type="Label" parent="Menu_lateral"]
+margin_left = 13.0
+margin_top = 20.0
+margin_right = 115.0
+margin_bottom = 42.0
+text = "Dia: x"
+
+[node name="T_exec" type="Timer" parent="Menu_lateral"]
 autostart = true
 
 [node name="Continuar" type="TextureButton" parent="."]
@@ -64,7 +72,8 @@ position = Vector2( 37.25, 20.125 )
 scale = Vector2( 0.180131, 0.199761 )
 texture = ExtResource( 3 )
 
-[connection signal="timeout" from="Menu_lateral/Timer" to="Menu_lateral" method="_on_Timer_timeout"]
-[connection signal="pressed" from="Continuar" to="Continuar" method="_on_Reiniciar_pressed"]
+[connection signal="timeout" from="Menu_lateral/T_exec" to="Menu_lateral" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Menu_lateral/T_exec" to="Menu_lateral" method="_on_T_exec_timeout"]
 [connection signal="pressed" from="Continuar" to="Continuar" method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Continuar" to="Continuar" method="_on_Continuar_pressed"]
+[connection signal="pressed" from="Continuar" to="Continuar" method="_on_Reiniciar_pressed"]
