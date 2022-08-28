@@ -3,7 +3,7 @@
 [ext_resource path="res://Imagens/Background/Mesa.png" type="Texture" id=1]
 [ext_resource path="res://Imagens/Cards/Carta_Intro.png" type="Texture" id=2]
 [ext_resource path="res://Imagens/Btns/Botao_prox.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/dropdownOption.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/objetivos.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Btn_scripts/btn_p2.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -48,30 +48,6 @@ text = "Você foi apontado como novo responsável pelo Vilarejo X. Para provar s
 
 Escolha uma das missões propostas para esse fim e informe em quanto tempo você cumprirá seus objetivos."
 
-[node name="ListaObj" type="OptionButton" parent="."]
-modulate = Color( 1, 0.980392, 0.796078, 1 )
-margin_left = 539.0
-margin_top = 19.0
-margin_right = 996.0
-margin_bottom = 52.0
-text = "- Selecione o Objetivo -"
-flat = true
-script = ExtResource( 4 )
-
-[node name="QtdSprint" type="SpinBox" parent="."]
-margin_left = 784.0
-margin_top = 543.0
-margin_right = 858.0
-margin_bottom = 573.0
-rounded = true
-
-[node name="TextObj" type="RichTextLabel" parent="."]
-margin_left = 554.0
-margin_top = 89.0
-margin_right = 1011.0
-margin_bottom = 500.0
-text = "Caixa de texto ainda não funcional"
-
 [node name="Iniciar_proj" type="TextureButton" parent="."]
 margin_left = 891.0
 margin_top = 535.0
@@ -84,7 +60,40 @@ position = Vector2( 37.25, 20.125 )
 scale = Vector2( 0.180131, 0.199761 )
 texture = ExtResource( 3 )
 
-[connection signal="item_selected" from="ListaObj" to="ListaObj" method="_on_ListaObj_item_selected"]
+[node name="Seletor_obj" type="CanvasLayer" parent="."]
+script = ExtResource( 4 )
+
+[node name="ListaObj" type="OptionButton" parent="Seletor_obj"]
+modulate = Color( 1, 0.980392, 0.796078, 1 )
+margin_left = 540.0
+margin_top = 19.0
+margin_right = 997.0
+margin_bottom = 52.0
+text = "- Selecione o Objetivo -"
+flat = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="QtdSprint" type="SpinBox" parent="Seletor_obj"]
+margin_left = 784.0
+margin_top = 543.0
+margin_right = 858.0
+margin_bottom = 573.0
+rounded = true
+
+[node name="TextObj" type="RichTextLabel" parent="Seletor_obj"]
+margin_left = 540.0
+margin_top = 89.0
+margin_right = 997.0
+margin_bottom = 500.0
+text = "Caixa de texto ainda não funcional"
+__meta__ = {
+"_edit_lock_": true
+}
+
 [connection signal="pressed" from="Iniciar_proj" to="Iniciar_proj" method="_on_Reiniciar_pressed"]
 [connection signal="pressed" from="Iniciar_proj" to="Iniciar_proj" method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Iniciar_proj" to="Iniciar_proj" method="_on_Iniciar_proj_pressed"]
+[connection signal="item_selected" from="Seletor_obj/ListaObj" to="Seletor_obj" method="_on_ListaObj_item_selected"]
+[connection signal="item_selected" from="Seletor_obj/ListaObj" to="Seletor_obj/ListaObj" method="_on_ListaObj_item_selected"]
