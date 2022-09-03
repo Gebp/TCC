@@ -63,18 +63,6 @@ texture = ExtResource( 3 )
 [node name="Seletor_obj" type="CanvasLayer" parent="."]
 script = ExtResource( 4 )
 
-[node name="ListaObj" type="OptionButton" parent="Seletor_obj"]
-modulate = Color( 1, 0.980392, 0.796078, 1 )
-margin_left = 540.0
-margin_top = 19.0
-margin_right = 997.0
-margin_bottom = 52.0
-text = "- Selecione o Objetivo -"
-flat = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="QtdSprint" type="SpinBox" parent="Seletor_obj"]
 margin_left = 784.0
 margin_top = 543.0
@@ -93,10 +81,22 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[connection signal="pressed" from="Iniciar_proj" to="Iniciar_proj" method="_on_Iniciar_proj_pressed"]
+[node name="ListaObj" type="OptionButton" parent="Seletor_obj"]
+modulate = Color( 1, 0.980392, 0.796078, 1 )
+margin_left = 533.0
+margin_top = 19.0
+margin_right = 997.0
+margin_bottom = 52.0
+text = "- Selecione o Objetivo -"
+flat = true
+__meta__ = {
+"_edit_lock_": true
+}
+
 [connection signal="pressed" from="Iniciar_proj" to="Iniciar_proj" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Iniciar_proj" to="Iniciar_proj" method="_on_Iniciar_proj_pressed"]
 [connection signal="pressed" from="Iniciar_proj" to="Iniciar_proj" method="_on_Reiniciar_pressed"]
-[connection signal="item_selected" from="Seletor_obj/ListaObj" to="Seletor_obj" method="_on_ListaObj_item_selected"]
-[connection signal="item_selected" from="Seletor_obj/ListaObj" to="Seletor_obj/ListaObj" method="_on_ListaObj_item_selected"]
 [connection signal="changed" from="Seletor_obj/QtdSprint" to="Seletor_obj" method="_on_QtdSprint_changed"]
 [connection signal="value_changed" from="Seletor_obj/QtdSprint" to="Seletor_obj" method="_on_QtdSprint_value_changed"]
+[connection signal="item_selected" from="Seletor_obj/ListaObj" to="Seletor_obj" method="_on_ListaObj_item_selected"]
+[connection signal="item_selected" from="Seletor_obj/ListaObj" to="Seletor_obj/ListaObj" method="_on_ListaObj_item_selected"]

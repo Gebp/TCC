@@ -5,19 +5,25 @@ var tempo = 5
 func _ready():
 	$Tempo_exec.text = 'Tempo: ' + str(tempo) + ' seg'
 	$Dia.text = 'Dia: ' + str(GlobalVar.dia)
+	GlobalVar.energia = GlobalVar.limite_energia
+	$Energia.text = str(GlobalVar.energia) + '/' + str(GlobalVar.limite_energia)
+	$Madeira.text = 'Madeira: ' + str(GlobalVar.madeira)
+	$Pedra.text = 'Pedra: ' + str(GlobalVar.pedra)
+	$Areia.text = 'Areia: ' + str(GlobalVar.areia)
+	$Minerais.text = 'Minerais: ' + str(GlobalVar.minerais)
+	$EnergiaBar.max_value = GlobalVar.limite_energia
+	$EnergiaBar.value = GlobalVar.limite_energia
 
 func _on_T_exec_timeout():
 	if tempo > 0:
 		tempo -= 1
 		$Tempo_exec.text = 'Tempo: ' + str(tempo) + ' seg'
 	if tempo == 0 and GlobalVar.dia < 4:
-		tempo = 5
 		GlobalVar.dia += 1
-		$Tempo_exec.text = 'Tempo: ' + str(tempo) + ' seg'
-		$Dia.text = 'Dia: ' + str(GlobalVar.dia)
+		get_tree().change_scene("res://Telas/4-Execucao.tscn")
 	elif tempo == 0 and GlobalVar.dia == 4:
 		GlobalVar.sprint += 1
-		if GlobalVar.sprint == GlobalVar.qtd_sprint:
+		if GlobalVar.sprint == GlobalVar.qtd_sprint+1:
 			get_tree().change_scene("res://Telas/5-Resultado.tscn")
 		else:
 			GlobalVar.dia = 1

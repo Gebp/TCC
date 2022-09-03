@@ -1,15 +1,33 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Imagens/Background/mapa.jpg" type="Texture" id=1]
 [ext_resource path="res://Imagens/Background/Mesa.png" type="Texture" id=2]
 [ext_resource path="res://Imagens/Btns/Botao_prox.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Btn_scripts/btn_p4.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/menu_execucao.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Btn_scripts/btn_campos.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/rdn_events.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 66, 308 )
 
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 1, 0.960784, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.482353, 0.34902, 0, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="Execucao" type="Node2D"]
+script = ExtResource( 7 )
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -30,6 +48,9 @@ __meta__ = {
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 56, 298 )
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Mesa" type="Sprite" parent="Area2D/CollisionPolygon2D"]
 position = Vector2( 4, 1 )
@@ -39,26 +60,145 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Menu_lateral" type="CanvasLayer" parent="."]
+[node name="Campos" type="CanvasLayer" parent="."]
+script = ExtResource( 6 )
+
+[node name="Menu_lateral" type="CanvasLayer" parent="Campos"]
 script = ExtResource( 5 )
 
-[node name="Tempo_exec" type="Label" parent="Menu_lateral"]
-margin_left = 12.0
-margin_top = 48.0
-margin_right = 116.0
-margin_bottom = 73.0
+[node name="Tempo_exec" type="Label" parent="Campos/Menu_lateral"]
+margin_left = 10.0
+margin_top = 50.0
+margin_right = 120.0
+margin_bottom = 70.0
 text = "Tempo: xx seg"
 valign = 1
 
-[node name="Dia" type="Label" parent="Menu_lateral"]
-margin_left = 13.0
+[node name="Dia" type="Label" parent="Campos/Menu_lateral"]
+margin_left = 10.0
 margin_top = 20.0
 margin_right = 115.0
-margin_bottom = 42.0
+margin_bottom = 40.0
 text = "Dia: x"
+valign = 1
 
-[node name="T_exec" type="Timer" parent="Menu_lateral"]
+[node name="T_exec" type="Timer" parent="Campos/Menu_lateral"]
 autostart = true
+
+[node name="ErnesrgiaText" type="Label" parent="Campos/Menu_lateral"]
+margin_left = 10.0
+margin_top = 85.0
+margin_right = 113.0
+margin_bottom = 99.0
+rect_pivot_offset = Vector2( -115, 211 )
+text = "Energia:"
+
+[node name="EnergiaBar" type="ProgressBar" parent="Campos/Menu_lateral"]
+modulate = Color( 0.858824, 0.458824, 0.235294, 1 )
+margin_left = 5.0
+margin_top = 102.0
+margin_right = 123.0
+margin_bottom = 126.0
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+max_value = 10.0
+step = 1.0
+rounded = true
+percent_visible = false
+
+[node name="Energia" type="Label" parent="Campos/Menu_lateral"]
+margin_left = 14.0
+margin_top = 108.0
+margin_right = 115.0
+margin_bottom = 122.0
+rect_pivot_offset = Vector2( -115, 211 )
+text = "xx/xx"
+align = 1
+valign = 1
+
+[node name="Materiais" type="Label" parent="Campos/Menu_lateral"]
+margin_left = 10.0
+margin_top = 138.0
+margin_right = 113.0
+margin_bottom = 152.0
+rect_pivot_offset = Vector2( -115, 211 )
+text = "Materiais"
+align = 1
+valign = 1
+
+[node name="Madeira" type="Label" parent="Campos/Menu_lateral"]
+margin_left = 10.0
+margin_top = 171.0
+margin_right = 110.0
+margin_bottom = 185.0
+rect_pivot_offset = Vector2( -115, 211 )
+text = "Madeira: xx"
+
+[node name="Pedra" type="Label" parent="Campos/Menu_lateral"]
+margin_left = 10.0
+margin_top = 197.0
+margin_right = 110.0
+margin_bottom = 211.0
+rect_pivot_offset = Vector2( -115, 211 )
+text = "Pedra: xx"
+
+[node name="Areia" type="Label" parent="Campos/Menu_lateral"]
+margin_left = 10.0
+margin_top = 221.0
+margin_right = 110.0
+margin_bottom = 235.0
+rect_pivot_offset = Vector2( -115, 211 )
+text = "Areia: xx"
+
+[node name="Minerais" type="Label" parent="Campos/Menu_lateral"]
+margin_left = 10.0
+margin_top = 246.0
+margin_right = 110.0
+margin_bottom = 260.0
+rect_pivot_offset = Vector2( -115, 211 )
+text = "Minerais: xx"
+
+[node name="Label7" type="Label" parent="Campos/Menu_lateral"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( -115, 211 )
+
+[node name="Label8" type="Label" parent="Campos/Menu_lateral"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( -115, 211 )
+
+[node name="Label9" type="Label" parent="Campos/Menu_lateral"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( -115, 211 )
+
+[node name="BtnMadeira" type="TextureButton" parent="Campos"]
+margin_left = 163.0
+margin_top = 226.0
+margin_right = 383.0
+margin_bottom = 395.0
+
+[node name="BtnPedra" type="TextureButton" parent="Campos"]
+margin_left = 604.0
+margin_top = 77.0
+margin_right = 753.0
+margin_bottom = 151.0
+
+[node name="BtnAreia" type="TextureButton" parent="Campos"]
+margin_left = 884.0
+margin_top = 114.0
+margin_right = 1030.0
+margin_bottom = 382.0
+
+[node name="BtnMinerais" type="TextureButton" parent="Campos"]
+margin_left = 725.0
+margin_top = 254.0
+margin_right = 787.0
+margin_bottom = 301.0
 
 [node name="Continuar" type="TextureButton" parent="."]
 margin_left = 935.0
@@ -72,8 +212,12 @@ position = Vector2( 37.25, 20.125 )
 scale = Vector2( 0.180131, 0.199761 )
 texture = ExtResource( 3 )
 
-[connection signal="timeout" from="Menu_lateral/T_exec" to="Menu_lateral" method="_on_Timer_timeout"]
-[connection signal="timeout" from="Menu_lateral/T_exec" to="Menu_lateral" method="_on_T_exec_timeout"]
+[connection signal="timeout" from="Campos/Menu_lateral/T_exec" to="Campos/Menu_lateral" method="_on_T_exec_timeout"]
+[connection signal="timeout" from="Campos/Menu_lateral/T_exec" to="Campos/Menu_lateral" method="_on_Timer_timeout"]
+[connection signal="pressed" from="Campos/BtnMadeira" to="Campos" method="_on_BtnMadeira_pressed"]
+[connection signal="pressed" from="Campos/BtnPedra" to="Campos" method="_on_BtnPedra_pressed"]
+[connection signal="pressed" from="Campos/BtnAreia" to="Campos" method="_on_BtnAreia_pressed"]
+[connection signal="pressed" from="Campos/BtnMinerais" to="Campos" method="_on_BtnMinerais_pressed"]
 [connection signal="pressed" from="Continuar" to="Continuar" method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Continuar" to="Continuar" method="_on_Continuar_pressed"]
 [connection signal="pressed" from="Continuar" to="Continuar" method="_on_Reiniciar_pressed"]
