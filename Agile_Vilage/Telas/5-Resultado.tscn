@@ -69,5 +69,5 @@ position = Vector2( 71, 25 )
 scale = Vector2( 0.327511, 0.30622 )
 texture = ExtResource( 2 )
 
-[connection signal="pressed" from="Reiniciar" to="Reiniciar" method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Reiniciar" to="Reiniciar" method="_on_Reiniciar_pressed"]
+[connection signal="pressed" from="Reiniciar" to="Reiniciar" method="_on_TextureButton_pressed"]

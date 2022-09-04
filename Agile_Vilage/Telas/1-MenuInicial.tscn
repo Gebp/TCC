@@ -56,5 +56,5 @@ text = "Iniciar"
 align = 1
 valign = 1
 
-[connection signal="pressed" from="Area2D/ColorRect/Iniciar" to="Area2D/ColorRect/Iniciar" method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Area2D/ColorRect/Iniciar" to="Area2D/ColorRect/Iniciar" method="_on_Iniciar_pressed"]
+[connection signal="pressed" from="Area2D/ColorRect/Iniciar" to="Area2D/ColorRect/Iniciar" method="_on_TextureButton_pressed"]

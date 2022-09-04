@@ -120,7 +120,7 @@ position = Vector2( 2.375, -0.75 )
 scale = Vector2( 0.200233, 0.152455 )
 texture = ExtResource( 7 )
 
-[connection signal="pressed" from="Executar" to="Executar" method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Executar" to="Executar" method="_on_Executar_pressed"]
 [connection signal="pressed" from="Executar" to="Executar" method="_on_Reiniciar_pressed"]
+[connection signal="pressed" from="Executar" to="Executar" method="_on_TextureButton_pressed"]
 [connection signal="timeout" from="Cabecalho/T_plan" to="Cabecalho" method="_on_T_plan_timeout"]

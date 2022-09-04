@@ -22,19 +22,34 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Mensagem inicial" type="Area2D" parent="."]
+[node name="Iniciar_proj" type="TextureButton" parent="."]
+margin_left = 891.0
+margin_top = 535.0
+margin_right = 970.0
+margin_bottom = 573.0
+script = ExtResource( 5 )
+
+[node name="BotaoProx" type="Sprite" parent="Iniciar_proj"]
+position = Vector2( 37.25, 20.125 )
+scale = Vector2( 0.180131, 0.199761 )
+texture = ExtResource( 3 )
+
+[node name="Objetivo" type="CanvasLayer" parent="."]
+script = ExtResource( 4 )
+
+[node name="Mensagem_inicial" type="Area2D" parent="Objetivo"]
 position = Vector2( 227, 226 )
 
-[node name="CartaIntro" type="CollisionShape2D" parent="Mensagem inicial"]
+[node name="CartaIntro" type="CollisionShape2D" parent="Objetivo/Mensagem_inicial"]
 position = Vector2( 27, 72 )
 shape = SubResource( 1 )
 
-[node name="CartaIntro" type="Sprite" parent="Mensagem inicial/CartaIntro"]
+[node name="CartaIntro" type="Sprite" parent="Objetivo/Mensagem_inicial/CartaIntro"]
 position = Vector2( -3.5, -3.99999 )
 scale = Vector2( 0.522152, 0.536178 )
 texture = ExtResource( 2 )
 
-[node name="TextoIntro" type="RichTextLabel" parent="Mensagem inicial"]
+[node name="TextoIntro" type="RichTextLabel" parent="Objetivo/Mensagem_inicial"]
 margin_left = -194.0
 margin_top = -193.0
 margin_right = 233.0
@@ -48,22 +63,7 @@ text = "Você foi apontado como novo responsável pelo Vilarejo X. Para provar s
 
 Escolha uma das missões propostas para esse fim e informe em quanto tempo você cumprirá seus objetivos."
 
-[node name="Iniciar_proj" type="TextureButton" parent="."]
-margin_left = 891.0
-margin_top = 535.0
-margin_right = 970.0
-margin_bottom = 573.0
-script = ExtResource( 5 )
-
-[node name="BotaoProx" type="Sprite" parent="Iniciar_proj"]
-position = Vector2( 37.25, 20.125 )
-scale = Vector2( 0.180131, 0.199761 )
-texture = ExtResource( 3 )
-
-[node name="Seletor_obj" type="CanvasLayer" parent="."]
-script = ExtResource( 4 )
-
-[node name="QtdSprint" type="SpinBox" parent="Seletor_obj"]
+[node name="QtdSprint" type="SpinBox" parent="Objetivo"]
 margin_left = 784.0
 margin_top = 543.0
 margin_right = 858.0
@@ -72,7 +72,7 @@ min_value = 1.0
 value = 1.0
 rounded = true
 
-[node name="TextObj" type="RichTextLabel" parent="Seletor_obj"]
+[node name="TextObj" type="RichTextLabel" parent="Objetivo"]
 margin_left = 540.0
 margin_top = 89.0
 margin_right = 997.0
@@ -81,7 +81,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ListaObj" type="OptionButton" parent="Seletor_obj"]
+[node name="ListaObj" type="OptionButton" parent="Objetivo"]
 modulate = Color( 1, 0.980392, 0.796078, 1 )
 margin_left = 533.0
 margin_top = 19.0
@@ -93,10 +93,10 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[connection signal="pressed" from="Iniciar_proj" to="Iniciar_proj" method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Iniciar_proj" to="Iniciar_proj" method="_on_Iniciar_proj_pressed"]
 [connection signal="pressed" from="Iniciar_proj" to="Iniciar_proj" method="_on_Reiniciar_pressed"]
-[connection signal="changed" from="Seletor_obj/QtdSprint" to="Seletor_obj" method="_on_QtdSprint_changed"]
-[connection signal="value_changed" from="Seletor_obj/QtdSprint" to="Seletor_obj" method="_on_QtdSprint_value_changed"]
-[connection signal="item_selected" from="Seletor_obj/ListaObj" to="Seletor_obj" method="_on_ListaObj_item_selected"]
-[connection signal="item_selected" from="Seletor_obj/ListaObj" to="Seletor_obj/ListaObj" method="_on_ListaObj_item_selected"]
+[connection signal="pressed" from="Iniciar_proj" to="Iniciar_proj" method="_on_TextureButton_pressed"]
+[connection signal="changed" from="Objetivo/QtdSprint" to="Objetivo" method="_on_QtdSprint_changed"]
+[connection signal="value_changed" from="Objetivo/QtdSprint" to="Objetivo" method="_on_QtdSprint_value_changed"]
+[connection signal="item_selected" from="Objetivo/ListaObj" to="Objetivo" method="_on_ListaObj_item_selected"]
+[connection signal="item_selected" from="Objetivo/ListaObj" to="Objetivo/ListaObj" method="_on_ListaObj_item_selected"]

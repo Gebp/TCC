@@ -218,6 +218,6 @@ texture = ExtResource( 3 )
 [connection signal="pressed" from="Campos/BtnPedra" to="Campos" method="_on_BtnPedra_pressed"]
 [connection signal="pressed" from="Campos/BtnAreia" to="Campos" method="_on_BtnAreia_pressed"]
 [connection signal="pressed" from="Campos/BtnMinerais" to="Campos" method="_on_BtnMinerais_pressed"]
-[connection signal="pressed" from="Continuar" to="Continuar" method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Continuar" to="Continuar" method="_on_Continuar_pressed"]
 [connection signal="pressed" from="Continuar" to="Continuar" method="_on_Reiniciar_pressed"]
+[connection signal="pressed" from="Continuar" to="Continuar" method="_on_TextureButton_pressed"]
