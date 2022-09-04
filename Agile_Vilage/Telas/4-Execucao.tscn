@@ -132,7 +132,7 @@ margin_top = 171.0
 margin_right = 110.0
 margin_bottom = 185.0
 rect_pivot_offset = Vector2( -115, 211 )
-text = "Madeira: xx"
+text = "Madeira: xx/xx"
 
 [node name="Pedra" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
@@ -140,7 +140,7 @@ margin_top = 197.0
 margin_right = 110.0
 margin_bottom = 211.0
 rect_pivot_offset = Vector2( -115, 211 )
-text = "Pedra: xx"
+text = "Pedra: xx/xx"
 
 [node name="Areia" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
@@ -148,7 +148,7 @@ margin_top = 221.0
 margin_right = 110.0
 margin_bottom = 235.0
 rect_pivot_offset = Vector2( -115, 211 )
-text = "Areia: xx"
+text = "Areia: xx/xx"
 
 [node name="Minerais" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
@@ -156,7 +156,7 @@ margin_top = 246.0
 margin_right = 110.0
 margin_bottom = 260.0
 rect_pivot_offset = Vector2( -115, 211 )
-text = "Minerais: xx"
+text = "Minerais: xx/xx"
 
 [node name="Label7" type="Label" parent="Campos/Menu_lateral"]
 visible = false
@@ -181,24 +181,36 @@ margin_left = 163.0
 margin_top = 226.0
 margin_right = 383.0
 margin_bottom = 395.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="BtnPedra" type="TextureButton" parent="Campos"]
 margin_left = 604.0
 margin_top = 77.0
 margin_right = 753.0
 margin_bottom = 151.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="BtnAreia" type="TextureButton" parent="Campos"]
 margin_left = 884.0
 margin_top = 114.0
 margin_right = 1030.0
 margin_bottom = 382.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="BtnMinerais" type="TextureButton" parent="Campos"]
 margin_left = 725.0
 margin_top = 254.0
 margin_right = 787.0
 margin_bottom = 301.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Continuar" type="TextureButton" parent="."]
 margin_left = 935.0

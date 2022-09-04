@@ -7,10 +7,10 @@ func _ready():
 	$Dia.text = 'Dia: ' + str(GlobalVar.dia)
 	GlobalVar.energia = GlobalVar.limite_energia
 	$Energia.text = str(GlobalVar.energia) + '/' + str(GlobalVar.limite_energia)
-	$Madeira.text = 'Madeira: ' + str(GlobalVar.madeira)
-	$Pedra.text = 'Pedra: ' + str(GlobalVar.pedra)
-	$Areia.text = 'Areia: ' + str(GlobalVar.areia)
-	$Minerais.text = 'Minerais: ' + str(GlobalVar.minerais)
+	$Madeira.text = 'Madeira: ' + str(GlobalVar.madeira) + '/' + str(GlobalVar.limite_madeira)
+	$Pedra.text = 'Pedra: ' + str(GlobalVar.pedra) + '/' + str(GlobalVar.limite_pedra)
+	$Areia.text = 'Areia: ' + str(GlobalVar.areia) + '/' + str(GlobalVar.limite_areia)
+	$Minerais.text = 'Minerais: ' + str(GlobalVar.minerais) + '/' + str(GlobalVar.limite_minerais)
 	$EnergiaBar.max_value = GlobalVar.limite_energia
 	$EnergiaBar.value = GlobalVar.limite_energia
 

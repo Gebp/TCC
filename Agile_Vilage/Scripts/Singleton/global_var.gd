@@ -14,13 +14,16 @@ var minerais = 0
 
 # Limitadores
 var limite_energia = 10
-var limite_madeira = 0
-var limite_pedra = 0
-var limite_areia = 0
-var limite_minerais = 0
+var limite_madeira = 20
+var limite_pedra = 20
+var limite_areia = 20
+var limite_minerais = 20
 
-#Contadores para validação dos objetivos
+# Contadores para validação dos objetivos
 var casas = 0
 var torres = 0
 var muros = 0
 var fazendas = 0
+
+# Validador do objetivo selecionado
+var obj = 0

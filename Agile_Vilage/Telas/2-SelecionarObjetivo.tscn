@@ -56,12 +56,8 @@ margin_right = 233.0
 margin_bottom = 318.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
-bbcode_text = "[center]Você foi apontado como novo responsável pelo Vilarejo X. Para provar seu valor e manter sua nova posição, você deverá utilizar as práticas ágeis para que o vilarejo creça e se desenvolva.
-
-Escolha uma das missões propostas para esse fim e informe em quanto tempo você cumprirá seus objetivos.[/center]"
-text = "Você foi apontado como novo responsável pelo Vilarejo X. Para provar seu valor e manter sua nova posição, você deverá utilizar as práticas ágeis para que o vilarejo creça e se desenvolva.
-
-Escolha uma das missões propostas para esse fim e informe em quanto tempo você cumprirá seus objetivos."
+bbcode_text = "[center]Texto da intro.[/center]"
+text = "Texto da intro."
 
 [node name="QtdSprint" type="SpinBox" parent="Objetivo"]
 margin_left = 784.0

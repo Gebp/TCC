@@ -24,7 +24,8 @@ func disable_items(id):
 
 func _on_ListaObj_item_selected(index):
 	var i = index - 2
-	
+	GlobalVar.obj = i
+
 	if i == 0:
 		$Mensagem_inicial/TextoIntro.bbcode_text = texto_padrao + "[color=red]Objetivo 1"
 		$TextObj.text = str('Objetivo 1')
