@@ -39,6 +39,7 @@ margin_left = 15.0
 margin_top = 241.0
 margin_right = 224.0
 margin_bottom = 281.0
+color = Color( 0.0117647, 0.376471, 0, 1 )
 
 [node name="Iniciar" type="TextureButton" parent="Area2D/ColorRect"]
 margin_right = 209.0
@@ -49,7 +50,6 @@ __meta__ = {
 }
 
 [node name="IniciarText" type="Label" parent="Area2D/ColorRect"]
-modulate = Color( 0, 0, 0, 1 )
 margin_right = 208.0
 margin_bottom = 40.0
 text = "Iniciar"

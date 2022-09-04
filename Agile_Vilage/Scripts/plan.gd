@@ -1,6 +1,6 @@
 extends Node
 
-onready var cena_arastavel: PackedScene = preload("res://Objetos/TaskCard.tscn")
+onready var cena_arrastavel: PackedScene = preload("res://Objetos/TaskCard.tscn")
 onready var container_a = $Container_cards
 
 var task_cards = [
@@ -15,7 +15,7 @@ func _ready():
 
 func _popular_cards():
 	for task in task_cards:
-		var item = cena_arastavel.instance()
+		var item = cena_arrastavel.instance()
 		item.id = task['id']
 		item.texto = task['texto']
 		container_a.add_child(item)

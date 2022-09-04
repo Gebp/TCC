@@ -43,3 +43,17 @@ func _on_BtnMinerais_pressed():
 			GlobalVar.minerais = GlobalVar.limite_minerais
 		$Menu_lateral/Minerais.text = 'Minerais: ' + str(GlobalVar.minerais) + '/' + str(GlobalVar.limite_minerais)
 		reduzir_energia()
+
+func _on_BtnVila_pressed():
+	$PopVila.popup_centered()
+
+func _on_BtnCasa_pressed():
+	if GlobalVar.energia > 0 and GlobalVar.madeira >= 10 and GlobalVar.pedra >= 5 and GlobalVar.areia >= 3:
+		GlobalVar.madeira -= 10
+		$Menu_lateral/Madeira.text = 'Madeira: ' + str(GlobalVar.madeira) + '/' + str(GlobalVar.limite_madeira)
+		GlobalVar.pedra -= 5
+		$Menu_lateral/Pedra.text = 'Pedra: ' + str(GlobalVar.pedra) + '/' + str(GlobalVar.limite_pedra)
+		GlobalVar.areia -= 3
+		$Menu_lateral/Areia.text = 'Areia: ' + str(GlobalVar.areia) + '/' + str(GlobalVar.limite_areia)
+		GlobalVar.casas += 1
+		reduzir_energia()
