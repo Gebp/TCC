@@ -27,8 +27,8 @@ func _on_ListaObj_item_selected(index):
 	GlobalVar.obj = i
 
 	if i == 0:
-		$Mensagem_inicial/TextoIntro.bbcode_text = texto_padrao + "[color=red]Objetivo 1"
-		$TextObj.text = str('Objetivo 1')
+		$Mensagem_inicial/TextoIntro.bbcode_text = texto_padrao + "[color=red]Sabe-se que o povo tem sofrido com a falta de moradias por conta do recente crescimento populacional.\n\nPlaneje e gerencie a construção dessas novas casas."
+		$TextObj.text = str('Construa:\n\n5 casas')
 	if i == 1:
 		$Mensagem_inicial/TextoIntro.bbcode_text = texto_padrao + "[color=red]Objetivo 2"
 		$TextObj.text = str('Objetivo 2')

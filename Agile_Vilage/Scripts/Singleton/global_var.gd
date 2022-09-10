@@ -11,6 +11,10 @@ var madeira = 0
 var pedra = 0
 var areia = 0
 var minerais = 0
+var carvao = 0
+
+# Contadores de recursos processados
+var vidro = 0
 
 # Limitadores
 var limite_energia = 10
@@ -18,6 +22,10 @@ var limite_madeira = 20
 var limite_pedra = 20
 var limite_areia = 20
 var limite_minerais = 20
+var limite_carvao = 20
+
+# Limitadores de recursos processados
+var limite_vidro = 10
 
 # Contadores para validação dos objetivos
 var casas = 0

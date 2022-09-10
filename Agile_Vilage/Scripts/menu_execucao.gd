@@ -11,6 +11,8 @@ func _ready():
 	$Pedra.text = 'Pedra: ' + str(GlobalVar.pedra) + '/' + str(GlobalVar.limite_pedra)
 	$Areia.text = 'Areia: ' + str(GlobalVar.areia) + '/' + str(GlobalVar.limite_areia)
 	$Minerais.text = 'Minerais: ' + str(GlobalVar.minerais) + '/' + str(GlobalVar.limite_minerais)
+	$Carvao.text = 'Carvão: ' + str(GlobalVar.carvao) + '/' + str(GlobalVar.limite_carvao)
+	$Vidro.text = 'Vidro: ' + str(GlobalVar.vidro) + '/' + str(GlobalVar.limite_vidro)
 	$EnergiaBar.max_value = GlobalVar.limite_energia
 	$EnergiaBar.value = GlobalVar.limite_energia
 

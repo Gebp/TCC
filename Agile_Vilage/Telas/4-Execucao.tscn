@@ -145,13 +145,13 @@ text = "xx/xx"
 align = 1
 valign = 1
 
-[node name="Materiais" type="Label" parent="Campos/Menu_lateral"]
+[node name="Recursos" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
-margin_top = 138.0
+margin_top = 146.0
 margin_right = 113.0
-margin_bottom = 152.0
+margin_bottom = 160.0
 rect_pivot_offset = Vector2( -115, 211 )
-text = "Materiais"
+text = "Recursos"
 align = 1
 valign = 1
 
@@ -187,23 +187,31 @@ margin_bottom = 260.0
 rect_pivot_offset = Vector2( -115, 211 )
 text = "Minerais: xx/xx"
 
-[node name="Label7" type="Label" parent="Campos/Menu_lateral"]
-visible = false
-margin_right = 40.0
-margin_bottom = 14.0
+[node name="Carvao" type="Label" parent="Campos/Menu_lateral"]
+margin_left = 10.0
+margin_top = 269.0
+margin_right = 110.0
+margin_bottom = 283.0
 rect_pivot_offset = Vector2( -115, 211 )
+text = "Carvão: xx/xx"
 
-[node name="Label8" type="Label" parent="Campos/Menu_lateral"]
-visible = false
-margin_right = 40.0
-margin_bottom = 14.0
+[node name="Materiais" type="Label" parent="Campos/Menu_lateral"]
+margin_left = 10.0
+margin_top = 303.0
+margin_right = 113.0
+margin_bottom = 317.0
 rect_pivot_offset = Vector2( -115, 211 )
+text = "Materiais"
+align = 1
+valign = 1
 
-[node name="Label9" type="Label" parent="Campos/Menu_lateral"]
-visible = false
-margin_right = 40.0
-margin_bottom = 14.0
+[node name="Vidro" type="Label" parent="Campos/Menu_lateral"]
+margin_left = 10.0
+margin_top = 326.0
+margin_right = 110.0
+margin_bottom = 340.0
 rect_pivot_offset = Vector2( -115, 211 )
+text = "Vidro: xx/xx"
 
 [node name="BtnMadeira" type="TextureButton" parent="Campos"]
 margin_left = 163.0
@@ -246,6 +254,24 @@ margin_left = 417.0
 margin_top = 181.0
 margin_right = 638.0
 margin_bottom = 342.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BtnCarvao" type="TextureButton" parent="Campos"]
+margin_left = 466.0
+margin_top = 390.0
+margin_right = 726.0
+margin_bottom = 482.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BtnForja" type="TextureButton" parent="Campos"]
+margin_left = 445.0
+margin_top = 56.0
+margin_right = 510.0
+margin_bottom = 123.0
 __meta__ = {
 "_edit_lock_": true
 }
@@ -318,17 +344,95 @@ bbcode_enabled = true
 bbcode_text = "[center]Construa casas para que os povo tenha onde morar.
 
 Custo:
-10 Madeiras, 3 Areias e 5 Pedras"
+10 Madeiras, 4 vidros e 5 Pedras
+5 Energias"
 text = "Construa casas para que os povo tenha onde morar.
 
 Custo:
-10 Madeiras, 3 Areias e 5 Pedras"
+10 Madeiras, 4 vidros e 5 Pedras
+5 Energias"
+
+[node name="PopForja" type="WindowDialog" parent="Campos"]
+visible = true
+margin_left = 772.0
+margin_top = 644.0
+margin_right = 1501.0
+margin_bottom = 971.0
+theme = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Titulo" type="Label" parent="Campos/PopForja"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 31.0
+margin_top = 11.0
+margin_right = 679.0
+margin_bottom = 33.0
+text = "Materiais e Ferramentas"
+align = 1
+valign = 1
+
+[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopForja"]
+margin_left = 30.0
+margin_top = 39.0
+margin_right = 680.0
+margin_bottom = 40.0
+color = Color( 0.941176, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BtnVidro" type="Button" parent="Campos/PopForja"]
+margin_left = 30.0
+margin_top = 56.0
+margin_right = 187.0
+margin_bottom = 302.0
+theme = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ItemText" type="Label" parent="Campos/PopForja/BtnVidro"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 149.0
+margin_bottom = 29.0
+text = "Vidro"
+align = 1
+valign = 1
+
+[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopForja/BtnVidro"]
+margin_left = 5.0
+margin_top = 33.0
+margin_right = 152.0
+margin_bottom = 34.0
+color = Color( 0.941176, 0, 0, 1 )
+
+[node name="DetalheText" type="RichTextLabel" parent="Campos/PopForja/BtnVidro"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 6.0
+margin_top = 40.0
+margin_right = 152.0
+margin_bottom = 214.0
+bbcode_enabled = true
+bbcode_text = "[center]Faça vidros para utilizar em suas construções
+
+Custo:
+5 areias e 2 carvões
+2 Energias"
+text = "Faça vidros para utilizar em suas construções
+
+Custo:
+5 areias e 2 carvões
+2 Energias"
 
 [node name="Continuar" type="TextureButton" parent="."]
-margin_left = 935.0
-margin_top = 552.0
-margin_right = 1014.0
-margin_bottom = 590.0
+margin_left = 936.0
+margin_top = 547.0
+margin_right = 1015.0
+margin_bottom = 585.0
 script = ExtResource( 4 )
 
 [node name="BotaoProx" type="Sprite" parent="Continuar"]
@@ -342,10 +446,13 @@ texture = ExtResource( 3 )
 [connection signal="pressed" from="Campos/BtnPedra" to="Campos" method="_on_BtnPedra_pressed"]
 [connection signal="pressed" from="Campos/BtnAreia" to="Campos" method="_on_BtnAreia_pressed"]
 [connection signal="pressed" from="Campos/BtnMinerais" to="Campos" method="_on_BtnMinerais_pressed"]
-[connection signal="pressed" from="Campos/BtnVila" to="Campos" method="_on_BtnVial_pressed"]
 [connection signal="pressed" from="Campos/BtnVila" to="Campos" method="_on_BtnVila_pressed"]
+[connection signal="pressed" from="Campos/BtnCarvao" to="Campos" method="_on_BtnCarvao_pressed"]
+[connection signal="pressed" from="Campos/BtnForja" to="Campos" method="_on_BtnForja_pressed"]
 [connection signal="popup_hide" from="Campos/PopVila" to="Campos/PopVila" method="_on_PopVila_popup_hide"]
 [connection signal="pressed" from="Campos/PopVila/BtnCasa" to="Campos" method="_on_BtnCasa_pressed"]
+[connection signal="popup_hide" from="Campos/PopForja" to="Campos/PopForja" method="_on_PopVila_popup_hide"]
+[connection signal="pressed" from="Campos/PopForja/BtnVidro" to="Campos" method="_on_BtnVidro_pressed"]
 [connection signal="pressed" from="Continuar" to="Continuar" method="_on_Continuar_pressed"]
 [connection signal="pressed" from="Continuar" to="Continuar" method="_on_Reiniciar_pressed"]
 [connection signal="pressed" from="Continuar" to="Continuar" method="_on_TextureButton_pressed"]

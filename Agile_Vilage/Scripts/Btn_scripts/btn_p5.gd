@@ -12,12 +12,18 @@ func _on_Reiniciar_pressed():
 	GlobalVar.pedra = 0
 	GlobalVar.areia = 0
 	GlobalVar.minerais = 0
+	GlobalVar.carvao = 0
+	# Contadores de recursos processados
+	GlobalVar.vidro = 0
 	# Limitadores
 	GlobalVar.limite_energia = 10
 	GlobalVar.limite_madeira = 20
 	GlobalVar.limite_pedra = 20
 	GlobalVar.limite_areia = 20
 	GlobalVar.limite_minerais = 20
+	GlobalVar.limite_carvao = 20
+	# Limitadores de recursos processados
+	GlobalVar.limite_vidro = 10
 	# Contadores para validação dos objetivos
 	GlobalVar.casas = 0
 	GlobalVar.torres = 0

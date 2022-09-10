@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Imagens/Background/Mesa.png" type="Texture" id=1]
 [ext_resource path="res://Imagens/Cards/Carta_Intro.png" type="Texture" id=2]
 [ext_resource path="res://Imagens/Btns/Botao_prox.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/objetivos.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Btn_scripts/btn_p2.gd" type="Script" id=5]
+[ext_resource path="res://styles/drop_down_list.tres" type="Theme" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 36.5, 17.5 )
@@ -23,10 +24,10 @@ __meta__ = {
 }
 
 [node name="Iniciar_proj" type="TextureButton" parent="."]
-margin_left = 891.0
-margin_top = 535.0
-margin_right = 970.0
-margin_bottom = 573.0
+margin_left = 936.0
+margin_top = 547.0
+margin_right = 1015.0
+margin_bottom = 585.0
 script = ExtResource( 5 )
 
 [node name="BotaoProx" type="Sprite" parent="Iniciar_proj"]
@@ -60,9 +61,9 @@ bbcode_text = "[center]Texto da intro.[/center]"
 text = "Texto da intro."
 
 [node name="QtdSprint" type="SpinBox" parent="Objetivo"]
-margin_left = 784.0
+margin_left = 842.0
 margin_top = 543.0
-margin_right = 858.0
+margin_right = 916.0
 margin_bottom = 573.0
 min_value = 1.0
 value = 1.0
@@ -83,8 +84,8 @@ margin_left = 533.0
 margin_top = 19.0
 margin_right = 997.0
 margin_bottom = 52.0
+theme = ExtResource( 6 )
 text = "- Selecione o Objetivo -"
-flat = true
 __meta__ = {
 "_edit_lock_": true
 }
