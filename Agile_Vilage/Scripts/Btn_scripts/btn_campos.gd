@@ -70,7 +70,7 @@ func valida_objetivos():
 	$Menu_lateral/Casas.text = 'Casas: ' + str(GlobalVar.casas)
 	$Menu_lateral/PopObj/Casa_progress.max_value = GlobalVar.obj_casas
 	$Menu_lateral/PopObj/Casa_progress.value = GlobalVar.casas
-	$Menu_lateral/PopObj/Casa_obj.text = 'Construa ' + GlobalVar.obj_casas + 'casas'
+	$Menu_lateral/PopObj/Casa_obj.text = 'Construa ' + str(GlobalVar.obj_casas) + 'casas'
 	if GlobalVar.casas >= GlobalVar.obj_casas:
 		$Menu_lateral/PopObj/Casa_progress/Label.text = 'Consluído'
 	else:
