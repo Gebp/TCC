@@ -66,6 +66,16 @@ func _on_BtnVila_pressed():
 func _on_BtnForja_pressed():
 	$PopForja.popup_centered()
 
+func valida_objetivos():
+	$Menu_lateral/Casas.text = 'Casas: ' + str(GlobalVar.casas)
+	$Menu_lateral/PopObj/Casa_progress.max_value = GlobalVar.obj_casas
+	$Menu_lateral/PopObj/Casa_progress.value = GlobalVar.casas
+	$Menu_lateral/PopObj/Casa_obj.text = 'Construa ' + GlobalVar.obj_casas + 'casas'
+	if GlobalVar.casas >= GlobalVar.obj_casas:
+		$Menu_lateral/PopObj/Casa_progress/Label.text = 'Consluído'
+	else:
+		$Menu_lateral/PopObj/Casa_progress/Label.text = str(GlobalVar.casas) + '/' + str(GlobalVar.obj_casas)
+
 # Botões de Construções
 func _on_BtnCasa_pressed():
 	if GlobalVar.energia >= 5 and GlobalVar.madeira >= 10 and GlobalVar.pedra >= 5 and GlobalVar.vidro >= 4:
@@ -73,9 +83,10 @@ func _on_BtnCasa_pressed():
 		$Menu_lateral/Madeira.text = 'Madeira: ' + str(GlobalVar.madeira) + '/' + str(GlobalVar.limite_madeira)
 		GlobalVar.pedra -= 5
 		$Menu_lateral/Pedra.text = 'Pedra: ' + str(GlobalVar.pedra) + '/' + str(GlobalVar.limite_pedra)
-		GlobalVar.areia -= 4
+		GlobalVar.vidro -= 4
 		$Menu_lateral/Vidro.text = 'Vidro: ' + str(GlobalVar.vidro) + '/' + str(GlobalVar.limite_vidro)
 		GlobalVar.casas += 1
+		valida_objetivos()
 		reduzir_energia(btnType[1])
 
 # Botões de Materiais

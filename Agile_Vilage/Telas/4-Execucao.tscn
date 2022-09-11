@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Imagens/Background/mapa.jpg" type="Texture" id=1]
 [ext_resource path="res://Imagens/Background/Mesa.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scripts/rdn_events.gd" type="Script" id=7]
 [ext_resource path="res://styles/pop_up.tres" type="StyleBox" id=8]
 [ext_resource path="res://styles/pop_up_btn_hover.tres" type="StyleBox" id=9]
+[ext_resource path="res://styles/obj_progress.tres" type="Theme" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 66, 308 )
@@ -148,7 +149,7 @@ valign = 1
 [node name="Recursos" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
 margin_top = 146.0
-margin_right = 113.0
+margin_right = 110.0
 margin_bottom = 160.0
 rect_pivot_offset = Vector2( -115, 211 )
 text = "Recursos"
@@ -198,20 +199,102 @@ text = "Carvão: xx/xx"
 [node name="Materiais" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
 margin_top = 303.0
-margin_right = 113.0
+margin_right = 110.0
 margin_bottom = 317.0
-rect_pivot_offset = Vector2( -115, 211 )
+rect_pivot_offset = Vector2( 140, -20 )
 text = "Materiais"
 align = 1
 valign = 1
 
 [node name="Vidro" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
-margin_top = 326.0
+margin_top = 327.0
 margin_right = 110.0
-margin_bottom = 340.0
-rect_pivot_offset = Vector2( -115, 211 )
+margin_bottom = 341.0
+rect_pivot_offset = Vector2( 140, -44 )
 text = "Vidro: xx/xx"
+
+[node name="Construções" type="Label" parent="Campos/Menu_lateral"]
+margin_left = 10.0
+margin_top = 361.0
+margin_right = 110.0
+margin_bottom = 375.0
+rect_pivot_offset = Vector2( 140, -20 )
+text = "Materiais"
+align = 1
+valign = 1
+
+[node name="Casas" type="Label" parent="Campos/Menu_lateral"]
+margin_left = 10.0
+margin_top = 382.0
+margin_right = 110.0
+margin_bottom = 396.0
+rect_pivot_offset = Vector2( 140, -44 )
+text = "Casas: xx/xx"
+
+[node name="BotaoProx" type="Sprite" parent="Campos/Menu_lateral"]
+position = Vector2( 57.5512, 599.49 )
+rotation = 1.5708
+scale = Vector2( 0.121891, 0.175831 )
+texture = ExtResource( 3 )
+
+[node name="Obj_btn" type="TextureButton" parent="Campos/Menu_lateral/BotaoProx"]
+margin_left = -221.0
+margin_top = -94.0
+margin_right = 4.00002
+margin_bottom = 95.0
+
+[node name="PopObj" type="WindowDialog" parent="Campos/Menu_lateral"]
+visible = true
+margin_left = 27.0
+margin_top = 998.0
+margin_right = 377.0
+margin_bottom = 1236.0
+theme = SubResource( 5 )
+
+[node name="Titulo" type="Label" parent="Campos/Menu_lateral/PopObj"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 31.0
+margin_top = 11.0
+margin_right = 331.0
+margin_bottom = 33.0
+text = "Objetivos"
+align = 1
+valign = 1
+
+[node name="LinhaVermelha" type="ColorRect" parent="Campos/Menu_lateral/PopObj"]
+margin_left = 30.0
+margin_top = 39.0
+margin_right = 330.0
+margin_bottom = 40.0
+color = Color( 0.941176, 0, 0, 1 )
+
+[node name="Casa_obj" type="Label" parent="Campos/Menu_lateral/PopObj"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 37.0
+margin_top = 72.0
+margin_right = 179.0
+margin_bottom = 94.0
+text = "Construa x casas"
+valign = 1
+
+[node name="Casa_progress" type="ProgressBar" parent="Campos/Menu_lateral/PopObj"]
+margin_left = 203.0
+margin_top = 73.0
+margin_right = 329.0
+margin_bottom = 93.0
+theme = ExtResource( 10 )
+percent_visible = false
+
+[node name="Label" type="Label" parent="Campos/Menu_lateral/PopObj/Casa_progress"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 123.0
+margin_bottom = 17.0
+text = "xx/xx"
+align = 1
+valign = 1
 
 [node name="BtnMadeira" type="TextureButton" parent="Campos"]
 margin_left = 163.0
@@ -442,6 +525,8 @@ texture = ExtResource( 3 )
 
 [connection signal="timeout" from="Campos/Menu_lateral/T_exec" to="Campos/Menu_lateral" method="_on_T_exec_timeout"]
 [connection signal="timeout" from="Campos/Menu_lateral/T_exec" to="Campos/Menu_lateral" method="_on_Timer_timeout"]
+[connection signal="pressed" from="Campos/Menu_lateral/BotaoProx/Obj_btn" to="Campos/Menu_lateral" method="_on_Obj_btn_pressed"]
+[connection signal="popup_hide" from="Campos/Menu_lateral/PopObj" to="Campos/Menu_lateral/PopObj" method="_on_PopVila_popup_hide"]
 [connection signal="pressed" from="Campos/BtnMadeira" to="Campos" method="_on_BtnMadeira_pressed"]
 [connection signal="pressed" from="Campos/BtnPedra" to="Campos" method="_on_BtnPedra_pressed"]
 [connection signal="pressed" from="Campos/BtnAreia" to="Campos" method="_on_BtnAreia_pressed"]
@@ -454,5 +539,3 @@ texture = ExtResource( 3 )
 [connection signal="popup_hide" from="Campos/PopForja" to="Campos/PopForja" method="_on_PopVila_popup_hide"]
 [connection signal="pressed" from="Campos/PopForja/BtnVidro" to="Campos" method="_on_BtnVidro_pressed"]
 [connection signal="pressed" from="Continuar" to="Continuar" method="_on_Continuar_pressed"]
-[connection signal="pressed" from="Continuar" to="Continuar" method="_on_Reiniciar_pressed"]
-[connection signal="pressed" from="Continuar" to="Continuar" method="_on_TextureButton_pressed"]

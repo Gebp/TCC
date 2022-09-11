@@ -12,6 +12,8 @@ func _ready():
 	add_items()
 	disable_items(0)
 	$Mensagem_inicial/TextoIntro.bbcode_text = texto_padrao + "[color=red]Para mais detalhes, selecione um dos objetivos"
+	$Iniciar_proj.disabled = true
+	$Iniciar_proj/BotaoProx.visible = false
 
 func add_items():
 	lista.add_item('- Selecione um Objetivo -') # Posição 0
@@ -25,20 +27,32 @@ func disable_items(id):
 func _on_ListaObj_item_selected(index):
 	var i = index - 2
 	GlobalVar.obj = i
-
+	$Iniciar_proj.disabled = false
+	$Iniciar_proj/BotaoProx.visible = true
+	
 	if i == 0:
 		$Mensagem_inicial/TextoIntro.bbcode_text = texto_padrao + "[color=red]Sabe-se que o povo tem sofrido com a falta de moradias por conta do recente crescimento populacional.\n\nPlaneje e gerencie a construção dessas novas casas."
 		$TextObj.text = str('Construa:\n\n5 casas')
+		GlobalVar.obj_casas = 5
 	if i == 1:
 		$Mensagem_inicial/TextoIntro.bbcode_text = texto_padrao + "[color=red]Objetivo 2"
 		$TextObj.text = str('Objetivo 2')
+		$Iniciar_proj.disabled = true
+		$Iniciar_proj/BotaoProx.visible = false
 	if i == 2:
 		$Mensagem_inicial/TextoIntro.bbcode_text = texto_padrao + "[color=red]Objetivo 3"
 		$TextObj.text = str('Objetivo 3')
+		$Iniciar_proj.disabled = true
+		$Iniciar_proj/BotaoProx.visible = false
 	if i == 3:
 		$Mensagem_inicial/TextoIntro.bbcode_text = texto_padrao + "[color=red]Objetivo 4"
 		$TextObj.text = str('Objetivo 4')
+		$Iniciar_proj.disabled = true
+		$Iniciar_proj/BotaoProx.visible = false
 
 func _on_QtdSprint_value_changed(value):
 	GlobalVar.qtd_sprint = value
 	print(GlobalVar.qtd_sprint)
+
+func _on_Iniciar_proj_pressed():
+	get_tree().change_scene("res://Telas/3-Planejamento.tscn")

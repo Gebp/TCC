@@ -4,8 +4,8 @@
 [ext_resource path="res://Imagens/Cards/Carta_Intro.png" type="Texture" id=2]
 [ext_resource path="res://Imagens/Btns/Botao_prox.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/objetivos.gd" type="Script" id=4]
-[ext_resource path="res://Scripts/Btn_scripts/btn_p2.gd" type="Script" id=5]
 [ext_resource path="res://styles/drop_down_list.tres" type="Theme" id=6]
+[ext_resource path="res://styles/sprint_sel.tres" type="Theme" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 36.5, 17.5 )
@@ -22,18 +22,6 @@ texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="Iniciar_proj" type="TextureButton" parent="."]
-margin_left = 936.0
-margin_top = 547.0
-margin_right = 1015.0
-margin_bottom = 585.0
-script = ExtResource( 5 )
-
-[node name="BotaoProx" type="Sprite" parent="Iniciar_proj"]
-position = Vector2( 37.25, 20.125 )
-scale = Vector2( 0.180131, 0.199761 )
-texture = ExtResource( 3 )
 
 [node name="Objetivo" type="CanvasLayer" parent="."]
 script = ExtResource( 4 )
@@ -60,14 +48,23 @@ bbcode_enabled = true
 bbcode_text = "[center]Texto da intro.[/center]"
 text = "Texto da intro."
 
+[node name="RichTextLabel" type="RichTextLabel" parent="Objetivo"]
+margin_left = 530.0
+margin_top = 549.0
+margin_right = 832.0
+margin_bottom = 583.0
+text = "Indique a quantidade de Sprints necessárias para completar esse objetivo"
+
 [node name="QtdSprint" type="SpinBox" parent="Objetivo"]
-margin_left = 842.0
-margin_top = 543.0
-margin_right = 916.0
-margin_bottom = 573.0
+margin_left = 845.0
+margin_top = 551.0
+margin_right = 903.0
+margin_bottom = 581.0
+theme = ExtResource( 7 )
 min_value = 1.0
 value = 1.0
 rounded = true
+align = 1
 
 [node name="TextObj" type="RichTextLabel" parent="Objetivo"]
 margin_left = 540.0
@@ -90,10 +87,19 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[connection signal="pressed" from="Iniciar_proj" to="Iniciar_proj" method="_on_Iniciar_proj_pressed"]
-[connection signal="pressed" from="Iniciar_proj" to="Iniciar_proj" method="_on_Reiniciar_pressed"]
-[connection signal="pressed" from="Iniciar_proj" to="Iniciar_proj" method="_on_TextureButton_pressed"]
+[node name="Iniciar_proj" type="TextureButton" parent="Objetivo"]
+margin_left = 936.0
+margin_top = 547.0
+margin_right = 1015.0
+margin_bottom = 585.0
+
+[node name="BotaoProx" type="Sprite" parent="Objetivo/Iniciar_proj"]
+position = Vector2( 37.25, 20.125 )
+scale = Vector2( 0.180131, 0.199761 )
+texture = ExtResource( 3 )
+
 [connection signal="changed" from="Objetivo/QtdSprint" to="Objetivo" method="_on_QtdSprint_changed"]
 [connection signal="value_changed" from="Objetivo/QtdSprint" to="Objetivo" method="_on_QtdSprint_value_changed"]
 [connection signal="item_selected" from="Objetivo/ListaObj" to="Objetivo" method="_on_ListaObj_item_selected"]
 [connection signal="item_selected" from="Objetivo/ListaObj" to="Objetivo/ListaObj" method="_on_ListaObj_item_selected"]
+[connection signal="pressed" from="Objetivo/Iniciar_proj" to="Objetivo" method="_on_Iniciar_proj_pressed"]

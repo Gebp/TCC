@@ -33,5 +33,11 @@ var torres = 0
 var muros = 0
 var fazendas = 0
 
+# Contadores de objetivos
+var obj_casas = 0
+var obj_torres = 0
+var obj_muros = 0
+var obj_fazendas = 0
+
 # Validador do objetivo selecionado
 var obj = 0

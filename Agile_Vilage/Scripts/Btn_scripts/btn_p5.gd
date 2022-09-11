@@ -29,6 +29,11 @@ func _on_Reiniciar_pressed():
 	GlobalVar.torres = 0
 	GlobalVar.muros = 0
 	GlobalVar.fazendas = 0
+	# Contadores de objetivos
+	GlobalVar.obj_casas = 0
+	GlobalVar.obj_torres = 0
+	GlobalVar.obj_muros = 0
+	GlobalVar.obj_fazendas = 0
 	# Validador do objetivo selecionado
 	GlobalVar.obj = 0
 	get_tree().change_scene("res://Telas/1-MenuInicial.tscn")
