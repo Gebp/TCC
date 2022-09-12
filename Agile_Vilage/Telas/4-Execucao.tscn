@@ -220,7 +220,7 @@ margin_top = 361.0
 margin_right = 110.0
 margin_bottom = 375.0
 rect_pivot_offset = Vector2( 140, -20 )
-text = "Materiais"
+text = "Construções"
 align = 1
 valign = 1
 
@@ -230,7 +230,7 @@ margin_top = 382.0
 margin_right = 110.0
 margin_bottom = 396.0
 rect_pivot_offset = Vector2( 140, -44 )
-text = "Casas: xx/xx"
+text = "Casas: xx"
 
 [node name="BotaoProx" type="Sprite" parent="Campos/Menu_lateral"]
 position = Vector2( 57.5512, 599.49 )

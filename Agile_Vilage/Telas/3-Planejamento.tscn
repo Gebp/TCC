@@ -74,6 +74,36 @@ position = Vector2( -1, 0 )
 scale = Vector2( 0.376772, 0.529523 )
 texture = ExtResource( 2 )
 
+[node name="ToDo_Label" type="Label" parent="Kanban"]
+self_modulate = Color( 1, 0, 0, 1 )
+margin_left = 229.0
+margin_top = 123.0
+margin_right = 403.0
+margin_bottom = 166.0
+text = "TO-DO"
+align = 1
+valign = 1
+
+[node name="Doing__Label" type="Label" parent="Kanban"]
+self_modulate = Color( 1, 0, 0, 1 )
+margin_left = 474.0
+margin_top = 122.0
+margin_right = 648.0
+margin_bottom = 165.0
+text = "DOING"
+align = 1
+valign = 1
+
+[node name="Done_Label" type="Label" parent="Kanban"]
+self_modulate = Color( 1, 0, 0, 1 )
+margin_left = 722.0
+margin_top = 123.0
+margin_right = 896.0
+margin_bottom = 166.0
+text = "DONE"
+align = 1
+valign = 1
+
 [node name="Cabecalho" type="CanvasLayer" parent="."]
 script = ExtResource( 5 )
 
