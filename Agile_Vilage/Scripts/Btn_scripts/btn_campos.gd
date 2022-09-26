@@ -16,7 +16,7 @@ func reduzir_energia(tipo):
 	else:
 		GlobalVar.energia -= 2
 	$Menu_lateral/EnergiaBar.value = GlobalVar.energia
-	$Menu_lateral/Energia.text = str(GlobalVar.energia) + '/' + str(GlobalVar.limite_energia)
+	$Menu_lateral/EnergiaBar/Energia.text = str(GlobalVar.energia) + '/' + str(GlobalVar.limite_energia)
 
 # Botões de recursos naturais
 func _on_BtnMadeira_pressed():

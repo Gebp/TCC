@@ -34,15 +34,14 @@ position = Vector2( 27, 72 )
 shape = SubResource( 1 )
 
 [node name="CartaIntro" type="Sprite" parent="Objetivo/Mensagem_inicial/CartaIntro"]
-position = Vector2( -3.5, -3.99999 )
-scale = Vector2( 0.522152, 0.536178 )
+scale = Vector2( 0.52, 0.53 )
 texture = ExtResource( 2 )
 
 [node name="TextoIntro" type="RichTextLabel" parent="Objetivo/Mensagem_inicial"]
-margin_left = -194.0
-margin_top = -193.0
-margin_right = 233.0
-margin_bottom = 318.0
+margin_left = -190.0
+margin_top = -185.0
+margin_right = 235.0
+margin_bottom = 315.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]Texto da intro.[/center]"
@@ -50,16 +49,16 @@ text = "Texto da intro."
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Objetivo"]
 margin_left = 530.0
-margin_top = 549.0
-margin_right = 832.0
-margin_bottom = 583.0
+margin_top = 550.0
+margin_right = 830.0
+margin_bottom = 585.0
 text = "Indique a quantidade de Sprints necessárias para completar esse objetivo"
 
 [node name="QtdSprint" type="SpinBox" parent="Objetivo"]
 margin_left = 845.0
-margin_top = 551.0
-margin_right = 903.0
-margin_bottom = 581.0
+margin_top = 550.0
+margin_right = 905.0
+margin_bottom = 580.0
 theme = ExtResource( 7 )
 min_value = 1.0
 value = 1.0
@@ -67,35 +66,36 @@ rounded = true
 align = 1
 
 [node name="TextObj" type="RichTextLabel" parent="Objetivo"]
-margin_left = 540.0
-margin_top = 89.0
-margin_right = 997.0
-margin_bottom = 500.0
+margin_left = 530.0
+margin_top = 75.0
+margin_right = 990.0
+margin_bottom = 475.0
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="ListaObj" type="OptionButton" parent="Objetivo"]
 modulate = Color( 1, 0.980392, 0.796078, 1 )
-margin_left = 533.0
-margin_top = 19.0
-margin_right = 997.0
-margin_bottom = 52.0
+margin_left = 530.0
+margin_top = 20.0
+margin_right = 990.0
+margin_bottom = 55.0
 theme = ExtResource( 6 )
 text = "- Selecione o Objetivo -"
+align = 1
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Iniciar_proj" type="TextureButton" parent="Objetivo"]
-margin_left = 936.0
-margin_top = 547.0
+margin_left = 935.0
+margin_top = 550.0
 margin_right = 1015.0
-margin_bottom = 585.0
+margin_bottom = 590.0
 
 [node name="BotaoProx" type="Sprite" parent="Objetivo/Iniciar_proj"]
-position = Vector2( 37.25, 20.125 )
-scale = Vector2( 0.180131, 0.199761 )
+position = Vector2( 40, 20 )
+scale = Vector2( 0.18, 0.2 )
 texture = ExtResource( 3 )
 
 [connection signal="changed" from="Objetivo/QtdSprint" to="Objetivo" method="_on_QtdSprint_changed"]

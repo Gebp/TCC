@@ -96,20 +96,20 @@ script = ExtResource( 6 )
 [node name="Menu_lateral" type="CanvasLayer" parent="Campos"]
 script = ExtResource( 5 )
 
-[node name="Tempo_exec" type="Label" parent="Campos/Menu_lateral"]
-margin_left = 10.0
-margin_top = 50.0
-margin_right = 120.0
-margin_bottom = 70.0
-text = "Tempo: xx seg"
-valign = 1
-
 [node name="Dia" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
 margin_top = 20.0
 margin_right = 115.0
-margin_bottom = 40.0
+margin_bottom = 35.0
 text = "Dia: x"
+valign = 1
+
+[node name="Tempo_exec" type="Label" parent="Campos/Menu_lateral"]
+margin_left = 10.0
+margin_top = 40.0
+margin_right = 115.0
+margin_bottom = 55.0
+text = "Tempo: xx seg"
 valign = 1
 
 [node name="T_exec" type="Timer" parent="Campos/Menu_lateral"]
@@ -117,18 +117,18 @@ autostart = true
 
 [node name="ErnesrgiaText" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
-margin_top = 85.0
-margin_right = 113.0
-margin_bottom = 99.0
+margin_top = 70.0
+margin_right = 115.0
+margin_bottom = 85.0
 rect_pivot_offset = Vector2( -115, 211 )
 text = "Energia:"
 
 [node name="EnergiaBar" type="ProgressBar" parent="Campos/Menu_lateral"]
 modulate = Color( 0.858824, 0.458824, 0.235294, 1 )
-margin_left = 5.0
-margin_top = 102.0
-margin_right = 123.0
-margin_bottom = 126.0
+margin_left = 10.0
+margin_top = 90.0
+margin_right = 115.0
+margin_bottom = 110.0
 custom_styles/fg = SubResource( 2 )
 custom_styles/bg = SubResource( 3 )
 max_value = 10.0
@@ -136,11 +136,9 @@ step = 1.0
 rounded = true
 percent_visible = false
 
-[node name="Energia" type="Label" parent="Campos/Menu_lateral"]
-margin_left = 14.0
-margin_top = 108.0
-margin_right = 115.0
-margin_bottom = 122.0
+[node name="Energia" type="Label" parent="Campos/Menu_lateral/EnergiaBar"]
+margin_right = 105.0
+margin_bottom = 20.0
 rect_pivot_offset = Vector2( -115, 211 )
 text = "xx/xx"
 align = 1
@@ -148,9 +146,9 @@ valign = 1
 
 [node name="Recursos" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
-margin_top = 146.0
-margin_right = 110.0
-margin_bottom = 160.0
+margin_top = 130.0
+margin_right = 115.0
+margin_bottom = 145.0
 rect_pivot_offset = Vector2( -115, 211 )
 text = "Recursos"
 align = 1
@@ -158,49 +156,49 @@ valign = 1
 
 [node name="Madeira" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
-margin_top = 171.0
-margin_right = 110.0
-margin_bottom = 185.0
+margin_top = 150.0
+margin_right = 115.0
+margin_bottom = 165.0
 rect_pivot_offset = Vector2( -115, 211 )
 text = "Madeira: xx/xx"
 
 [node name="Pedra" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
-margin_top = 197.0
-margin_right = 110.0
-margin_bottom = 211.0
+margin_top = 170.0
+margin_right = 115.0
+margin_bottom = 185.0
 rect_pivot_offset = Vector2( -115, 211 )
 text = "Pedra: xx/xx"
 
 [node name="Areia" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
-margin_top = 221.0
-margin_right = 110.0
-margin_bottom = 235.0
+margin_top = 190.0
+margin_right = 115.0
+margin_bottom = 205.0
 rect_pivot_offset = Vector2( -115, 211 )
 text = "Areia: xx/xx"
 
 [node name="Minerais" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
-margin_top = 246.0
-margin_right = 110.0
-margin_bottom = 260.0
+margin_top = 210.0
+margin_right = 115.0
+margin_bottom = 225.0
 rect_pivot_offset = Vector2( -115, 211 )
 text = "Minerais: xx/xx"
 
 [node name="Carvao" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
-margin_top = 269.0
-margin_right = 110.0
-margin_bottom = 283.0
+margin_top = 230.0
+margin_right = 115.0
+margin_bottom = 245.0
 rect_pivot_offset = Vector2( -115, 211 )
 text = "Carvão: xx/xx"
 
 [node name="Materiais" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
-margin_top = 303.0
-margin_right = 110.0
-margin_bottom = 317.0
+margin_top = 260.0
+margin_right = 115.0
+margin_bottom = 275.0
 rect_pivot_offset = Vector2( 140, -20 )
 text = "Materiais"
 align = 1
@@ -208,17 +206,17 @@ valign = 1
 
 [node name="Vidro" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
-margin_top = 327.0
-margin_right = 110.0
-margin_bottom = 341.0
+margin_top = 280.0
+margin_right = 115.0
+margin_bottom = 295.0
 rect_pivot_offset = Vector2( 140, -44 )
 text = "Vidro: xx/xx"
 
 [node name="Construções" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
-margin_top = 361.0
-margin_right = 110.0
-margin_bottom = 375.0
+margin_top = 400.0
+margin_right = 115.0
+margin_bottom = 415.0
 rect_pivot_offset = Vector2( 140, -20 )
 text = "Construções"
 align = 1
@@ -226,72 +224,172 @@ valign = 1
 
 [node name="Casas" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
-margin_top = 382.0
-margin_right = 110.0
-margin_bottom = 396.0
+margin_top = 420.0
+margin_right = 115.0
+margin_bottom = 435.0
 rect_pivot_offset = Vector2( 140, -44 )
 text = "Casas: xx"
 
+[node name="Torres" type="Label" parent="Campos/Menu_lateral"]
+margin_left = 10.0
+margin_top = 440.0
+margin_right = 115.0
+margin_bottom = 455.0
+rect_pivot_offset = Vector2( 140, -44 )
+text = "Torres: xx"
+
+[node name="Muros" type="Label" parent="Campos/Menu_lateral"]
+margin_left = 10.0
+margin_top = 460.0
+margin_right = 115.0
+margin_bottom = 475.0
+rect_pivot_offset = Vector2( 140, -44 )
+text = "Muros: xx"
+
+[node name="Fazendas" type="Label" parent="Campos/Menu_lateral"]
+margin_left = 10.0
+margin_top = 480.0
+margin_right = 115.0
+margin_bottom = 495.0
+rect_pivot_offset = Vector2( 140, -44 )
+text = "Fazendas: xx"
+
 [node name="BotaoProx" type="Sprite" parent="Campos/Menu_lateral"]
-position = Vector2( 57.5512, 599.49 )
+position = Vector2( 57.551, 600 )
 rotation = 1.5708
 scale = Vector2( 0.121891, 0.175831 )
 texture = ExtResource( 3 )
 
 [node name="Obj_btn" type="TextureButton" parent="Campos/Menu_lateral/BotaoProx"]
-margin_left = -221.0
-margin_top = -94.0
-margin_right = 4.00002
+margin_left = -220.0
+margin_top = -95.0
+margin_right = 195.0
 margin_bottom = 95.0
 
 [node name="PopObj" type="WindowDialog" parent="Campos/Menu_lateral"]
 visible = true
-margin_left = 27.0
-margin_top = 998.0
-margin_right = 377.0
-margin_bottom = 1236.0
+margin_left = 25.0
+margin_top = 1000.0
+margin_right = 375.0
+margin_bottom = 1210.0
 theme = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Titulo" type="Label" parent="Campos/Menu_lateral/PopObj"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 31.0
-margin_top = 11.0
-margin_right = 331.0
-margin_bottom = 33.0
+margin_left = 25.0
+margin_top = 15.0
+margin_right = 325.0
+margin_bottom = 40.0
 text = "Objetivos"
 align = 1
 valign = 1
 
 [node name="LinhaVermelha" type="ColorRect" parent="Campos/Menu_lateral/PopObj"]
-margin_left = 30.0
-margin_top = 39.0
-margin_right = 330.0
-margin_bottom = 40.0
+margin_left = 25.0
+margin_top = 40.0
+margin_right = 325.0
+margin_bottom = 41.0
 color = Color( 0.941176, 0, 0, 1 )
 
 [node name="Casa_obj" type="Label" parent="Campos/Menu_lateral/PopObj"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 37.0
-margin_top = 72.0
-margin_right = 179.0
-margin_bottom = 94.0
+margin_left = 25.0
+margin_top = 65.0
+margin_right = 175.0
+margin_bottom = 90.0
 text = "Construa x casas"
 valign = 1
 
 [node name="Casa_progress" type="ProgressBar" parent="Campos/Menu_lateral/PopObj"]
-margin_left = 203.0
-margin_top = 73.0
-margin_right = 329.0
-margin_bottom = 93.0
+margin_left = 185.0
+margin_top = 65.0
+margin_right = 325.0
+margin_bottom = 90.0
 theme = ExtResource( 10 )
 percent_visible = false
 
 [node name="Label" type="Label" parent="Campos/Menu_lateral/PopObj/Casa_progress"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 3.0
-margin_top = 3.0
-margin_right = 123.0
-margin_bottom = 17.0
+margin_right = 140.0
+margin_bottom = 25.0
+text = "xx/xx"
+align = 1
+valign = 1
+
+[node name="Torre_obj" type="Label" parent="Campos/Menu_lateral/PopObj"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 25.0
+margin_top = 100.0
+margin_right = 175.0
+margin_bottom = 125.0
+text = "Construa x torres"
+valign = 1
+
+[node name="Torre_progress" type="ProgressBar" parent="Campos/Menu_lateral/PopObj"]
+margin_left = 185.0
+margin_top = 100.0
+margin_right = 325.0
+margin_bottom = 125.0
+theme = ExtResource( 10 )
+percent_visible = false
+
+[node name="Label" type="Label" parent="Campos/Menu_lateral/PopObj/Torre_progress"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 140.0
+margin_bottom = 25.0
+text = "xx/xx"
+align = 1
+valign = 1
+
+[node name="Muro_obj" type="Label" parent="Campos/Menu_lateral/PopObj"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 25.0
+margin_top = 135.0
+margin_right = 175.0
+margin_bottom = 160.0
+text = "Construa x muros"
+valign = 1
+
+[node name="Muro_progress" type="ProgressBar" parent="Campos/Menu_lateral/PopObj"]
+margin_left = 185.0
+margin_top = 135.0
+margin_right = 325.0
+margin_bottom = 160.0
+theme = ExtResource( 10 )
+percent_visible = false
+
+[node name="Label" type="Label" parent="Campos/Menu_lateral/PopObj/Muro_progress"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 140.0
+margin_bottom = 25.0
+text = "xx/xx"
+align = 1
+valign = 1
+
+[node name="Fazenda_obj" type="Label" parent="Campos/Menu_lateral/PopObj"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 25.0
+margin_top = 170.0
+margin_right = 175.0
+margin_bottom = 195.0
+text = "Construa x fazendas"
+valign = 1
+
+[node name="Fazenda_progress" type="ProgressBar" parent="Campos/Menu_lateral/PopObj"]
+margin_left = 185.0
+margin_top = 170.0
+margin_right = 325.0
+margin_bottom = 195.0
+theme = ExtResource( 10 )
+percent_visible = false
+
+[node name="Label" type="Label" parent="Campos/Menu_lateral/PopObj/Fazenda_progress"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 140.0
+margin_bottom = 25.0
 text = "xx/xx"
 align = 1
 valign = 1
@@ -363,8 +461,8 @@ __meta__ = {
 visible = true
 margin_left = 26.0
 margin_top = 643.0
-margin_right = 755.0
-margin_bottom = 970.0
+margin_right = 756.0
+margin_bottom = 968.0
 theme = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
@@ -372,75 +470,194 @@ __meta__ = {
 
 [node name="Titulo" type="Label" parent="Campos/PopVila"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 31.0
-margin_top = 11.0
-margin_right = 679.0
-margin_bottom = 33.0
+margin_left = 25.0
+margin_top = 15.0
+margin_right = 705.0
+margin_bottom = 40.0
 text = "Itens para construção"
 align = 1
 valign = 1
 
 [node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila"]
-margin_left = 30.0
-margin_top = 39.0
-margin_right = 680.0
-margin_bottom = 40.0
+margin_left = 25.0
+margin_top = 40.0
+margin_right = 705.0
+margin_bottom = 41.0
 color = Color( 0.941176, 0, 0, 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="BtnCasa" type="Button" parent="Campos/PopVila"]
-margin_left = 30.0
-margin_top = 56.0
-margin_right = 187.0
-margin_bottom = 302.0
+margin_left = 25.0
+margin_top = 55.0
+margin_right = 185.0
+margin_bottom = 305.0
 theme = SubResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="DetalheText" type="Label" parent="Campos/PopVila/BtnCasa"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 35.0
+margin_right = 155.0
+margin_bottom = 245.0
+text = "Construções que servirão de moradia para a população.
+
+Custo:
+10 Madeiras, 4 vidros e 5 Pedras
+5 Energias"
+align = 1
+autowrap = true
+
 [node name="ItemText" type="Label" parent="Campos/PopVila/BtnCasa"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 149.0
-margin_bottom = 29.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 155.0
+margin_bottom = 30.0
 text = "Casa"
 align = 1
 valign = 1
 
 [node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila/BtnCasa"]
 margin_left = 5.0
-margin_top = 33.0
-margin_right = 152.0
-margin_bottom = 34.0
+margin_top = 30.0
+margin_right = 155.0
+margin_bottom = 31.0
 color = Color( 0.941176, 0, 0, 1 )
 
-[node name="DetalheText" type="RichTextLabel" parent="Campos/PopVila/BtnCasa"]
+[node name="BtnTorre" type="Button" parent="Campos/PopVila"]
+margin_left = 200.0
+margin_top = 55.0
+margin_right = 360.0
+margin_bottom = 305.0
+theme = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DetalheText" type="Label" parent="Campos/PopVila/BtnTorre"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 6.0
-margin_top = 40.0
-margin_right = 152.0
-margin_bottom = 214.0
-bbcode_enabled = true
-bbcode_text = "[center]Construa casas para que os povo tenha onde morar.
+margin_left = 5.0
+margin_top = 35.0
+margin_right = 155.0
+margin_bottom = 245.0
+text = "Construções que serão utilizadas pelos guardas para vigiar o vilarejo.
 
 Custo:
-10 Madeiras, 4 vidros e 5 Pedras
-5 Energias"
-text = "Construa casas para que os povo tenha onde morar.
+[recuros]
+x Energias"
+align = 1
+autowrap = true
+
+[node name="ItemText" type="Label" parent="Campos/PopVila/BtnTorre"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 155.0
+margin_bottom = 30.0
+text = "Torre"
+align = 1
+valign = 1
+
+[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila/BtnTorre"]
+margin_left = 5.0
+margin_top = 30.0
+margin_right = 155.0
+margin_bottom = 31.0
+color = Color( 0.941176, 0, 0, 1 )
+
+[node name="BtnMuro" type="Button" parent="Campos/PopVila"]
+margin_left = 370.0
+margin_top = 55.0
+margin_right = 530.0
+margin_bottom = 305.0
+theme = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DetalheText" type="Label" parent="Campos/PopVila/BtnMuro"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 35.0
+margin_right = 155.0
+margin_bottom = 245.0
+text = "Construções que protegerão o vilarejo.
 
 Custo:
-10 Madeiras, 4 vidros e 5 Pedras
-5 Energias"
+[recursos]
+x Energias"
+align = 1
+autowrap = true
+
+[node name="ItemText" type="Label" parent="Campos/PopVila/BtnMuro"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 155.0
+margin_bottom = 30.0
+text = "Muro"
+align = 1
+valign = 1
+
+[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila/BtnMuro"]
+margin_left = 5.0
+margin_top = 30.0
+margin_right = 155.0
+margin_bottom = 31.0
+color = Color( 0.941176, 0, 0, 1 )
+
+[node name="BtnFazenda" type="Button" parent="Campos/PopVila"]
+margin_left = 545.0
+margin_top = 55.0
+margin_right = 705.0
+margin_bottom = 305.0
+theme = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DetalheText" type="Label" parent="Campos/PopVila/BtnFazenda"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 35.0
+margin_right = 155.0
+margin_bottom = 245.0
+text = "Construções onde serão produzidos alimentos para a população.
+
+Custo:
+[recursos]
+x Energias"
+align = 1
+autowrap = true
+
+[node name="ItemText" type="Label" parent="Campos/PopVila/BtnFazenda"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 155.0
+margin_bottom = 30.0
+text = "Fazenda"
+align = 1
+valign = 1
+
+[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila/BtnFazenda"]
+margin_left = 5.0
+margin_top = 30.0
+margin_right = 155.0
+margin_bottom = 31.0
+color = Color( 0.941176, 0, 0, 1 )
 
 [node name="PopForja" type="WindowDialog" parent="Campos"]
 visible = true
 margin_left = 772.0
 margin_top = 644.0
-margin_right = 1501.0
-margin_bottom = 971.0
+margin_right = 1502.0
+margin_bottom = 969.0
 theme = SubResource( 5 )
 __meta__ = {
 "_edit_lock_": true
@@ -448,19 +665,19 @@ __meta__ = {
 
 [node name="Titulo" type="Label" parent="Campos/PopForja"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 31.0
-margin_top = 11.0
-margin_right = 679.0
-margin_bottom = 33.0
+margin_left = 25.0
+margin_top = 15.0
+margin_right = 705.0
+margin_bottom = 40.0
 text = "Materiais e Ferramentas"
 align = 1
 valign = 1
 
 [node name="LinhaVermelha" type="ColorRect" parent="Campos/PopForja"]
-margin_left = 30.0
-margin_top = 39.0
-margin_right = 680.0
-margin_bottom = 40.0
+margin_left = 25.0
+margin_top = 40.0
+margin_right = 705.0
+margin_bottom = 41.0
 color = Color( 0.941176, 0, 0, 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -468,20 +685,34 @@ __meta__ = {
 
 [node name="BtnVidro" type="Button" parent="Campos/PopForja"]
 margin_left = 30.0
-margin_top = 56.0
-margin_right = 187.0
-margin_bottom = 302.0
+margin_top = 55.0
+margin_right = 190.0
+margin_bottom = 305.0
 theme = SubResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="DetalheText" type="Label" parent="Campos/PopForja/BtnVidro"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 35.0
+margin_right = 155.0
+margin_bottom = 245.0
+text = "Faça vidros para utilizar em suas construções
+
+Custo:
+5 areias e 2 carvões
+2 Energias"
+align = 1
+autowrap = true
+
 [node name="ItemText" type="Label" parent="Campos/PopForja/BtnVidro"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 149.0
-margin_bottom = 29.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 155.0
+margin_bottom = 30.0
 text = "Vidro"
 align = 1
 valign = 1
@@ -493,38 +724,22 @@ margin_right = 152.0
 margin_bottom = 34.0
 color = Color( 0.941176, 0, 0, 1 )
 
-[node name="DetalheText" type="RichTextLabel" parent="Campos/PopForja/BtnVidro"]
-self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 6.0
-margin_top = 40.0
-margin_right = 152.0
-margin_bottom = 214.0
-bbcode_enabled = true
-bbcode_text = "[center]Faça vidros para utilizar em suas construções
-
-Custo:
-5 areias e 2 carvões
-2 Energias"
-text = "Faça vidros para utilizar em suas construções
-
-Custo:
-5 areias e 2 carvões
-2 Energias"
-
 [node name="Continuar" type="TextureButton" parent="."]
-margin_left = 936.0
-margin_top = 547.0
+margin_left = 935.0
+margin_top = 550.0
 margin_right = 1015.0
-margin_bottom = 585.0
+margin_bottom = 590.0
 script = ExtResource( 4 )
 
 [node name="BotaoProx" type="Sprite" parent="Continuar"]
-position = Vector2( 37.25, 20.125 )
+position = Vector2( 40, 20 )
 scale = Vector2( 0.180131, 0.199761 )
 texture = ExtResource( 3 )
 
 [connection signal="timeout" from="Campos/Menu_lateral/T_exec" to="Campos/Menu_lateral" method="_on_T_exec_timeout"]
 [connection signal="timeout" from="Campos/Menu_lateral/T_exec" to="Campos/Menu_lateral" method="_on_Timer_timeout"]
+[connection signal="mouse_entered" from="Campos/Menu_lateral/BotaoProx/Obj_btn" to="Campos/Menu_lateral" method="_on_Obj_btn_mouse_entered"]
+[connection signal="mouse_exited" from="Campos/Menu_lateral/BotaoProx/Obj_btn" to="Campos/Menu_lateral" method="_on_Obj_btn_mouse_exited"]
 [connection signal="pressed" from="Campos/Menu_lateral/BotaoProx/Obj_btn" to="Campos/Menu_lateral" method="_on_Obj_btn_pressed"]
 [connection signal="popup_hide" from="Campos/Menu_lateral/PopObj" to="Campos/Menu_lateral/PopObj" method="_on_PopVila_popup_hide"]
 [connection signal="pressed" from="Campos/BtnMadeira" to="Campos" method="_on_BtnMadeira_pressed"]

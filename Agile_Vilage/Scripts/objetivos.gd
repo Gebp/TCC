@@ -1,17 +1,17 @@
 extends Node
 
 # Reesrever esse texto
-var texto_padrao = "[center]Você foi apontado como novo responsável pelo Vilarejo X. \n\nPara provar seu valor e manter sua nova posição, você deverá utilizar as práticas ágeis para que o vilarejo creça e se desenvolva.\n\n"
+var texto_padrao = "[center]Você foi apontado como novo responsável pelo Vilarejo X. \n\nNo entanto, para que mantenha sua nova posição, você deverá, primeiramente, provar ser capaz de realizar um bom gerenciamento do vilarejo. \n\nUtilizando de práticas ágeis, faça um planejamento e o execute, desenvolvendo cada vez mais suas terras.\n\n"
 
 onready var lista = get_node("ListaObj")
 # Lista de opções
-var items = ['Item 1', 'Item 2', 'Item 3', 'Item 4']
+var items = ['Crescimento Populacional', 'Combate ao Crime', 'Defesa contra Invasores', 'Distribuição de Alimentos']
 
 # Chamada quando inicia a função.
 func _ready():
 	add_items()
 	disable_items(0)
-	$Mensagem_inicial/TextoIntro.bbcode_text = texto_padrao + "[color=red]Para mais detalhes, selecione um dos objetivos"
+	$Mensagem_inicial/TextoIntro.bbcode_text = texto_padrao + "[color=red]Selecione um dos objetivos para iniciar"
 	$Iniciar_proj.disabled = true
 	$Iniciar_proj/BotaoProx.visible = false
 
@@ -31,7 +31,7 @@ func _on_ListaObj_item_selected(index):
 	$Iniciar_proj/BotaoProx.visible = true
 	
 	if i == 0:
-		$Mensagem_inicial/TextoIntro.bbcode_text = texto_padrao + "[color=red]Sabe-se que o povo tem sofrido com a falta de moradias por conta do recente crescimento populacional.\n\nPlaneje e gerencie a construção dessas novas casas."
+		$Mensagem_inicial/TextoIntro.bbcode_text = texto_padrao + "Durante esse período de teste, informo-lhe que nos últimos tempos o vilarejo tem sofrido com o crescimento populacional, novas pessoas tem vindo para fugir dos conflitos de suas terras.\n\nMas o vilarejo não possui estrutura para manter tantas pessoas. Por conta disso, muitos se encontram sem uma moradia.\n\nConstrua casas para que essas pessoas tenham onde viver."
 		$TextObj.text = str('Construa:\n\n5 casas')
 		GlobalVar.obj_casas = 5
 	if i == 1:
