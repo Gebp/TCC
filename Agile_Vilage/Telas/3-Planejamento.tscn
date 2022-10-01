@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Imagens/Background/Mesa.png" type="Texture" id=1]
 [ext_resource path="res://Imagens/Cards/QuadroKanban.png" type="Texture" id=2]
@@ -6,10 +6,13 @@
 [ext_resource path="res://Scripts/Btn_scripts/btn_p3.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/menu_plan.gd" type="Script" id=5]
 [ext_resource path="res://Imagens/Cards/Info.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/tk_pos.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/plan.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 110, 231.5 )
+
+[sub_resource type="CircleShape2D" id=2]
 
 [node name="Planejamento" type="Node2D"]
 script = ExtResource( 8 )
@@ -38,8 +41,12 @@ scale = Vector2( 0.180131, 0.199761 )
 texture = ExtResource( 3 )
 
 [node name="Kanban" type="CanvasLayer" parent="."]
+layer = -1
 
 [node name="ToDo" type="Area2D" parent="Kanban"]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kanban/ToDo"]
 position = Vector2( 316, 339.5 )
@@ -52,6 +59,9 @@ texture = ExtResource( 2 )
 
 [node name="Doing" type="Area2D" parent="Kanban"]
 position = Vector2( 495, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kanban/Doing"]
 position = Vector2( 316, 339.5 )
@@ -64,6 +74,9 @@ texture = ExtResource( 2 )
 
 [node name="Done" type="Area2D" parent="Kanban"]
 position = Vector2( 246, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kanban/Done"]
 position = Vector2( 316, 339.5 )
@@ -83,6 +96,9 @@ margin_bottom = 166.0
 text = "TO-DO"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Doing__Label" type="Label" parent="Kanban"]
 self_modulate = Color( 1, 0, 0, 1 )
@@ -93,6 +109,9 @@ margin_bottom = 165.0
 text = "DOING"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Done_Label" type="Label" parent="Kanban"]
 self_modulate = Color( 1, 0, 0, 1 )
@@ -103,6 +122,9 @@ margin_bottom = 166.0
 text = "DONE"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cabecalho" type="CanvasLayer" parent="."]
 script = ExtResource( 5 )
@@ -133,11 +155,15 @@ text = "Sprint x"
 align = 1
 valign = 1
 
-[node name="Container_cards" type="MarginContainer" parent="."]
-margin_left = 35.0
-margin_top = 490.0
-margin_right = 185.0
-margin_bottom = 575.0
+[node name="CardsPos" type="Area2D" parent="."]
+position = Vector2( 92, 521 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardsPos"]
+shape = SubResource( 2 )
 
 [connection signal="pressed" from="Executar" to="Executar" method="_on_Executar_pressed"]
 [connection signal="timeout" from="Cabecalho/T_plan" to="Cabecalho" method="_on_T_plan_timeout"]

@@ -8,13 +8,27 @@ func _ready():
 	GlobalVar.energia = GlobalVar.limite_energia
 	$EnergiaBar/Energia.text = str(GlobalVar.energia) + '/' + str(GlobalVar.limite_energia)
 	# Set valores iniciais e limites para recursos
-	$Madeira.text = 'Madeira: ' + str(GlobalVar.madeira) + '/' + str(GlobalVar.limite_madeira)
-	$Pedra.text = 'Pedra: ' + str(GlobalVar.pedra) + '/' + str(GlobalVar.limite_pedra)
-	$Areia.text = 'Areia: ' + str(GlobalVar.areia) + '/' + str(GlobalVar.limite_areia)
-	$Minerais.text = 'Minerais: ' + str(GlobalVar.minerais) + '/' + str(GlobalVar.limite_minerais)
-	$Carvao.text = 'Carvão: ' + str(GlobalVar.carvao) + '/' + str(GlobalVar.limite_carvao)
+	$Recursos/MadeiraBar/Madeira.text = str(GlobalVar.madeira) + '/' + str(GlobalVar.limite_madeira)
+	$Recursos/PedraBar/Pedra.text = str(GlobalVar.pedra) + '/' + str(GlobalVar.limite_pedra)
+	$Recursos/AreiaBar/Areia.text = str(GlobalVar.areia) + '/' + str(GlobalVar.limite_areia)
+	$Recursos/MineraisBar/Minerais.text = str(GlobalVar.minerais) + '/' + str(GlobalVar.limite_minerais)
+	$Recursos/CarvaoBar/Carvao.text = str(GlobalVar.carvao) + '/' + str(GlobalVar.limite_carvao)
+	# Set progressão para recursos
+	$Recursos/MadeiraBar.max_value = GlobalVar.limite_madeira
+	$Recursos/MadeiraBar.value = GlobalVar.madeira
+	$Recursos/PedraBar.max_value = GlobalVar.limite_pedra
+	$Recursos/PedraBar.value = GlobalVar.pedra
+	$Recursos/AreiaBar.max_value = GlobalVar.limite_areia
+	$Recursos/AreiaBar.value = GlobalVar.areia
+	$Recursos/MineraisBar.max_value = GlobalVar.limite_minerais
+	$Recursos/MineraisBar.value = GlobalVar.minerais
+	$Recursos/CarvaoBar.max_value = GlobalVar.limite_carvao
+	$Recursos/CarvaoBar.value = GlobalVar.carvao
 	# Set valores iniciais e limites para materiais
-	$Vidro.text = 'Vidro: ' + str(GlobalVar.vidro) + '/' + str(GlobalVar.limite_vidro)
+	$Materiais/VidroBar/Vidro.text = str(GlobalVar.vidro) + '/' + str(GlobalVar.limite_vidro)
+	# Set progressão para materiais
+	$Materiais/VidroBar.max_value = GlobalVar.limite_madeira
+	$Materiais/VidroBar.value = GlobalVar.madeira
 	# Set valores iniciais e objetivos
 	valida_objetivos()
 	$EnergiaBar.max_value = GlobalVar.limite_energia
@@ -22,7 +36,7 @@ func _ready():
 
 func valida_objetivos():
 	# Qtd de casas
-	$Casas.text = 'Casas: ' + str(GlobalVar.casas)
+	$Construcoes/Casas.text = 'Casas: ' + str(GlobalVar.casas)
 	$PopObj/Casa_progress.max_value = GlobalVar.obj_casas
 	$PopObj/Casa_progress.value = GlobalVar.casas
 	$PopObj/Casa_obj.text = 'Construa ' + str(GlobalVar.obj_casas) + ' casas'
@@ -31,7 +45,7 @@ func valida_objetivos():
 	else:
 		$PopObj/Casa_progress/Label.text = str(GlobalVar.casas) + '/' + str(GlobalVar.obj_casas)
 	# Qtd de torres
-	$Torres.text = 'Torres: ' + str(GlobalVar.torres)
+	$Construcoes/Torres.text = 'Torres: ' + str(GlobalVar.torres)
 	if GlobalVar.obj_torres > 0:
 		$PopObj/Torre_obj.visible = true
 		$PopObj/Torre_progress.visible = true
@@ -46,7 +60,7 @@ func valida_objetivos():
 		$PopObj/Torre_obj.visible = false
 		$PopObj/Torre_progress.visible = false
 	# Qtd de muros
-	$Muros.text = 'Muros: ' + str(GlobalVar.muros)
+	$Construcoes/Muros.text = 'Muros: ' + str(GlobalVar.muros)
 	if GlobalVar.obj_muros > 0:
 		$PopObj/Muro_obj.visible = true
 		$PopObj/Muro_progress.visible = true
@@ -60,7 +74,7 @@ func valida_objetivos():
 	else:
 		$PopObj/Muro_obj.visible = false
 		$PopObj/Muro_progress.visible = false	# Qtd de fazendas
-	$Fazendas.text = 'Fazendas: ' + str(GlobalVar.fazendas)
+	$Construcoes/Fazendas.text = 'Fazendas: ' + str(GlobalVar.fazendas)
 	if GlobalVar.obj_fazendas > 0:
 		$PopObj/Fazenda_obj.visible = true
 		$PopObj/Fazenda_progress.visible = true

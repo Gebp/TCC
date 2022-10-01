@@ -1,29 +1,28 @@
 extends Node
 
-onready var cena_arrastavel: PackedScene = preload("res://Objetos/TaskCard.tscn")
-onready var container_a = $Container_cards
-
-var task_cards = [
-	{'id': 1, 'texto': 'Task 1'},
-	{'id': 2, 'texto': 'Task 2'},
-	{'id': 3, 'texto': 'Task 3'},
-	{'id': 4, 'texto': 'Task 4'},
-]
+onready var card = preload("res://Objetos/TaskCard.tscn")
+var tasks = []
+var task_cards = ['Task 1', 'Task 2', 'Task 3', 'Task 4']
 
 func _ready():
-	_popular_cards()
-
-func _popular_cards():
+	var v = 0
 	for task in task_cards:
-		var item = cena_arrastavel.instance()
-		item.id = task['id']
-		item.texto = task['texto']
-		container_a.add_child(item)
+		var item = card.instance()
+		item.get_children()[-1].text = task_cards[v]
+		add_child(item)
+		add_task(item)
+		v += 1
 
-func _on_item_dropped_on_target(dropped_item: Arrastavel):
-	for item in container_a.get_children():
-		item = (item as Arrastavel)
-		if item.id == dropped_item.id:
-			container_a.remove_child(item)
-			item.queue_free()
-			break
+func add_task(item):
+	tasks.append(item)
+	
+	var cont = 0
+	for i in tasks:
+		i.z_index = cont
+		cont += 1
+
+func trazer_para_frente(item):
+	print(tasks)
+	tasks.erase(item)
+	add_child(item)
+	print(tasks)
