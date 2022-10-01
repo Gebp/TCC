@@ -1,6 +1,6 @@
 extends Node
 
-var tempo = 5
+var tempo = 500
 
 func _ready():
 	$Tempo_plan.text = 'Tempo: ' + str(tempo) + ' seg'

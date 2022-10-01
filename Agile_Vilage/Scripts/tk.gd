@@ -1,32 +1,34 @@
 extends KinematicBody2D
 
-var distancia
+var draggingDistance
 var dir
-var arrasta
-var nPos = Vector2()
+var dragging
+var newPosition = Vector2()
 
 var mouse_in = false
-var sel = false
+var chosen = false
 
 func _input(event):
 	if event is InputEventMouseButton:
-		if sel and event.is_pressed() && mouse_in:
-			distancia = position.distance_to(get_viewport().get_mouse_position())
+		if chosen and event.is_pressed() && mouse_in:
+			draggingDistance = position.distance_to(get_viewport().get_mouse_position())
 			dir = (get_viewport().get_mouse_position() - position).normalized()
-			arrasta = true
-			nPos = get_viewport().get_mouse_position() - distancia * dir
+			dragging = true
+			newPosition = get_viewport().get_mouse_position() - draggingDistance * dir
 		else:
-			arrasta = false
-			sel = false
-		
+			dragging = false
+			chosen = false
+			
 	elif event is InputEventMouseMotion:
-		if arrasta:
-			nPos = get_viewport().get_mouse_position() - distancia * dir
+		if dragging:
+			newPosition = get_viewport().get_mouse_position() - draggingDistance * dir
 
 func _physics_process(delta):
-	if arrasta:
-		move_and_slide((nPos - position) * Vector2(30, 30))
+	if dragging:
+		move_and_slide((newPosition - position) * Vector2(30, 30))
 
+func chosen():
+	chosen = true
 
 func _on_Card_mouse_entered():
 	mouse_in = true

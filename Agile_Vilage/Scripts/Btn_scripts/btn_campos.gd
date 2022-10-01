@@ -62,9 +62,17 @@ func _on_BtnCarvao_pressed():
 # Botões de Pop Up
 func _on_BtnVila_pressed():
 	$PopVila.popup_centered()
+	if GlobalVar.energia < 5 or (GlobalVar.madeira < 10 and GlobalVar.pedra < 5 and GlobalVar.vidro < 4):
+		$PopVila/BtnCasa.disabled = true
+	else:
+		$PopVila/BtnCasa.disabled = false
 
 func _on_BtnForja_pressed():
 	$PopForja.popup_centered()
+	if GlobalVar.energia >= 2 or (GlobalVar.areia >= 5 and GlobalVar.carvao >= 2 and GlobalVar.vidro < GlobalVar.limite_vidro):
+		$PopForja/BtnVidro.disabled = true
+	else:
+		$PopForja/BtnVidro.disabled = false
 
 func valida_objetivos():
 	$Menu_lateral/Casas.text = 'Casas: ' + str(GlobalVar.casas)
