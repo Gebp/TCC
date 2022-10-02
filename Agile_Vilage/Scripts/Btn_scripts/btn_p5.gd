@@ -37,3 +37,9 @@ func _on_Reiniciar_pressed():
 	# Validador do objetivo selecionado
 	GlobalVar.obj = 0
 	get_tree().change_scene("res://Telas/1-MenuInicial.tscn")
+
+func _on_Reiniciar_mouse_entered():
+	self.modulate = 'd2d2d2'
+
+func _on_Reiniciar_mouse_exited():
+	self.modulate = 'ffffff'

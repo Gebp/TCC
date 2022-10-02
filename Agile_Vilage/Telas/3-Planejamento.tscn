@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Imagens/Background/Mesa.png" type="Texture" id=1]
 [ext_resource path="res://Imagens/Cards/QuadroKanban.png" type="Texture" id=2]
 [ext_resource path="res://Imagens/Btns/Botao_prox.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/Btn_scripts/btn_p3.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/menu_plan.gd" type="Script" id=5]
 [ext_resource path="res://Imagens/Cards/Info.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/tk_pos.gd" type="Script" id=7]
@@ -27,18 +26,6 @@ texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="Executar" type="TextureButton" parent="."]
-margin_left = 935.0
-margin_top = 550.0
-margin_right = 1015.0
-margin_bottom = 590.0
-script = ExtResource( 4 )
-
-[node name="BotaoProx" type="Sprite" parent="Executar"]
-position = Vector2( 40, 20 )
-scale = Vector2( 0.180131, 0.199761 )
-texture = ExtResource( 3 )
 
 [node name="Kanban" type="CanvasLayer" parent="."]
 layer = -1
@@ -158,12 +145,22 @@ valign = 1
 [node name="CardsPos" type="Area2D" parent="."]
 position = Vector2( 92, 521 )
 script = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardsPos"]
 shape = SubResource( 2 )
 
-[connection signal="pressed" from="Executar" to="Executar" method="_on_Executar_pressed"]
+[node name="Executar" type="TextureButton" parent="."]
+margin_left = 935.0
+margin_top = 550.0
+margin_right = 1015.0
+margin_bottom = 590.0
+
+[node name="BotaoProx" type="Sprite" parent="Executar"]
+position = Vector2( 40, 20 )
+scale = Vector2( 0.180131, 0.199761 )
+texture = ExtResource( 3 )
+
 [connection signal="timeout" from="Cabecalho/T_plan" to="Cabecalho" method="_on_T_plan_timeout"]
+[connection signal="mouse_entered" from="Executar" to="." method="_on_Executar_mouse_entered"]
+[connection signal="mouse_exited" from="Executar" to="." method="_on_Executar_mouse_exited"]
+[connection signal="pressed" from="Executar" to="." method="_on_Executar_pressed"]

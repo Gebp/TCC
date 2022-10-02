@@ -855,4 +855,6 @@ texture = ExtResource( 3 )
 [connection signal="pressed" from="Campos/PopVila/BtnCasa" to="Campos" method="_on_BtnCasa_pressed"]
 [connection signal="popup_hide" from="Campos/PopForja" to="Campos/PopForja" method="_on_PopVila_popup_hide"]
 [connection signal="pressed" from="Campos/PopForja/BtnVidro" to="Campos" method="_on_BtnVidro_pressed"]
+[connection signal="mouse_entered" from="Continuar" to="Continuar" method="_on_Continuar_mouse_entered"]
+[connection signal="mouse_exited" from="Continuar" to="Continuar" method="_on_Continuar_mouse_exited"]
 [connection signal="pressed" from="Continuar" to="Continuar" method="_on_Continuar_pressed"]

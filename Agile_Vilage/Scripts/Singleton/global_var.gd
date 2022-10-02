@@ -41,3 +41,7 @@ var obj_fazendas = 0
 
 # Validador do objetivo selecionado
 var obj = 0
+
+# Tasks
+var task = []
+

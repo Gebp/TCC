@@ -11,3 +11,9 @@ func _on_Continuar_pressed():
 		GlobalVar.dia = 1
 		GlobalVar.sprint += 1
 		get_tree().change_scene("res://Telas/3-Planejamento.tscn")
+
+func _on_Continuar_mouse_entered():
+	self.modulate = 'd2d2d2'
+
+func _on_Continuar_mouse_exited():
+	self.modulate = 'ffffff'

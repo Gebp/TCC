@@ -1,6 +1,6 @@
 extends Node
 
-var tempo = 5
+var tempo = 30
 
 func _ready():
 	$Tempo_exec.text = 'Tempo: ' + str(tempo) + ' seg'

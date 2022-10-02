@@ -102,4 +102,6 @@ texture = ExtResource( 3 )
 [connection signal="value_changed" from="Objetivo/QtdSprint" to="Objetivo" method="_on_QtdSprint_value_changed"]
 [connection signal="item_selected" from="Objetivo/ListaObj" to="Objetivo" method="_on_ListaObj_item_selected"]
 [connection signal="item_selected" from="Objetivo/ListaObj" to="Objetivo/ListaObj" method="_on_ListaObj_item_selected"]
+[connection signal="mouse_entered" from="Objetivo/Iniciar_proj" to="Objetivo" method="_on_Iniciar_proj_mouse_entered"]
+[connection signal="mouse_exited" from="Objetivo/Iniciar_proj" to="Objetivo" method="_on_Iniciar_proj_mouse_exited"]
 [connection signal="pressed" from="Objetivo/Iniciar_proj" to="Objetivo" method="_on_Iniciar_proj_pressed"]

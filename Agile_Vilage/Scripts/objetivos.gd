@@ -34,6 +34,7 @@ func _on_ListaObj_item_selected(index):
 		$Mensagem_inicial/TextoIntro.bbcode_text = texto_padrao + "Durante esse período de teste, informo-lhe que nos últimos tempos o vilarejo tem sofrido com o crescimento populacional, novas pessoas tem vindo para fugir dos conflitos de suas terras.\n\nMas o vilarejo não possui estrutura para manter tantas pessoas. Por conta disso, muitos se encontram sem uma moradia.\n\nConstrua casas para que essas pessoas tenham onde viver."
 		$TextObj.text = str('Construa:\n\n5 casas')
 		GlobalVar.obj_casas = 5
+		GlobalVar.task = ['Task 1', 'Task 2', 'Task 3', 'Task 4']
 	if i == 1:
 		$Mensagem_inicial/TextoIntro.bbcode_text = texto_padrao + "[color=red]Objetivo 2"
 		$TextObj.text = str('Objetivo 2')
@@ -56,3 +57,9 @@ func _on_QtdSprint_value_changed(value):
 
 func _on_Iniciar_proj_pressed():
 	get_tree().change_scene("res://Telas/3-Planejamento.tscn")
+
+func _on_Iniciar_proj_mouse_entered():
+	$Iniciar_proj.modulate = 'd2d2d2'
+
+func _on_Iniciar_proj_mouse_exited():
+	$Iniciar_proj.modulate = 'ffffff'
