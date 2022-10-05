@@ -31,8 +31,8 @@ func _ready():
 	$Materiais/VidroBar.value = GlobalVar.madeira
 	# Set valores iniciais e objetivos
 	valida_objetivos()
-	$EnergiaBar.max_value = GlobalVar.limite_energia
-	$EnergiaBar.value = GlobalVar.limite_energia
+	$EnergiaBar.max_value = GlobalVar.limite_vidro
+	$EnergiaBar.value = GlobalVar.vidro
 
 func valida_objetivos():
 	# Qtd de casas
