@@ -165,6 +165,7 @@ margin_left = 5.0
 margin_top = 10.0
 margin_right = 455.0
 margin_bottom = 160.0
+text = "No Scrum (Metodologia Ágil de Projeto) são realizadas mini entregas chamadas de 'Sprint', que servem para acompanhamento e planejamento, do projeto, junto ao cliente.
 
 Geralmente cada Sprint possui 7 dias, mas isso pode variar conforme projeto ou equipe, a recomendação geral é que a duração de uma Sprint não seja muito extensa.
 
