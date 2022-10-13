@@ -27,12 +27,12 @@ func _ready():
 	# Set valores iniciais e limites para materiais
 	$Materiais/VidroBar/Vidro.text = str(GlobalVar.vidro) + '/' + str(GlobalVar.limite_vidro)
 	# Set progressão para materiais
-	$Materiais/VidroBar.max_value = GlobalVar.limite_madeira
-	$Materiais/VidroBar.value = GlobalVar.madeira
+	$Materiais/VidroBar.max_value = GlobalVar.limite_vidro
+	$Materiais/VidroBar.value = GlobalVar.vidro
 	# Set valores iniciais e objetivos
 	valida_objetivos()
-	$EnergiaBar.max_value = GlobalVar.limite_vidro
-	$EnergiaBar.value = GlobalVar.vidro
+	$EnergiaBar.max_value = GlobalVar.limite_energia
+	$EnergiaBar.value = GlobalVar.energia
 
 func valida_objetivos():
 	# Qtd de casas

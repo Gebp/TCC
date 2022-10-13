@@ -1,5 +1,8 @@
 extends Node2D
 
+# Validador do tutorial
+var tutorial = true
+
 # Contadores e validadores de tempo
 var qtd_sprint = 1
 var sprint = 0

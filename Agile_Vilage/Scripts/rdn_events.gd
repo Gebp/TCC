@@ -10,6 +10,9 @@ var re_o = RandomNumberGenerator.new()
 var re_e = RandomNumberGenerator.new()
 
 func _ready():
+	if GlobalVar.tutorial and GlobalVar.sprint == 0 and GlobalVar.dia == 1:
+		$Campos/Menu_lateral/T_exec.stop()
+		$Tutorial/Popup1.popup()
 	# Condição para a sprint 0 ser a mais ideal possível
 	if GlobalVar.sprint > 0:
 		eventos()
@@ -44,3 +47,18 @@ func eventos():
 	# eventos positivos
 	if re_b >= 45:
 		GlobalVar.limite_energia += energia_random()
+
+# Passagem dos tutoriais
+# -----------------------
+func _on_Popup1_popup_hide():
+	$Tutorial/Popup2.popup()
+
+func _on_Popup2_popup_hide():
+	$Tutorial/Popup3.popup()
+
+func _on_Popup3_popup_hide():
+	$Tutorial/Popup4.popup()
+
+func _on_Popup4_popup_hide():
+	$Campos/Menu_lateral/T_exec.start()
+# -----------------------

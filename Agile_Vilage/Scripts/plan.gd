@@ -12,6 +12,9 @@ func _ready():
 		add_child(item)
 		add_task(item)
 		v += 1
+	if GlobalVar.tutorial and GlobalVar.sprint == 0:
+		$Cabecalho/T_plan.stop()
+		$Tutorial/Popup1.popup()
 
 func add_task(item):
 	tasks.append(item)
@@ -26,6 +29,21 @@ func trazer_para_frente(item):
 	tasks.erase(item)
 	add_child(item)
 	print(tasks)
+
+# Passagem dos tutoriais
+# -----------------------
+func _on_Popup1_popup_hide():
+	$Tutorial/Popup2.popup()
+
+func _on_Popup2_popup_hide():
+	$Tutorial/Popup3.popup()
+
+func _on_Popup3_popup_hide():
+	$Tutorial/Popup4.popup()
+
+func _on_Popup4_popup_hide():
+	$Cabecalho/T_plan.start()
+# -----------------------
 
 func _on_Executar_pressed():
 	get_tree().change_scene("res://Telas/4-Execucao.tscn")

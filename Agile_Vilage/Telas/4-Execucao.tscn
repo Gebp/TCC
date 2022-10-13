@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Imagens/Background/mapa.jpg" type="Texture" id=1]
 [ext_resource path="res://Imagens/Background/Mesa.png" type="Texture" id=2]
@@ -11,18 +11,11 @@
 [ext_resource path="res://styles/pop_up_btn_hover.tres" type="StyleBox" id=9]
 [ext_resource path="res://styles/obj_progress.tres" type="Theme" id=10]
 [ext_resource path="res://styles/progress_bar.tres" type="Theme" id=11]
+[ext_resource path="res://styles/exec_pop_up.tres" type="Theme" id=12]
+[ext_resource path="res://styles/tutorial_pop_up.tres" type="Theme" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 66, 308 )
-
-[sub_resource type="ViewportTexture" id=4]
-
-[sub_resource type="ViewportTexture" id=6]
-
-[sub_resource type="Theme" id=5]
-WindowDialog/icons/close = SubResource( 4 )
-WindowDialog/icons/close_highlight = SubResource( 6 )
-WindowDialog/styles/panel = ExtResource( 8 )
 
 [sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.894118, 0.898039, 0.788235, 1 )
@@ -374,7 +367,7 @@ margin_left = 25.0
 margin_top = 1000.0
 margin_right = 375.0
 margin_bottom = 1210.0
-theme = SubResource( 5 )
+theme = ExtResource( 12 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -501,6 +494,7 @@ margin_left = 163.0
 margin_top = 226.0
 margin_right = 383.0
 margin_bottom = 395.0
+hint_tooltip = "Clique para conseguir Madeira"
 __meta__ = {
 "_edit_lock_": true
 }
@@ -565,7 +559,7 @@ margin_left = 26.0
 margin_top = 643.0
 margin_right = 756.0
 margin_bottom = 968.0
-theme = SubResource( 5 )
+theme = ExtResource( 12 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -760,7 +754,7 @@ margin_left = 772.0
 margin_top = 644.0
 margin_right = 1502.0
 margin_bottom = 969.0
-theme = SubResource( 5 )
+theme = ExtResource( 12 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -838,6 +832,92 @@ position = Vector2( 40, 20 )
 scale = Vector2( 0.180131, 0.199761 )
 texture = ExtResource( 3 )
 
+[node name="Tutorial" type="CanvasLayer" parent="."]
+
+[node name="Popup1" type="PopupDialog" parent="Tutorial"]
+visible = true
+margin_left = 135.0
+margin_top = 5.0
+margin_right = 595.0
+margin_bottom = 130.0
+theme = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="Tutorial/Popup1"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_top = 15.0
+margin_right = 460.0
+margin_bottom = 110.0
+text = "Pop up sobre a tempo e energia"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Popup2" type="PopupDialog" parent="Tutorial"]
+visible = true
+margin_left = 135.0
+margin_top = 150.0
+margin_right = 595.0
+margin_bottom = 275.0
+theme = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="Tutorial/Popup2"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_top = 15.0
+margin_right = 460.0
+margin_bottom = 110.0
+text = "Pop up sobre recursos e materiais"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Popup3" type="PopupDialog" parent="Tutorial"]
+visible = true
+margin_left = 135.0
+margin_top = 400.0
+margin_right = 595.0
+margin_bottom = 525.0
+theme = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="Tutorial/Popup3"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_top = 15.0
+margin_right = 460.0
+margin_bottom = 110.0
+text = "Pop up sobre a construções e objetivos"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Popup4" type="PopupDialog" parent="Tutorial"]
+visible = true
+margin_left = 550.0
+margin_top = 400.0
+margin_right = 1010.0
+margin_bottom = 525.0
+theme = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="Tutorial/Popup4"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_top = 15.0
+margin_right = 460.0
+margin_bottom = 110.0
+text = "Pop up sobre o botão próximo"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
+
 [connection signal="timeout" from="Campos/Menu_lateral/T_exec" to="Campos/Menu_lateral" method="_on_T_exec_timeout"]
 [connection signal="timeout" from="Campos/Menu_lateral/T_exec" to="Campos/Menu_lateral" method="_on_Timer_timeout"]
 [connection signal="mouse_entered" from="Campos/Menu_lateral/BotaoProx/Obj_btn" to="Campos/Menu_lateral" method="_on_Obj_btn_mouse_entered"]
@@ -858,3 +938,7 @@ texture = ExtResource( 3 )
 [connection signal="mouse_entered" from="Continuar" to="Continuar" method="_on_Continuar_mouse_entered"]
 [connection signal="mouse_exited" from="Continuar" to="Continuar" method="_on_Continuar_mouse_exited"]
 [connection signal="pressed" from="Continuar" to="Continuar" method="_on_Continuar_pressed"]
+[connection signal="popup_hide" from="Tutorial/Popup1" to="." method="_on_Popup1_popup_hide"]
+[connection signal="popup_hide" from="Tutorial/Popup2" to="." method="_on_Popup2_popup_hide"]
+[connection signal="popup_hide" from="Tutorial/Popup3" to="." method="_on_Popup3_popup_hide"]
+[connection signal="popup_hide" from="Tutorial/Popup4" to="." method="_on_Popup4_popup_hide"]
