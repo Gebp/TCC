@@ -1,5 +1,8 @@
 extends Node2D
 
+func _ready():
+	$CheckBox.pressed = GlobalVar.tutorial
+
 func _on_CheckBox_pressed():
 	if GlobalVar.tutorial:
 		GlobalVar.tutorial = false

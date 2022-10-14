@@ -311,6 +311,32 @@ text = "xx/xx"
 align = 1
 valign = 2
 
+[node name="LabelMoeda" type="Label" parent="Campos/Menu_lateral/Materiais"]
+margin_top = 40.0
+margin_right = 65.0
+margin_bottom = 55.0
+rect_pivot_offset = Vector2( 140, -44 )
+text = "Moeda:"
+
+[node name="MoedaBar" type="ProgressBar" parent="Campos/Menu_lateral/Materiais"]
+margin_left = 65.0
+margin_top = 40.0
+margin_right = 115.0
+margin_bottom = 55.0
+theme = ExtResource( 11 )
+max_value = 10.0
+step = 1.0
+rounded = true
+percent_visible = false
+
+[node name="Moeda" type="Label" parent="Campos/Menu_lateral/Materiais/MoedaBar"]
+margin_right = 50.0
+margin_bottom = 15.0
+rect_pivot_offset = Vector2( 140, -44 )
+text = "xx/xx"
+align = 1
+valign = 2
+
 [node name="Construcoes" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 5.0
 margin_top = 400.0
@@ -360,13 +386,14 @@ margin_left = -220.0
 margin_top = -95.0
 margin_right = 195.0
 margin_bottom = 95.0
+mouse_default_cursor_shape = 2
 
 [node name="PopObj" type="WindowDialog" parent="Campos/Menu_lateral"]
 visible = true
 margin_left = 25.0
 margin_top = 1000.0
 margin_right = 375.0
-margin_bottom = 1210.0
+margin_bottom = 1220.0
 theme = ExtResource( 12 )
 __meta__ = {
 "_edit_lock_": true
@@ -413,21 +440,24 @@ margin_bottom = 25.0
 text = "xx/xx"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Torre_obj" type="Label" parent="Campos/Menu_lateral/PopObj"]
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 25.0
-margin_top = 100.0
+margin_top = 135.0
 margin_right = 175.0
-margin_bottom = 125.0
+margin_bottom = 160.0
 text = "Construa x torres"
 valign = 1
 
 [node name="Torre_progress" type="ProgressBar" parent="Campos/Menu_lateral/PopObj"]
 margin_left = 185.0
-margin_top = 100.0
+margin_top = 135.0
 margin_right = 325.0
-margin_bottom = 125.0
+margin_bottom = 160.0
 theme = ExtResource( 10 )
 percent_visible = false
 
@@ -438,21 +468,24 @@ margin_bottom = 25.0
 text = "xx/xx"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Muro_obj" type="Label" parent="Campos/Menu_lateral/PopObj"]
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 25.0
-margin_top = 135.0
+margin_top = 100.0
 margin_right = 175.0
-margin_bottom = 160.0
+margin_bottom = 125.0
 text = "Construa x muros"
 valign = 1
 
 [node name="Muro_progress" type="ProgressBar" parent="Campos/Menu_lateral/PopObj"]
 margin_left = 185.0
-margin_top = 135.0
+margin_top = 100.0
 margin_right = 325.0
-margin_bottom = 160.0
+margin_bottom = 125.0
 theme = ExtResource( 10 )
 percent_visible = false
 
@@ -463,6 +496,9 @@ margin_bottom = 25.0
 text = "xx/xx"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Fazenda_obj" type="Label" parent="Campos/Menu_lateral/PopObj"]
 self_modulate = Color( 0, 0, 0, 1 )
@@ -488,6 +524,9 @@ margin_bottom = 25.0
 text = "xx/xx"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="BtnMadeira" type="TextureButton" parent="Campos"]
 margin_left = 163.0
@@ -495,6 +534,7 @@ margin_top = 226.0
 margin_right = 383.0
 margin_bottom = 395.0
 hint_tooltip = "Clique para conseguir Madeira"
+mouse_default_cursor_shape = 2
 __meta__ = {
 "_edit_lock_": true
 }
@@ -504,6 +544,8 @@ margin_left = 604.0
 margin_top = 77.0
 margin_right = 753.0
 margin_bottom = 151.0
+hint_tooltip = "Clique para conseguir Pedra"
+mouse_default_cursor_shape = 2
 __meta__ = {
 "_edit_lock_": true
 }
@@ -513,6 +555,8 @@ margin_left = 884.0
 margin_top = 114.0
 margin_right = 1030.0
 margin_bottom = 382.0
+hint_tooltip = "Clique para conseguir Areia"
+mouse_default_cursor_shape = 2
 __meta__ = {
 "_edit_lock_": true
 }
@@ -522,15 +566,8 @@ margin_left = 725.0
 margin_top = 254.0
 margin_right = 787.0
 margin_bottom = 301.0
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BtnVila" type="TextureButton" parent="Campos"]
-margin_left = 417.0
-margin_top = 181.0
-margin_right = 638.0
-margin_bottom = 342.0
+hint_tooltip = "Clique para conseguir Minerais"
+mouse_default_cursor_shape = 2
 __meta__ = {
 "_edit_lock_": true
 }
@@ -540,6 +577,19 @@ margin_left = 466.0
 margin_top = 390.0
 margin_right = 726.0
 margin_bottom = 482.0
+hint_tooltip = "Clique para conseguir Carvão"
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BtnVila" type="TextureButton" parent="Campos"]
+margin_left = 417.0
+margin_top = 181.0
+margin_right = 638.0
+margin_bottom = 342.0
+hint_tooltip = "Clique para selecionar a Construção que será feita"
+mouse_default_cursor_shape = 2
 __meta__ = {
 "_edit_lock_": true
 }
@@ -549,6 +599,8 @@ margin_left = 445.0
 margin_top = 56.0
 margin_right = 510.0
 margin_bottom = 123.0
+hint_tooltip = "Clique para selecionar o Material que será forjado"
+mouse_default_cursor_shape = 2
 __meta__ = {
 "_edit_lock_": true
 }
@@ -589,6 +641,7 @@ margin_left = 25.0
 margin_top = 55.0
 margin_right = 185.0
 margin_bottom = 305.0
+hint_tooltip = "Clique para construir uma Casa"
 theme = SubResource( 8 )
 __meta__ = {
 "_edit_lock_": true
@@ -603,7 +656,7 @@ margin_bottom = 245.0
 text = "Construções que servirão de moradia para a população.
 
 Custo:
-10 Madeiras, 4 vidros e 5 Pedras
+8 Madeiras, 4 vidros e 5 Pedras
 5 Energias"
 align = 1
 autowrap = true
@@ -625,52 +678,12 @@ margin_right = 155.0
 margin_bottom = 31.0
 color = Color( 0.941176, 0, 0, 1 )
 
-[node name="BtnTorre" type="Button" parent="Campos/PopVila"]
+[node name="BtnMuro" type="Button" parent="Campos/PopVila"]
 margin_left = 200.0
 margin_top = 55.0
 margin_right = 360.0
 margin_bottom = 305.0
-theme = SubResource( 8 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="DetalheText" type="Label" parent="Campos/PopVila/BtnTorre"]
-self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 5.0
-margin_top = 35.0
-margin_right = 155.0
-margin_bottom = 245.0
-text = "Construções que serão utilizadas pelos guardas para vigiar o vilarejo.
-
-Custo:
-[recuros]
-x Energias"
-align = 1
-autowrap = true
-
-[node name="ItemText" type="Label" parent="Campos/PopVila/BtnTorre"]
-self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 155.0
-margin_bottom = 30.0
-text = "Torre"
-align = 1
-valign = 1
-
-[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila/BtnTorre"]
-margin_left = 5.0
-margin_top = 30.0
-margin_right = 155.0
-margin_bottom = 31.0
-color = Color( 0.941176, 0, 0, 1 )
-
-[node name="BtnMuro" type="Button" parent="Campos/PopVila"]
-margin_left = 370.0
-margin_top = 55.0
-margin_right = 530.0
-margin_bottom = 305.0
+hint_tooltip = "Clique para construir um Muro"
 theme = SubResource( 8 )
 __meta__ = {
 "_edit_lock_": true
@@ -685,8 +698,8 @@ margin_bottom = 245.0
 text = "Construções que protegerão o vilarejo.
 
 Custo:
-[recursos]
-x Energias"
+4 Pedras e 2 Madeiras
+2 Energias"
 align = 1
 autowrap = true
 
@@ -707,11 +720,54 @@ margin_right = 155.0
 margin_bottom = 31.0
 color = Color( 0.941176, 0, 0, 1 )
 
+[node name="BtnTorre" type="Button" parent="Campos/PopVila"]
+margin_left = 370.0
+margin_top = 55.0
+margin_right = 530.0
+margin_bottom = 305.0
+hint_tooltip = "Clique para construir uma Torre"
+theme = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DetalheText" type="Label" parent="Campos/PopVila/BtnTorre"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 35.0
+margin_right = 155.0
+margin_bottom = 245.0
+text = "Construções que serão utilizadas pelos guardas para vigiar o vilarejo.
+
+Custo:
+12 Pedras, 6 Madeiras e 5 Vidros
+6 Energias"
+align = 1
+autowrap = true
+
+[node name="ItemText" type="Label" parent="Campos/PopVila/BtnTorre"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 155.0
+margin_bottom = 30.0
+text = "Torre"
+align = 1
+valign = 1
+
+[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila/BtnTorre"]
+margin_left = 5.0
+margin_top = 30.0
+margin_right = 155.0
+margin_bottom = 31.0
+color = Color( 0.941176, 0, 0, 1 )
+
 [node name="BtnFazenda" type="Button" parent="Campos/PopVila"]
 margin_left = 545.0
 margin_top = 55.0
 margin_right = 705.0
 margin_bottom = 305.0
+hint_tooltip = "Clique para construir uma Fazenda"
 theme = SubResource( 8 )
 __meta__ = {
 "_edit_lock_": true
@@ -726,8 +782,8 @@ margin_bottom = 245.0
 text = "Construções onde serão produzidos alimentos para a população.
 
 Custo:
-[recursos]
-x Energias"
+12 Madeiras, 4 Vidros e 4 Pedras
+6 Energias"
 align = 1
 autowrap = true
 
@@ -752,7 +808,7 @@ color = Color( 0.941176, 0, 0, 1 )
 visible = true
 margin_left = 772.0
 margin_top = 644.0
-margin_right = 1502.0
+margin_right = 1162.0
 margin_bottom = 969.0
 theme = ExtResource( 12 )
 __meta__ = {
@@ -763,16 +819,16 @@ __meta__ = {
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 25.0
 margin_top = 15.0
-margin_right = 705.0
+margin_right = 360.0
 margin_bottom = 40.0
-text = "Materiais e Ferramentas"
+text = "Materiais e Moedas"
 align = 1
 valign = 1
 
 [node name="LinhaVermelha" type="ColorRect" parent="Campos/PopForja"]
 margin_left = 25.0
 margin_top = 40.0
-margin_right = 705.0
+margin_right = 360.0
 margin_bottom = 41.0
 color = Color( 0.941176, 0, 0, 1 )
 __meta__ = {
@@ -780,10 +836,11 @@ __meta__ = {
 }
 
 [node name="BtnVidro" type="Button" parent="Campos/PopForja"]
-margin_left = 30.0
+margin_left = 25.0
 margin_top = 55.0
-margin_right = 190.0
+margin_right = 185.0
 margin_bottom = 305.0
+hint_tooltip = "Clique para fazer Vidro"
 theme = SubResource( 8 )
 __meta__ = {
 "_edit_lock_": true
@@ -798,7 +855,7 @@ margin_bottom = 245.0
 text = "Faça vidros para utilizar em suas construções
 
 Custo:
-5 areias e 2 carvões
+5 Areias e 2 Carvões
 2 Energias"
 align = 1
 autowrap = true
@@ -815,9 +872,51 @@ valign = 1
 
 [node name="LinhaVermelha" type="ColorRect" parent="Campos/PopForja/BtnVidro"]
 margin_left = 5.0
-margin_top = 33.0
+margin_top = 30.0
 margin_right = 152.0
-margin_bottom = 34.0
+margin_bottom = 31.0
+color = Color( 0.941176, 0, 0, 1 )
+
+[node name="BtnMoeda" type="Button" parent="Campos/PopForja"]
+margin_left = 200.0
+margin_top = 55.0
+margin_right = 360.0
+margin_bottom = 305.0
+hint_tooltip = "Clique para fazer Moeda"
+theme = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DetalheText" type="Label" parent="Campos/PopForja/BtnMoeda"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 35.0
+margin_right = 155.0
+margin_bottom = 245.0
+text = "Faça moedas para realizar trocas ou adquirir conhecimento
+
+Custo:
+1 Mineral e 2 Carvões
+1 Energia"
+align = 1
+autowrap = true
+
+[node name="ItemText" type="Label" parent="Campos/PopForja/BtnMoeda"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 155.0
+margin_bottom = 30.0
+text = "Moeda"
+align = 1
+valign = 1
+
+[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopForja/BtnMoeda"]
+margin_left = 5.0
+margin_top = 30.0
+margin_right = 152.0
+margin_bottom = 31.0
 color = Color( 0.941176, 0, 0, 1 )
 
 [node name="Continuar" type="TextureButton" parent="."]
@@ -825,6 +924,7 @@ margin_left = 935.0
 margin_top = 550.0
 margin_right = 1015.0
 margin_bottom = 590.0
+mouse_default_cursor_shape = 2
 script = ExtResource( 4 )
 
 [node name="BotaoProx" type="Sprite" parent="Continuar"]
@@ -835,7 +935,6 @@ texture = ExtResource( 3 )
 [node name="Tutorial" type="CanvasLayer" parent="."]
 
 [node name="Popup1" type="PopupDialog" parent="Tutorial"]
-visible = true
 margin_left = 135.0
 margin_top = 5.0
 margin_right = 595.0
@@ -856,7 +955,6 @@ __meta__ = {
 }
 
 [node name="Popup2" type="PopupDialog" parent="Tutorial"]
-visible = true
 margin_left = 135.0
 margin_top = 150.0
 margin_right = 595.0
@@ -877,7 +975,6 @@ __meta__ = {
 }
 
 [node name="Popup3" type="PopupDialog" parent="Tutorial"]
-visible = true
 margin_left = 135.0
 margin_top = 400.0
 margin_right = 595.0
@@ -898,7 +995,6 @@ __meta__ = {
 }
 
 [node name="Popup4" type="PopupDialog" parent="Tutorial"]
-visible = true
 margin_left = 550.0
 margin_top = 400.0
 margin_right = 1010.0
@@ -923,18 +1019,21 @@ __meta__ = {
 [connection signal="mouse_entered" from="Campos/Menu_lateral/BotaoProx/Obj_btn" to="Campos/Menu_lateral" method="_on_Obj_btn_mouse_entered"]
 [connection signal="mouse_exited" from="Campos/Menu_lateral/BotaoProx/Obj_btn" to="Campos/Menu_lateral" method="_on_Obj_btn_mouse_exited"]
 [connection signal="pressed" from="Campos/Menu_lateral/BotaoProx/Obj_btn" to="Campos/Menu_lateral" method="_on_Obj_btn_pressed"]
-[connection signal="popup_hide" from="Campos/Menu_lateral/PopObj" to="Campos/Menu_lateral/PopObj" method="_on_PopVila_popup_hide"]
 [connection signal="pressed" from="Campos/BtnMadeira" to="Campos" method="_on_BtnMadeira_pressed"]
 [connection signal="pressed" from="Campos/BtnPedra" to="Campos" method="_on_BtnPedra_pressed"]
 [connection signal="pressed" from="Campos/BtnAreia" to="Campos" method="_on_BtnAreia_pressed"]
 [connection signal="pressed" from="Campos/BtnMinerais" to="Campos" method="_on_BtnMinerais_pressed"]
-[connection signal="pressed" from="Campos/BtnVila" to="Campos" method="_on_BtnVila_pressed"]
 [connection signal="pressed" from="Campos/BtnCarvao" to="Campos" method="_on_BtnCarvao_pressed"]
+[connection signal="pressed" from="Campos/BtnVila" to="Campos" method="_on_BtnVila_pressed"]
 [connection signal="pressed" from="Campos/BtnForja" to="Campos" method="_on_BtnForja_pressed"]
 [connection signal="popup_hide" from="Campos/PopVila" to="Campos/PopVila" method="_on_PopVila_popup_hide"]
 [connection signal="pressed" from="Campos/PopVila/BtnCasa" to="Campos" method="_on_BtnCasa_pressed"]
+[connection signal="pressed" from="Campos/PopVila/BtnMuro" to="Campos" method="_on_BtnMuro_pressed"]
+[connection signal="pressed" from="Campos/PopVila/BtnTorre" to="Campos" method="_on_BtnTorre_pressed"]
+[connection signal="pressed" from="Campos/PopVila/BtnFazenda" to="Campos" method="_on_BtnFazenda_pressed"]
 [connection signal="popup_hide" from="Campos/PopForja" to="Campos/PopForja" method="_on_PopVila_popup_hide"]
 [connection signal="pressed" from="Campos/PopForja/BtnVidro" to="Campos" method="_on_BtnVidro_pressed"]
+[connection signal="pressed" from="Campos/PopForja/BtnMoeda" to="Campos" method="_on_BtnMoeda_pressed"]
 [connection signal="mouse_entered" from="Continuar" to="Continuar" method="_on_Continuar_mouse_entered"]
 [connection signal="mouse_exited" from="Continuar" to="Continuar" method="_on_Continuar_mouse_exited"]
 [connection signal="pressed" from="Continuar" to="Continuar" method="_on_Continuar_pressed"]

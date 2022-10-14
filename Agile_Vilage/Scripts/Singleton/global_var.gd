@@ -18,6 +18,7 @@ var carvao = 0
 
 # Contadores de recursos processados
 var vidro = 0
+var moeda = 0
 
 # Limitadores
 var limite_energia = 10
@@ -29,6 +30,7 @@ var limite_carvao = 20
 
 # Limitadores de recursos processados
 var limite_vidro = 10
+var limite_moeda = 15
 
 # Contadores para validação dos objetivos
 var casas = 0

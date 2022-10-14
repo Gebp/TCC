@@ -26,32 +26,59 @@ func _ready():
 	$Recursos/CarvaoBar.value = GlobalVar.carvao
 	# Set valores iniciais e limites para materiais
 	$Materiais/VidroBar/Vidro.text = str(GlobalVar.vidro) + '/' + str(GlobalVar.limite_vidro)
+	$Materiais/MoedaBar/Moeda.text = str(GlobalVar.moeda) + '/' + str(GlobalVar.limite_moeda)
 	# Set progressão para materiais
 	$Materiais/VidroBar.max_value = GlobalVar.limite_vidro
 	$Materiais/VidroBar.value = GlobalVar.vidro
+	$Materiais/MoedaBar.max_value = GlobalVar.limite_moeda
+	$Materiais/MoedaBar.value = GlobalVar.moeda
 	# Set valores iniciais e objetivos
-	valida_objetivos()
+	$Construcoes/Casas.text = 'Casas: ' + str(GlobalVar.casas)
+	$Construcoes/Muros.text = 'Muros: ' + str(GlobalVar.muros)
+	$Construcoes/Torres.text = 'Torres: ' + str(GlobalVar.torres)
+	$Construcoes/Fazendas.text = 'Fazendas: ' + str(GlobalVar.fazendas)
 	$EnergiaBar.max_value = GlobalVar.limite_energia
 	$EnergiaBar.value = GlobalVar.energia
 
 func valida_objetivos():
 	# Qtd de casas
-	$Construcoes/Casas.text = 'Casas: ' + str(GlobalVar.casas)
 	$PopObj/Casa_progress.max_value = GlobalVar.obj_casas
 	$PopObj/Casa_progress.value = GlobalVar.casas
-	$PopObj/Casa_obj.text = 'Construa ' + str(GlobalVar.obj_casas) + ' casas'
+	if GlobalVar.obj_casas == 1:
+		$PopObj/Casa_obj.text = 'Construa ' + str(GlobalVar.obj_casas) + ' casa'
+	else:
+		$PopObj/Casa_obj.text = 'Construa ' + str(GlobalVar.obj_casas) + ' casas'
 	if GlobalVar.casas >= GlobalVar.obj_casas:
 		$PopObj/Casa_progress/Label.text = 'Concluído'
 	else:
 		$PopObj/Casa_progress/Label.text = str(GlobalVar.casas) + '/' + str(GlobalVar.obj_casas)
+	# Qtd de muros
+	if GlobalVar.obj_muros > 0:
+		$PopObj/Muro_obj.visible = true
+		$PopObj/Muro_progress.visible = true
+		$PopObj/Muro_progress.max_value = GlobalVar.obj_muros
+		$PopObj/Muro_progress.value = GlobalVar.muros
+		if GlobalVar.obj_muros == 1:
+			$PopObj/Muro_obj.text = 'Construa ' + str(GlobalVar.obj_muros) + ' muro'
+		else:
+			$PopObj/Muro_obj.text = 'Construa ' + str(GlobalVar.obj_muros) + ' muros'
+		if GlobalVar.muros >= GlobalVar.obj_muros:
+			$PopObj/Muro_progress/Label.text = 'Concluído'
+		else:
+			$PopObj/Muro_progress/Label.text = str(GlobalVar.muros) + '/' + str(GlobalVar.obj_muros)
+	else:
+		$PopObj/Muro_obj.visible = false
+		$PopObj/Muro_progress.visible = false
 	# Qtd de torres
-	$Construcoes/Torres.text = 'Torres: ' + str(GlobalVar.torres)
 	if GlobalVar.obj_torres > 0:
 		$PopObj/Torre_obj.visible = true
 		$PopObj/Torre_progress.visible = true
 		$PopObj/Torre_progress.max_value = GlobalVar.obj_torres
 		$PopObj/Torre_progress.value = GlobalVar.torres
-		$PopObj/Torre_obj.text = 'Construa ' + str(GlobalVar.obj_torres) + ' torres'
+		if GlobalVar.obj_torres == 1:
+			$PopObj/Torre_obj.text = 'Construa ' + str(GlobalVar.obj_torres) + ' torre'
+		else:
+			$PopObj/Torre_obj.text = 'Construa ' + str(GlobalVar.obj_torres) + ' torres'
 		if GlobalVar.torres >= GlobalVar.obj_torres:
 			$PopObj/Torre_progress/Label.text = 'Concluído'
 		else:
@@ -59,28 +86,16 @@ func valida_objetivos():
 	else:
 		$PopObj/Torre_obj.visible = false
 		$PopObj/Torre_progress.visible = false
-	# Qtd de muros
-	$Construcoes/Muros.text = 'Muros: ' + str(GlobalVar.muros)
-	if GlobalVar.obj_muros > 0:
-		$PopObj/Muro_obj.visible = true
-		$PopObj/Muro_progress.visible = true
-		$PopObj/Muro_progress.max_value = GlobalVar.obj_muros
-		$PopObj/Muro_progress.value = GlobalVar.muros
-		$PopObj/Muro_obj.text = 'Construa ' + str(GlobalVar.obj_muros) + ' muros'
-		if GlobalVar.muros >= GlobalVar.obj_muros:
-			$PopObj/Muro_progress/Label.text = 'Concluído'
-		else:
-			$PopObj/Muro_progress/Label.text = str(GlobalVar.muros) + '/' + str(GlobalVar.obj_muros)
-	else:
-		$PopObj/Muro_obj.visible = false
-		$PopObj/Muro_progress.visible = false	# Qtd de fazendas
-	$Construcoes/Fazendas.text = 'Fazendas: ' + str(GlobalVar.fazendas)
+	# Qtd de fazendas
 	if GlobalVar.obj_fazendas > 0:
 		$PopObj/Fazenda_obj.visible = true
 		$PopObj/Fazenda_progress.visible = true
 		$PopObj/Fazenda_progress.max_value = GlobalVar.obj_fazendas
 		$PopObj/Fazenda_progress.value = GlobalVar.fazendas
-		$PopObj/Fazenda_obj.text = 'Construa ' + str(GlobalVar.obj_fazendas) + ' fazendas'
+		if GlobalVar.obj_fazendas == 1:
+			$PopObj/Fazenda_obj.text = 'Construa ' + str(GlobalVar.obj_fazendas) + ' fazenda'
+		else:
+			$PopObj/Fazenda_obj.text = 'Construa ' + str(GlobalVar.obj_fazendas) + ' fazendas'
 		if GlobalVar.fazendas >= GlobalVar.obj_fazendas:
 			$PopObj/Fazenda_progress/Label.text = 'Concluído'
 		else:
@@ -90,11 +105,15 @@ func valida_objetivos():
 		$PopObj/Fazenda_progress.visible = false
 	# tamanho popup conforme objetivos
 	if GlobalVar.obj_fazendas == 0: 
-		$PopObj.rect_size.y = 170
-		if GlobalVar.obj_muros == 0:
-			$PopObj.rect_size.y = 135
-			if GlobalVar.obj_torres == 0:
-				$PopObj.rect_size.y = 105
+		$PopObj.rect_size.y = 180
+		if GlobalVar.obj_torres == 0:
+			$PopObj.rect_size.y = 150
+			if GlobalVar.obj_muros == 0:
+				$PopObj.rect_size.y = 115
+	if GlobalVar.obj_fazendas == 0 and GlobalVar.obj_torres == 0 and GlobalVar.obj_muros == 0:
+		$PopObj/Titulo.text = 'Objetivo'
+	else:
+		$PopObj/Titulo.text = 'Objetivos'
 
 func _on_T_exec_timeout():
 	if tempo > 0:
@@ -113,6 +132,7 @@ func _on_T_exec_timeout():
 
 func _on_Obj_btn_pressed():
 	$PopObj.popup_centered()
+	valida_objetivos()
 
 func _on_Obj_btn_mouse_entered():
 	$BotaoProx.position.y -= 10

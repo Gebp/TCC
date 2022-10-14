@@ -59,15 +59,17 @@ texture = ExtResource( 3 )
 
 [node name="Reiniciar" type="TextureButton" parent="."]
 margin_left = 450.0
-margin_top = 534.0
-margin_right = 580.0
-margin_bottom = 590.0
+margin_top = 530.0
+margin_right = 595.0
+margin_bottom = 595.0
+hint_tooltip = "Clique para reiniciar"
+mouse_default_cursor_shape = 2
 script = ExtResource( 4 )
 
 [node name="BotaoProx" type="Sprite" parent="Reiniciar"]
-position = Vector2( 71, 25 )
 scale = Vector2( 0.327511, 0.30622 )
 texture = ExtResource( 2 )
+centered = false
 
 [connection signal="mouse_entered" from="Reiniciar" to="Reiniciar" method="_on_Reiniciar_mouse_entered"]
 [connection signal="mouse_exited" from="Reiniciar" to="Reiniciar" method="_on_Reiniciar_mouse_exited"]

@@ -47,6 +47,7 @@ margin_left = 15.0
 margin_top = 240.0
 margin_right = 225.0
 margin_bottom = 280.0
+mouse_default_cursor_shape = 2
 theme = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
@@ -67,7 +68,7 @@ margin_left = 15.0
 margin_top = 570.0
 margin_right = 39.0
 margin_bottom = 594.0
-pressed = true
+mouse_default_cursor_shape = 2
 
 [node name="Label" type="Label" parent="CheckBox"]
 margin_left = 24.0

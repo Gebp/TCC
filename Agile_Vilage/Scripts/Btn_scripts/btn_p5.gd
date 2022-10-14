@@ -2,6 +2,8 @@ extends Control
 
 func _on_Reiniciar_pressed():
 	# Reseta os valores dos contadores ao reiniciar
+	# Validador do tutorial
+	GlobalVar.tutorial = false
 	# Contadores e validadores de tempo
 	GlobalVar.qtd_sprint = 1
 	GlobalVar.sprint = 0
@@ -15,6 +17,7 @@ func _on_Reiniciar_pressed():
 	GlobalVar.carvao = 0
 	# Contadores de recursos processados
 	GlobalVar.vidro = 0
+	GlobalVar.moeda = 0
 	# Limitadores
 	GlobalVar.limite_energia = 10
 	GlobalVar.limite_madeira = 20
@@ -24,6 +27,7 @@ func _on_Reiniciar_pressed():
 	GlobalVar.limite_carvao = 20
 	# Limitadores de recursos processados
 	GlobalVar.limite_vidro = 10
+	GlobalVar.limite_moeda = 15
 	# Contadores para validação dos objetivos
 	GlobalVar.casas = 0
 	GlobalVar.torres = 0
