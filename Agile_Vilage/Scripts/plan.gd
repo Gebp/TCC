@@ -14,7 +14,7 @@ func _ready():
 		v += 1
 	if GlobalVar.tutorial and GlobalVar.sprint == 0:
 		$Cabecalho/T_plan.stop()
-		$Tutorial/Popup1.popup()
+		$Tutorial/Popup0.popup_centered()
 
 func add_task(item):
 	tasks.append(item)
@@ -32,6 +32,9 @@ func trazer_para_frente(item):
 
 # Passagem dos tutoriais
 # -----------------------
+func _on_Popup0_popup_hide():
+	$Tutorial/Popup1.popup()
+
 func _on_Popup1_popup_hide():
 	$Tutorial/Popup2.popup()
 

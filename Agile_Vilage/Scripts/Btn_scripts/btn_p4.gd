@@ -15,8 +15,10 @@ func _on_Continuar_pressed():
 func _on_Continuar_mouse_entered():
 	if GlobalVar.dia < 4:
 		self.hint_tooltip = 'Clique para o próximo dia'
-	else:
+	elif GlobalVar.dia == 4 and GlobalVar.sprint < GlobalVar.qtd_sprint:
 		self.hint_tooltip = 'Clique para conluir a Sprint'
+	else:
+		self.hint_tooltip = 'Clique para concluir o Projeto'
 	self.modulate = 'd2d2d2'
 
 func _on_Continuar_mouse_exited():

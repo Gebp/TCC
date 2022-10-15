@@ -176,11 +176,36 @@ texture = ExtResource( 3 )
 
 [node name="Tutorial" type="CanvasLayer" parent="."]
 
+[node name="Popup0" type="PopupDialog" parent="Tutorial"]
+visible = true
+margin_left = 25.0
+margin_top = 640.0
+margin_right = 385.0
+margin_bottom = 760.0
+theme = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="Tutorial/Popup0"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 355.0
+margin_bottom = 110.0
+text = "O jogo consistirá de duas etapas: Planejamento e Execução.
+
+Essa é a primeira etapa, a de planejamento, onde será utilizado o quadro Kanban, utilizado para gerir as atividades do projeto por meio do acompanhamento."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Popup1" type="PopupDialog" parent="Tutorial"]
+visible = true
 margin_left = 115.0
 margin_top = 10.0
 margin_right = 475.0
-margin_bottom = 265.0
+margin_bottom = 235.0
 theme = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="Tutorial/Popup1"]
@@ -188,12 +213,11 @@ self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 5.0
 margin_top = 10.0
 margin_right = 355.0
-margin_bottom = 245.0
-text = "Dois pontos que sempre deverão ser verificados são o tempo e a Sprint.
+margin_bottom = 215.0
+text = "Aqui são apresentados o tempo e a Sprint.
 
-O tempo indica a quantidade de segundos que você terá, para montar seu planjemento.
-
-O número da Sprint indicará em qual fase do projeto você estará.
+O tempo indica a quantidade de segundos que você terá para montar seu planjemento.
+O número da Sprint indicará em qual fase do projeto você está.
 
 Como pode ser observado, o jogo se inicia na Sprint 0. Essa é uma Sprint de inicialição do Projeto, normalmente nessa etapa são definidas as principais entregas do projeto, juntamente ao resultado final do projeto."
 align = 1
@@ -204,10 +228,11 @@ __meta__ = {
 }
 
 [node name="Popup2" type="PopupDialog" parent="Tutorial"]
-margin_left = 380.0
+visible = true
+margin_left = 375.0
 margin_top = 200.0
-margin_right = 740.0
-margin_bottom = 505.0
+margin_right = 745.0
+margin_bottom = 475.0
 theme = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="Tutorial/Popup2"]
@@ -215,15 +240,14 @@ self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 5.0
 margin_top = 10.0
 margin_right = 365.0
-margin_bottom = 296.0
-text = "A próxima coisa a se observar é o quadro Kanban.
+margin_bottom = 265.0
+text = "O quadro consiste, geralmente, de 3 colunas indicando em que fase, ou status, se econtram as atividades do projeto, sendo elas:
 
-O quadro consiste, normalmente, de 3 colunas indicando em que fase, ou status, se econtram as atividades do projeto, sendo elas:
 1. To-Do: Atividades que ainda não foram iniciadas;
 2. Doing: Atividades que estão em desenvolvimento;
 3. Done: Atividades que foram concluídas.
 
-É muito importante que esse quadro esteja sempre atualizado, pois quando ele é utilizado em projetos, ele serve como referência rápida para identificação do status das atividades, tanto pelos membros da equipe, quanto para gestores e gerentes de projeto, ou seja, atividades inseridas em locais indevidos podem gerar a falsa impressão de que algo não foi inciado, ainda está em desenvolvimento ou já foi concluído. "
+Esse quadro deve ser atualizado a cada Sprint, pois ele serve como referência rápida para identificação do status das atividades, tanto pelos membros da equipe, quanto para gestores e gerentes de projeto. Dessa forma, atividades inseridas em locais indevidos podem gerar a falsa impressão de que algo não foi inciado, ainda está em desenvolvimento ou já foi concluído."
 align = 1
 valign = 1
 autowrap = true
@@ -232,18 +256,24 @@ __meta__ = {
 }
 
 [node name="Popup3" type="PopupDialog" parent="Tutorial"]
-margin_left = 10.0
-margin_top = 375.0
-margin_right = 370.0
-margin_bottom = 475.0
+visible = true
+margin_left = 25.0
+margin_top = 225.0
+margin_right = 385.0
+margin_bottom = 480.0
 theme = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="Tutorial/Popup3"]
 self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
 margin_top = 10.0
-margin_right = 360.0
-margin_bottom = 90.0
-text = "Pop up sobre os cards"
+margin_right = 355.0
+margin_bottom = 245.0
+text = "Logo abaixo encontram-se as Task Cards, ou Cartões de Atividade, que são utilizadas no quadro Kanban.
+
+Elas apresentam, de forma sucinta, as atividades que devem ser realizadas para cumprimento do objetivo final do projeto, e são alocadas no quadro conforme a situação e podem ser movimentadas a qualquer momento.
+
+Ao longo do projeto podem surgir novos Cartões ou alguns podem deixar de ser utilizados, conforme mudanças de projeto, para o jogo, entretatno, as atividades e a quantidade estão pré definidas conforme objetivo."
 align = 1
 valign = 1
 autowrap = true
@@ -252,18 +282,20 @@ __meta__ = {
 }
 
 [node name="Popup4" type="PopupDialog" parent="Tutorial"]
-margin_left = 650.0
-margin_top = 440.0
-margin_right = 1010.0
+visible = true
+margin_left = 775.0
+margin_top = 480.0
+margin_right = 1015.0
 margin_bottom = 540.0
 theme = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="Tutorial/Popup4"]
 self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
 margin_top = 10.0
-margin_right = 360.0
-margin_bottom = 90.0
-text = "Pop up sobre os botão próximo"
+margin_right = 235.0
+margin_bottom = 50.0
+text = "O botão próximo serve para avançar para a etapa de Execução."
 align = 1
 valign = 1
 autowrap = true
@@ -276,6 +308,7 @@ __meta__ = {
 [connection signal="mouse_entered" from="Executar" to="." method="_on_Executar_mouse_entered"]
 [connection signal="mouse_exited" from="Executar" to="." method="_on_Executar_mouse_exited"]
 [connection signal="pressed" from="Executar" to="." method="_on_Executar_pressed"]
+[connection signal="popup_hide" from="Tutorial/Popup0" to="." method="_on_Popup0_popup_hide"]
 [connection signal="popup_hide" from="Tutorial/Popup1" to="." method="_on_Popup1_popup_hide"]
 [connection signal="popup_hide" from="Tutorial/Popup2" to="." method="_on_Popup2_popup_hide"]
 [connection signal="popup_hide" from="Tutorial/Popup3" to="." method="_on_Popup3_popup_hide"]

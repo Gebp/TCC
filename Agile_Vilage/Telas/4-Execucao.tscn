@@ -89,19 +89,31 @@ script = ExtResource( 6 )
 [node name="Menu_lateral" type="CanvasLayer" parent="Campos"]
 script = ExtResource( 5 )
 
+[node name="Sprint" type="Label" parent="Campos/Menu_lateral"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 115.0
+margin_bottom = 25.0
+mouse_filter = 1
+mouse_default_cursor_shape = 16
+text = "Sprint: x"
+valign = 1
+
 [node name="Dia" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
-margin_top = 20.0
+margin_top = 30.0
 margin_right = 115.0
-margin_bottom = 35.0
+margin_bottom = 45.0
+mouse_filter = 1
+mouse_default_cursor_shape = 16
 text = "Dia: x"
 valign = 1
 
 [node name="Tempo_exec" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
-margin_top = 40.0
+margin_top = 50.0
 margin_right = 115.0
-margin_bottom = 55.0
+margin_bottom = 65.0
 text = "Tempo: xx seg"
 valign = 1
 
@@ -110,17 +122,17 @@ autostart = true
 
 [node name="EnergiaText" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 10.0
-margin_top = 70.0
+margin_top = 80.0
 margin_right = 115.0
-margin_bottom = 85.0
+margin_bottom = 95.0
 rect_pivot_offset = Vector2( -115, 211 )
 text = "Energia:"
 
 [node name="EnergiaBar" type="ProgressBar" parent="Campos/Menu_lateral"]
 margin_left = 10.0
-margin_top = 90.0
+margin_top = 100.0
 margin_right = 115.0
-margin_bottom = 110.0
+margin_bottom = 120.0
 theme = ExtResource( 11 )
 max_value = 10.0
 step = 1.0
@@ -375,18 +387,19 @@ margin_bottom = 95.0
 rect_pivot_offset = Vector2( 140, -44 )
 text = "Fazendas: xx"
 
-[node name="BotaoProx" type="Sprite" parent="Campos/Menu_lateral"]
-position = Vector2( 57.551, 600 )
+[node name="Obj_btn" type="TextureButton" parent="Campos/Menu_lateral"]
+margin_left = 45.0
+margin_top = 575.0
+margin_right = 75.0
+margin_bottom = 625.0
+hint_tooltip = "Objetivos do Projeto"
+mouse_default_cursor_shape = 2
+
+[node name="BotaoObj" type="Sprite" parent="Campos/Menu_lateral/Obj_btn"]
+position = Vector2( 15, 26.816 )
 rotation = 1.5708
 scale = Vector2( 0.121891, 0.175831 )
 texture = ExtResource( 3 )
-
-[node name="Obj_btn" type="TextureButton" parent="Campos/Menu_lateral/BotaoProx"]
-margin_left = -220.0
-margin_top = -95.0
-margin_right = 195.0
-margin_bottom = 95.0
-mouse_default_cursor_shape = 2
 
 [node name="PopObj" type="WindowDialog" parent="Campos/Menu_lateral"]
 visible = true
@@ -934,19 +947,47 @@ texture = ExtResource( 3 )
 
 [node name="Tutorial" type="CanvasLayer" parent="."]
 
+[node name="Popup0" type="PopupDialog" parent="Tutorial"]
+visible = true
+margin_left = 400.0
+margin_top = 1000.0
+margin_right = 730.0
+margin_bottom = 1085.0
+theme = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="Tutorial/Popup0"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 325.0
+margin_bottom = 75.0
+text = "Para fechar o ciclo, temos a etapa de execução, que é onde ocorrerá todo o esforço para a evolução do projeto, conforme organizado na etapa de planejamento."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Popup1" type="PopupDialog" parent="Tutorial"]
 margin_left = 135.0
 margin_top = 5.0
 margin_right = 595.0
-margin_bottom = 130.0
+margin_bottom = 210.0
 theme = ExtResource( 13 )
 
 [node name="Label" type="Label" parent="Tutorial/Popup1"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_top = 15.0
-margin_right = 460.0
-margin_bottom = 110.0
-text = "Pop up sobre a tempo e energia"
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 455.0
+margin_bottom = 195.0
+text = "No menu ao lado, estão presentes todos os pontos relevantes sobre o projeto, separados em seções.
+
+Aqui, as primeiras informações indicadas são o número da Sprint, o dia da Sprint e o tempo restante para executar as atividades diárias.
+Lembre-se que, neste jogo, cada Sprint possui 4 dias.
+
+Logo abaixo está apresentada a Energia, que sao os 'Pontos de Ação' do jogo, utilizada para a coleta dos recuros e para confecção de materiais e construções. Ao início de cada novo dia, a quantidade de Energia é reposta completamente."
 align = 1
 valign = 1
 autowrap = true
@@ -956,17 +997,23 @@ __meta__ = {
 
 [node name="Popup2" type="PopupDialog" parent="Tutorial"]
 margin_left = 135.0
-margin_top = 150.0
-margin_right = 595.0
-margin_bottom = 275.0
+margin_top = 125.0
+margin_right = 495.0
+margin_bottom = 350.0
 theme = ExtResource( 13 )
 
 [node name="Label" type="Label" parent="Tutorial/Popup2"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_top = 15.0
-margin_right = 460.0
-margin_bottom = 110.0
-text = "Pop up sobre recursos e materiais"
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 355.0
+margin_bottom = 215.0
+text = "As duas próximas seções mostram a quantidade de itens possuídos que poderão ser utilizados ao longo da fase de execução.
+
+- Todos os itens em 'Recursos' podem ser obtidos clicando nos campos presentes no mapa.
+- Todos os itens em 'Materiais' podem ser feitos através da 'Forja' utilizando recursos, que serão transformados no determinado material.
+
+Em ambas as situações há um limite do que pode ser obtido ou construído."
 align = 1
 valign = 1
 autowrap = true
@@ -977,16 +1024,19 @@ __meta__ = {
 [node name="Popup3" type="PopupDialog" parent="Tutorial"]
 margin_left = 135.0
 margin_top = 400.0
-margin_right = 595.0
-margin_bottom = 525.0
+margin_right = 395.0
+margin_bottom = 520.0
 theme = ExtResource( 13 )
 
 [node name="Label" type="Label" parent="Tutorial/Popup3"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_top = 15.0
-margin_right = 460.0
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 255.0
 margin_bottom = 110.0
-text = "Pop up sobre a construções e objetivos"
+text = "A última seção mostra a quantidade de construções realizadas.
+
+As construções estão atreladas ao objetivo selecionado e podem ser escolhidas clicando na 'Vila'."
 align = 1
 valign = 1
 autowrap = true
@@ -995,18 +1045,19 @@ __meta__ = {
 }
 
 [node name="Popup4" type="PopupDialog" parent="Tutorial"]
-margin_left = 550.0
-margin_top = 400.0
-margin_right = 1010.0
-margin_bottom = 525.0
+margin_left = 135.0
+margin_top = 500.0
+margin_right = 395.0
+margin_bottom = 595.0
 theme = ExtResource( 13 )
 
 [node name="Label" type="Label" parent="Tutorial/Popup4"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_top = 15.0
-margin_right = 460.0
-margin_bottom = 110.0
-text = "Pop up sobre o botão próximo"
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 255.0
+margin_bottom = 85.0
+text = "Ao final do Menu há um botão que exibirá os Objetivos, mostrando o que deve ser feito e quanto ainda falta para que sejam completados."
 align = 1
 valign = 1
 autowrap = true
@@ -1014,11 +1065,293 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Popup5" type="PopupDialog" parent="Tutorial"]
+margin_left = 350.0
+margin_top = 175.0
+margin_right = 720.0
+margin_bottom = 360.0
+rect_pivot_offset = Vector2( -524, -10 )
+theme = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="Tutorial/Popup5"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 365.0
+margin_bottom = 180.0
+text = "Para obter os recursos, alguns campos no mapa poderão ser clicados.
+
+Sempre que clicar em 1 campo, 1 energia será gasta e uma quantidade entre 1 e 3 recursos poderá ser obtida de forma randômica.
+
+Os campos destacados em vermelho podem ser utuilizados para obtenção dos recursos, conforme descrição."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ReferenceMadeira" type="ReferenceRect" parent="Tutorial/Popup5"]
+margin_left = -160.0
+margin_top = 70.0
+margin_right = -10.0
+margin_bottom = 190.0
+border_color = Color( 0.796078, 0.0745098, 0.0745098, 1 )
+border_width = 1.5
+editor_only = false
+
+[node name="ColorRect" type="ColorRect" parent="Tutorial/Popup5/ReferenceMadeira"]
+margin_top = -30.0
+margin_right = 150.0
+margin_bottom = -5.0
+color = Color( 0.988235, 0.992157, 0.94902, 1 )
+
+[node name="Label" type="Label" parent="Tutorial/Popup5/ReferenceMadeira/ColorRect"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 150.0
+margin_bottom = 25.0
+text = "Madeira"
+align = 1
+valign = 1
+
+[node name="ReferencePedra" type="ReferenceRect" parent="Tutorial/Popup5"]
+margin_left = 250.0
+margin_top = -100.0
+margin_right = 400.0
+margin_bottom = -20.0
+border_color = Color( 0.796078, 0.0745098, 0.0745098, 1 )
+border_width = 1.5
+editor_only = false
+
+[node name="ColorRect" type="ColorRect" parent="Tutorial/Popup5/ReferencePedra"]
+margin_top = -30.0
+margin_right = 150.0
+margin_bottom = -5.0
+color = Color( 0.988235, 0.992157, 0.94902, 1 )
+
+[node name="Label" type="Label" parent="Tutorial/Popup5/ReferencePedra/ColorRect"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 150.0
+margin_bottom = 25.0
+text = "Pedra"
+align = 1
+valign = 1
+
+[node name="ReferenceAreia" type="ReferenceRect" parent="Tutorial/Popup5"]
+margin_left = 550.0
+margin_top = -20.0
+margin_right = 660.0
+margin_bottom = 190.0
+border_color = Color( 0.796078, 0.0745098, 0.0745098, 1 )
+border_width = 1.5
+editor_only = false
+
+[node name="ColorRect" type="ColorRect" parent="Tutorial/Popup5/ReferenceAreia"]
+margin_top = -30.0
+margin_right = 110.0
+margin_bottom = -5.0
+color = Color( 0.988235, 0.992157, 0.94902, 1 )
+
+[node name="Label" type="Label" parent="Tutorial/Popup5/ReferenceAreia/ColorRect"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 110.0
+margin_bottom = 25.0
+text = "Areia"
+align = 1
+valign = 1
+
+[node name="ReferenceMinerais" type="ReferenceRect" parent="Tutorial/Popup5"]
+margin_left = 375.0
+margin_top = 75.0
+margin_right = 435.0
+margin_bottom = 125.0
+border_color = Color( 0.796078, 0.0745098, 0.0745098, 1 )
+border_width = 1.5
+editor_only = false
+
+[node name="ColorRect" type="ColorRect" parent="Tutorial/Popup5/ReferenceMinerais"]
+margin_top = -30.0
+margin_right = 60.0
+margin_bottom = -5.0
+color = Color( 0.988235, 0.992157, 0.94902, 1 )
+
+[node name="Label" type="Label" parent="Tutorial/Popup5/ReferenceMinerais/ColorRect"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 60.0
+margin_bottom = 25.0
+text = "Minerais"
+align = 1
+valign = 1
+
+[node name="ReferenceCarvao" type="ReferenceRect" parent="Tutorial/Popup5"]
+margin_left = 125.0
+margin_top = 220.0
+margin_right = 350.0
+margin_bottom = 320.0
+border_color = Color( 0.796078, 0.0745098, 0.0745098, 1 )
+border_width = 1.5
+editor_only = false
+
+[node name="ColorRect" type="ColorRect" parent="Tutorial/Popup5/ReferenceCarvao"]
+margin_top = -30.0
+margin_right = 225.0
+margin_bottom = -5.0
+color = Color( 0.988235, 0.992157, 0.94902, 1 )
+
+[node name="Label" type="Label" parent="Tutorial/Popup5/ReferenceCarvao/ColorRect"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 225.0
+margin_bottom = 25.0
+text = "Carvão"
+align = 1
+valign = 1
+
+[node name="Popup6" type="PopupDialog" parent="Tutorial"]
+margin_left = 70.0
+margin_top = 15.0
+margin_right = 430.0
+margin_bottom = 185.0
+theme = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="Tutorial/Popup6"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 355.0
+margin_bottom = 145.0
+text = "Para a criação de Materiais, deve-se selecionar a forja.
+
+Ao fazer isso, será aberta uma tela contendo os itens que poderão ser criados, com a indicação de quantos recursos e energias deverão ser gastos.
+
+Enquanto não houver a quantidade mínima de recursos ou energia necessária, ou os limites tiverem sido atingidos, os botões estarão bloqueados."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ReferenceForja" type="ReferenceRect" parent="Tutorial/Popup6"]
+margin_left = 375.0
+margin_top = 45.0
+margin_right = 440.0
+margin_bottom = 110.0
+border_color = Color( 0.796078, 0.0745098, 0.0745098, 1 )
+border_width = 1.5
+editor_only = false
+
+[node name="ColorRect" type="ColorRect" parent="Tutorial/Popup6/ReferenceForja"]
+margin_top = -30.0
+margin_right = 65.0
+margin_bottom = -5.0
+color = Color( 0.988235, 0.992157, 0.94902, 1 )
+
+[node name="Label" type="Label" parent="Tutorial/Popup6/ReferenceForja/ColorRect"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 65.0
+margin_bottom = 25.0
+text = "Forja"
+align = 1
+valign = 1
+
+[node name="Popup7" type="PopupDialog" parent="Tutorial"]
+margin_left = 250.0
+margin_top = 200.0
+margin_right = 410.0
+margin_bottom = 310.0
+theme = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="Tutorial/Popup7"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 155.0
+margin_bottom = 100.0
+text = "O último tipo de campo é o Vilarejo, onde poderão ser selecionadas as construções."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ReferenceVila" type="ReferenceRect" parent="Tutorial/Popup7"]
+margin_left = 170.0
+margin_top = -10.0
+margin_right = 400.0
+margin_bottom = 140.0
+border_color = Color( 0.796078, 0.0745098, 0.0745098, 1 )
+border_width = 1.5
+editor_only = false
+
+[node name="ColorRect" type="ColorRect" parent="Tutorial/Popup7/ReferenceVila"]
+margin_top = -30.0
+margin_right = 230.0
+margin_bottom = -5.0
+color = Color( 0.988235, 0.992157, 0.94902, 1 )
+
+[node name="Label" type="Label" parent="Tutorial/Popup7/ReferenceVila/ColorRect"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 230.0
+margin_bottom = 25.0
+text = "Vilarejo"
+align = 1
+valign = 1
+
+[node name="Popup8" type="PopupDialog" parent="Tutorial"]
+visible = true
+margin_left = 145.0
+margin_top = 50.0
+margin_right = 535.0
+margin_bottom = 135.0
+theme = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="Tutorial/Popup8"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 385.0
+margin_bottom = 75.0
+text = "A tela de seleção de construções funciona de forma bem similar a de Materiais, ou seja, apresenta o que é necessário para cada item e bloqueia a seleção conforme disponibilidade de recursos, materiais e energia."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Popup9" type="PopupDialog" parent="Tutorial"]
+margin_left = 655.0
+margin_top = 390.0
+margin_right = 1015.0
+margin_bottom = 545.0
+theme = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="Tutorial/Popup9"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 355.0
+margin_bottom = 145.0
+text = "Nessa etapa o botão próximo poderá realizar 3 ações:
+
+1. Enquanto houver dias na Sprint, ao clicar no botão, o dia será passado;
+2. Se estiver no dia 4 e ainda houver Sprints para realizar, voltará para a etapa de Planejamento;
+3. Se estiver no dia 4 e na última Sprint, encerrará o jogo e você receberá seu Feedback."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="mouse_entered" from="Campos/Menu_lateral/Sprint" to="." method="_on_Sprint_mouse_entered"]
+[connection signal="mouse_entered" from="Campos/Menu_lateral/Dia" to="." method="_on_Dia_mouse_entered"]
 [connection signal="timeout" from="Campos/Menu_lateral/T_exec" to="Campos/Menu_lateral" method="_on_T_exec_timeout"]
 [connection signal="timeout" from="Campos/Menu_lateral/T_exec" to="Campos/Menu_lateral" method="_on_Timer_timeout"]
-[connection signal="mouse_entered" from="Campos/Menu_lateral/BotaoProx/Obj_btn" to="Campos/Menu_lateral" method="_on_Obj_btn_mouse_entered"]
-[connection signal="mouse_exited" from="Campos/Menu_lateral/BotaoProx/Obj_btn" to="Campos/Menu_lateral" method="_on_Obj_btn_mouse_exited"]
-[connection signal="pressed" from="Campos/Menu_lateral/BotaoProx/Obj_btn" to="Campos/Menu_lateral" method="_on_Obj_btn_pressed"]
+[connection signal="mouse_entered" from="Campos/Menu_lateral/Obj_btn" to="Campos/Menu_lateral" method="_on_Obj_btn_mouse_entered"]
+[connection signal="mouse_exited" from="Campos/Menu_lateral/Obj_btn" to="Campos/Menu_lateral" method="_on_Obj_btn_mouse_exited"]
+[connection signal="pressed" from="Campos/Menu_lateral/Obj_btn" to="Campos/Menu_lateral" method="_on_Obj_btn_pressed"]
 [connection signal="pressed" from="Campos/BtnMadeira" to="Campos" method="_on_BtnMadeira_pressed"]
 [connection signal="pressed" from="Campos/BtnPedra" to="Campos" method="_on_BtnPedra_pressed"]
 [connection signal="pressed" from="Campos/BtnAreia" to="Campos" method="_on_BtnAreia_pressed"]
@@ -1037,7 +1370,13 @@ __meta__ = {
 [connection signal="mouse_entered" from="Continuar" to="Continuar" method="_on_Continuar_mouse_entered"]
 [connection signal="mouse_exited" from="Continuar" to="Continuar" method="_on_Continuar_mouse_exited"]
 [connection signal="pressed" from="Continuar" to="Continuar" method="_on_Continuar_pressed"]
+[connection signal="popup_hide" from="Tutorial/Popup0" to="." method="_on_Popup0_popup_hide"]
 [connection signal="popup_hide" from="Tutorial/Popup1" to="." method="_on_Popup1_popup_hide"]
 [connection signal="popup_hide" from="Tutorial/Popup2" to="." method="_on_Popup2_popup_hide"]
 [connection signal="popup_hide" from="Tutorial/Popup3" to="." method="_on_Popup3_popup_hide"]
 [connection signal="popup_hide" from="Tutorial/Popup4" to="." method="_on_Popup4_popup_hide"]
+[connection signal="popup_hide" from="Tutorial/Popup5" to="." method="_on_Popup5_popup_hide"]
+[connection signal="popup_hide" from="Tutorial/Popup6" to="." method="_on_Popup6_popup_hide"]
+[connection signal="popup_hide" from="Tutorial/Popup7" to="." method="_on_Popup7_popup_hide"]
+[connection signal="popup_hide" from="Tutorial/Popup8" to="." method="_on_Popup8_popup_hide"]
+[connection signal="popup_hide" from="Tutorial/Popup9" to="." method="_on_Popup9_popup_hide"]

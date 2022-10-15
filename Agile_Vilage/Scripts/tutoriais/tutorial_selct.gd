@@ -3,7 +3,7 @@ extends Node
 func _ready():
 	if GlobalVar.tutorial:
 		$Objetivo/Iniciar_proj/BotaoProx.visible = true
-		$Tutorial/Popup0.popup()
+		$Tutorial/Popup0.popup_centered()
 
 func _on_Popup0_popup_hide():
 	$Tutorial/Popup1.popup()

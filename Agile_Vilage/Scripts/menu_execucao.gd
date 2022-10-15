@@ -3,6 +3,7 @@ extends Node
 var tempo = 30
 
 func _ready():
+	$Sprint.text = 'Sprint: ' + str(GlobalVar.sprint)
 	$Tempo_exec.text = 'Tempo: ' + str(tempo) + ' seg'
 	$Dia.text = 'Dia: ' + str(GlobalVar.dia)
 	GlobalVar.energia = GlobalVar.limite_energia
@@ -135,7 +136,7 @@ func _on_Obj_btn_pressed():
 	valida_objetivos()
 
 func _on_Obj_btn_mouse_entered():
-	$BotaoProx.position.y -= 10
+	$Obj_btn.rect_position.y -= 10
 
 func _on_Obj_btn_mouse_exited():
-	$BotaoProx.position.y += 10
+	$Obj_btn.rect_position.y += 10

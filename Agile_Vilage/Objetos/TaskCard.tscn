@@ -13,7 +13,7 @@ input_pickable = true
 script = ExtResource( 3 )
 
 [node name="TaskCard" type="Sprite" parent="."]
-position = Vector2( 70, 36 )
+position = Vector2( 70, 35 )
 scale = Vector2( 0.246501, 0.213178 )
 texture = ExtResource( 1 )
 

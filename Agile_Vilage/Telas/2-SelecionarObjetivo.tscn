@@ -55,7 +55,10 @@ margin_left = 530.0
 margin_top = 550.0
 margin_right = 830.0
 margin_bottom = 585.0
-text = "Indique a quantidade de Sprints necessárias para completar esse objetivo"
+hint_tooltip = "Cada Sprint possui 4 dias"
+mouse_filter = 1
+mouse_default_cursor_shape = 16
+text = "Quantidade de Sprints para completar o objetivo"
 
 [node name="QtdSprint" type="SpinBox" parent="Objetivo"]
 margin_left = 845.0
@@ -121,8 +124,8 @@ margin_left = 5.0
 margin_top = 10.0
 margin_right = 455.0
 margin_bottom = 110.0
-text = "Olá jogador/a! 
-Sejá bem vindo como o novo gerente de projeto (Scrum Master)  da nossa vila.
+text = "Olá, sejá bem vindo como o novo gerente de projeto (Scrum Master)  da nossa vila.
+
 Para iniciar verifique quais as principais necessidades que nossos aldeões (Product Owner) indicaram como sendo algum problema para a vila e selecione um para resolver (Objetivo)."
 align = 1
 valign = 1
@@ -195,7 +198,7 @@ margin_left = 5.0
 margin_top = 10.0
 margin_right = 205.0
 margin_bottom = 60.0
-text = "Quando tudo estiver pronto, clique na seta para avançar para a próxima etapa.."
+text = "Quando tudo estiver pronto, clique na seta para avançar para a próxima etapa."
 align = 1
 valign = 1
 autowrap = true

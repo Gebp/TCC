@@ -12,7 +12,7 @@ var re_e = RandomNumberGenerator.new()
 func _ready():
 	if GlobalVar.tutorial and GlobalVar.sprint == 0 and GlobalVar.dia == 1:
 		$Campos/Menu_lateral/T_exec.stop()
-		$Tutorial/Popup1.popup()
+		$Tutorial/Popup0.popup_centered()
 	# Condição para a sprint 0 ser a mais ideal possível
 	if GlobalVar.sprint > 0:
 		eventos()
@@ -50,6 +50,9 @@ func eventos():
 
 # Passagem dos tutoriais
 # -----------------------
+func _on_Popup0_popup_hide():
+	$Tutorial/Popup1.popup()
+
 func _on_Popup1_popup_hide():
 	$Tutorial/Popup2.popup()
 
@@ -58,7 +61,34 @@ func _on_Popup2_popup_hide():
 
 func _on_Popup3_popup_hide():
 	$Tutorial/Popup4.popup()
+	$Campos/Menu_lateral/PopObj.popup_centered()
 
 func _on_Popup4_popup_hide():
+	$Tutorial/Popup5.popup()
+	$Campos/Menu_lateral/PopObj.hide()
+
+func _on_Popup5_popup_hide():
+	$Tutorial/Popup6.popup()
+	$Campos/PopForja.popup_centered()
+
+func _on_Popup6_popup_hide():
+	$Tutorial/Popup7.popup()
+	$Campos/PopForja.hide()
+
+func _on_Popup7_popup_hide():
+	$Tutorial/Popup8.popup()
+	$Campos/PopVila.popup_centered()
+
+func _on_Popup8_popup_hide():
+	$Tutorial/Popup9.popup()
+	$Campos/PopVila.hide()
+
+func _on_Popup9_popup_hide():
 	$Campos/Menu_lateral/T_exec.start()
 # -----------------------
+
+func _on_Sprint_mouse_entered():
+	$Campos/Menu_lateral/Sprint.hint_tooltip = 'Sprint atual do Projeto: ' + str(GlobalVar.sprint) + '\nSprints previstas para o Projeto: ' + str(GlobalVar.qtd_sprint) + '\nSprints restantes para conclusão do Projeto: ' + str(GlobalVar.qtd_sprint - GlobalVar.sprint)
+
+func _on_Dia_mouse_entered():
+	$Campos/Menu_lateral/Dia.hint_tooltip = 'Dia ' + str(GlobalVar.dia) + ' de 4'
