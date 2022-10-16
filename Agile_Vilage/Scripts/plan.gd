@@ -5,6 +5,12 @@ var tasks = []
 var task_cards = GlobalVar.task
 
 func _ready():
+	if GlobalVar.sprint == 0:
+		$Encerrar.visible = false
+		$Encerrar.disabled = true
+	else:
+		$Encerrar.visible = true
+		$Encerrar.disabled = false
 	var v = 0
 	for task in task_cards:
 		var item = card.instance()
@@ -42,9 +48,14 @@ func _on_Popup2_popup_hide():
 	$Tutorial/Popup3.popup()
 
 func _on_Popup3_popup_hide():
+	$Encerrar.visible = true
 	$Tutorial/Popup4.popup()
 
 func _on_Popup4_popup_hide():
+	$Encerrar.visible = false
+	$Tutorial/Popup5.popup()
+
+func _on_Popup5_popup_hide():
 	$Cabecalho/T_plan.start()
 # -----------------------
 
@@ -56,3 +67,6 @@ func _on_Executar_mouse_entered():
 
 func _on_Executar_mouse_exited():
 	$Executar.modulate = 'ffffff'
+
+func _on_Encerrar_pressed():
+	get_tree().change_scene("res://Telas/5-Resultado.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Imagens/Background/mapa.jpg" type="Texture" id=1]
 [ext_resource path="res://Imagens/Background/Mesa.png" type="Texture" id=2]
@@ -6,13 +6,16 @@
 [ext_resource path="res://Scripts/Btn_scripts/btn_p4.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/menu_execucao.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Btn_scripts/btn_campos.gd" type="Script" id=6]
-[ext_resource path="res://Scripts/rdn_events.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/exec.gd" type="Script" id=7]
 [ext_resource path="res://styles/pop_up.tres" type="StyleBox" id=8]
 [ext_resource path="res://styles/pop_up_btn_hover.tres" type="StyleBox" id=9]
 [ext_resource path="res://styles/obj_progress.tres" type="Theme" id=10]
 [ext_resource path="res://styles/progress_bar.tres" type="Theme" id=11]
 [ext_resource path="res://styles/exec_pop_up.tres" type="Theme" id=12]
 [ext_resource path="res://styles/tutorial_pop_up.tres" type="Theme" id=13]
+[ext_resource path="res://Imagens/Outros/Folhinhas E.png" type="Texture" id=14]
+[ext_resource path="res://Imagens/Outros/Folhinhas D.png" type="Texture" id=15]
+[ext_resource path="res://styles/btn_encerrar.tres" type="Theme" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 66, 308 )
@@ -146,6 +149,17 @@ rect_pivot_offset = Vector2( -115, 211 )
 text = "xx/xx"
 align = 1
 valign = 1
+
+[node name="FolhinhasD" type="Sprite" parent="Campos/Menu_lateral/EnergiaBar/Energia"]
+modulate = Color( 0.658824, 1, 0.431373, 1 )
+position = Vector2( 105, 20 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 15 )
+
+[node name="FolhinhasE" type="Sprite" parent="Campos/Menu_lateral/EnergiaBar/Energia"]
+modulate = Color( 0.658824, 1, 0.431373, 1 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 14 )
 
 [node name="Recursos" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 5.0
@@ -945,6 +959,21 @@ position = Vector2( 40, 20 )
 scale = Vector2( 0.180131, 0.199761 )
 texture = ExtResource( 3 )
 
+[node name="Encerrar" type="Button" parent="."]
+margin_left = 945.0
+margin_top = 10.0
+margin_right = 1015.0
+margin_bottom = 30.0
+hint_tooltip = "Clique para encerrar o jogo antecipadamente"
+theme = ExtResource( 16 )
+
+[node name="Label" type="Label" parent="Encerrar"]
+margin_right = 70.0
+margin_bottom = 20.0
+text = "Encerrar"
+align = 1
+valign = 1
+
 [node name="Tutorial" type="CanvasLayer" parent="."]
 
 [node name="Popup0" type="PopupDialog" parent="Tutorial"]
@@ -1299,7 +1328,6 @@ align = 1
 valign = 1
 
 [node name="Popup8" type="PopupDialog" parent="Tutorial"]
-visible = true
 margin_left = 145.0
 margin_top = 50.0
 margin_right = 535.0
@@ -1321,13 +1349,34 @@ __meta__ = {
 }
 
 [node name="Popup9" type="PopupDialog" parent="Tutorial"]
+margin_left = 755.0
+margin_top = 40.0
+margin_right = 1015.0
+margin_bottom = 125.0
+theme = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="Tutorial/Popup9"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 255.0
+margin_bottom = 75.0
+text = "De forma semelhante à etapa de planejamento, a partir da Sprint 1 será disponibilizado um botão para encerrar o jogo de forma antecipada."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Popup10" type="PopupDialog" parent="Tutorial"]
 margin_left = 655.0
 margin_top = 390.0
 margin_right = 1015.0
 margin_bottom = 545.0
 theme = ExtResource( 13 )
 
-[node name="Label" type="Label" parent="Tutorial/Popup9"]
+[node name="Label" type="Label" parent="Tutorial/Popup10"]
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 5.0
 margin_top = 10.0
@@ -1370,6 +1419,7 @@ __meta__ = {
 [connection signal="mouse_entered" from="Continuar" to="Continuar" method="_on_Continuar_mouse_entered"]
 [connection signal="mouse_exited" from="Continuar" to="Continuar" method="_on_Continuar_mouse_exited"]
 [connection signal="pressed" from="Continuar" to="Continuar" method="_on_Continuar_pressed"]
+[connection signal="pressed" from="Encerrar" to="." method="_on_Encerrar_pressed"]
 [connection signal="popup_hide" from="Tutorial/Popup0" to="." method="_on_Popup0_popup_hide"]
 [connection signal="popup_hide" from="Tutorial/Popup1" to="." method="_on_Popup1_popup_hide"]
 [connection signal="popup_hide" from="Tutorial/Popup2" to="." method="_on_Popup2_popup_hide"]
@@ -1380,3 +1430,4 @@ __meta__ = {
 [connection signal="popup_hide" from="Tutorial/Popup7" to="." method="_on_Popup7_popup_hide"]
 [connection signal="popup_hide" from="Tutorial/Popup8" to="." method="_on_Popup8_popup_hide"]
 [connection signal="popup_hide" from="Tutorial/Popup9" to="." method="_on_Popup9_popup_hide"]
+[connection signal="popup_hide" from="Tutorial/Popup10" to="." method="_on_Popup10_popup_hide"]
