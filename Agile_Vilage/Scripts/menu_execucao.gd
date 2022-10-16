@@ -33,6 +33,8 @@ func _ready():
 	$Materiais/VidroBar.value = GlobalVar.vidro
 	$Materiais/MoedaBar.max_value = GlobalVar.limite_moeda
 	$Materiais/MoedaBar.value = GlobalVar.moeda
+	# Set nível de conhecimento
+	$Conhecimento/Nivel.text = 'Nível: ' + str(GlobalVar.conhecimento)
 	# Set valores iniciais e objetivos
 	$Construcoes/Casas.text = 'Casas: ' + str(GlobalVar.casas)
 	$Construcoes/Muros.text = 'Muros: ' + str(GlobalVar.muros)

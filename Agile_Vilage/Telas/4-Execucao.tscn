@@ -363,6 +363,23 @@ text = "xx/xx"
 align = 1
 valign = 2
 
+[node name="Conhecimento" type="Label" parent="Campos/Menu_lateral"]
+margin_left = 5.0
+margin_top = 345.0
+margin_right = 120.0
+margin_bottom = 360.0
+rect_pivot_offset = Vector2( 140, -20 )
+text = "Conhecimento"
+align = 1
+valign = 1
+
+[node name="Nivel" type="Label" parent="Campos/Menu_lateral/Conhecimento"]
+margin_top = 20.0
+margin_right = 105.0
+margin_bottom = 35.0
+rect_pivot_offset = Vector2( 140, -44 )
+text = "Nível: x"
+
 [node name="Construcoes" type="Label" parent="Campos/Menu_lateral"]
 margin_left = 5.0
 margin_top = 400.0
@@ -632,18 +649,18 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="PopVila" type="WindowDialog" parent="Campos"]
+[node name="PopVila1" type="WindowDialog" parent="Campos"]
 visible = true
-margin_left = 26.0
-margin_top = 643.0
-margin_right = 756.0
-margin_bottom = 968.0
+margin_left = 25.0
+margin_top = 645.0
+margin_right = 755.0
+margin_bottom = 970.0
 theme = ExtResource( 12 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Titulo" type="Label" parent="Campos/PopVila"]
+[node name="Titulo" type="Label" parent="Campos/PopVila1"]
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 25.0
 margin_top = 15.0
@@ -653,7 +670,19 @@ text = "Itens para construção"
 align = 1
 valign = 1
 
-[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila"]
+[node name="Pagina" type="TextureButton" parent="Campos/PopVila1"]
+margin_left = 665.0
+margin_top = 15.0
+margin_right = 705.0
+margin_bottom = 35.0
+mouse_default_cursor_shape = 2
+
+[node name="BotaoProx" type="Sprite" parent="Campos/PopVila1/Pagina"]
+scale = Vector2( 0.09, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila1"]
 margin_left = 25.0
 margin_top = 40.0
 margin_right = 705.0
@@ -663,10 +692,10 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="BtnCasa" type="Button" parent="Campos/PopVila"]
-margin_left = 25.0
+[node name="BtnCasa" type="Button" parent="Campos/PopVila1"]
+margin_left = 200.0
 margin_top = 55.0
-margin_right = 185.0
+margin_right = 360.0
 margin_bottom = 305.0
 hint_tooltip = "Clique para construir uma Casa"
 theme = SubResource( 8 )
@@ -674,7 +703,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="DetalheText" type="Label" parent="Campos/PopVila/BtnCasa"]
+[node name="DetalheText" type="Label" parent="Campos/PopVila1/BtnCasa"]
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 5.0
 margin_top = 35.0
@@ -684,11 +713,14 @@ text = "Construções que servirão de moradia para a população.
 
 Custo:
 8 Madeiras, 4 vidros e 5 Pedras
-5 Energias"
+5 Energias
+
+Conhecimento:
+Nível: 2"
 align = 1
 autowrap = true
 
-[node name="ItemText" type="Label" parent="Campos/PopVila/BtnCasa"]
+[node name="ItemText" type="Label" parent="Campos/PopVila1/BtnCasa"]
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 5.0
 margin_top = 5.0
@@ -698,17 +730,17 @@ text = "Casa"
 align = 1
 valign = 1
 
-[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila/BtnCasa"]
+[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila1/BtnCasa"]
 margin_left = 5.0
 margin_top = 30.0
 margin_right = 155.0
 margin_bottom = 31.0
 color = Color( 0.941176, 0, 0, 1 )
 
-[node name="BtnMuro" type="Button" parent="Campos/PopVila"]
-margin_left = 200.0
+[node name="BtnMuro" type="Button" parent="Campos/PopVila1"]
+margin_left = 25.0
 margin_top = 55.0
-margin_right = 360.0
+margin_right = 185.0
 margin_bottom = 305.0
 hint_tooltip = "Clique para construir um Muro"
 theme = SubResource( 8 )
@@ -716,7 +748,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="DetalheText" type="Label" parent="Campos/PopVila/BtnMuro"]
+[node name="DetalheText" type="Label" parent="Campos/PopVila1/BtnMuro"]
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 5.0
 margin_top = 35.0
@@ -726,11 +758,14 @@ text = "Construções que protegerão o vilarejo.
 
 Custo:
 4 Pedras e 2 Madeiras
-2 Energias"
+2 Energias
+
+Conhecimento:
+Nível: 1"
 align = 1
 autowrap = true
 
-[node name="ItemText" type="Label" parent="Campos/PopVila/BtnMuro"]
+[node name="ItemText" type="Label" parent="Campos/PopVila1/BtnMuro"]
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 5.0
 margin_top = 5.0
@@ -740,14 +775,14 @@ text = "Muro"
 align = 1
 valign = 1
 
-[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila/BtnMuro"]
+[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila1/BtnMuro"]
 margin_left = 5.0
 margin_top = 30.0
 margin_right = 155.0
 margin_bottom = 31.0
 color = Color( 0.941176, 0, 0, 1 )
 
-[node name="BtnTorre" type="Button" parent="Campos/PopVila"]
+[node name="BtnTorre" type="Button" parent="Campos/PopVila1"]
 margin_left = 370.0
 margin_top = 55.0
 margin_right = 530.0
@@ -758,7 +793,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="DetalheText" type="Label" parent="Campos/PopVila/BtnTorre"]
+[node name="DetalheText" type="Label" parent="Campos/PopVila1/BtnTorre"]
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 5.0
 margin_top = 35.0
@@ -768,11 +803,14 @@ text = "Construções que serão utilizadas pelos guardas para vigiar o vilarejo
 
 Custo:
 12 Pedras, 6 Madeiras e 5 Vidros
-6 Energias"
+6 Energias
+
+Conhecimento:
+Nível: 3"
 align = 1
 autowrap = true
 
-[node name="ItemText" type="Label" parent="Campos/PopVila/BtnTorre"]
+[node name="ItemText" type="Label" parent="Campos/PopVila1/BtnTorre"]
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 5.0
 margin_top = 5.0
@@ -782,14 +820,14 @@ text = "Torre"
 align = 1
 valign = 1
 
-[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila/BtnTorre"]
+[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila1/BtnTorre"]
 margin_left = 5.0
 margin_top = 30.0
 margin_right = 155.0
 margin_bottom = 31.0
 color = Color( 0.941176, 0, 0, 1 )
 
-[node name="BtnFazenda" type="Button" parent="Campos/PopVila"]
+[node name="BtnFazenda" type="Button" parent="Campos/PopVila1"]
 margin_left = 545.0
 margin_top = 55.0
 margin_right = 705.0
@@ -800,7 +838,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="DetalheText" type="Label" parent="Campos/PopVila/BtnFazenda"]
+[node name="DetalheText" type="Label" parent="Campos/PopVila1/BtnFazenda"]
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 5.0
 margin_top = 35.0
@@ -810,11 +848,14 @@ text = "Construções onde serão produzidos alimentos para a população.
 
 Custo:
 12 Madeiras, 4 Vidros e 4 Pedras
-6 Energias"
+6 Energias
+
+Conhecimento:
+Nível: 4"
 align = 1
 autowrap = true
 
-[node name="ItemText" type="Label" parent="Campos/PopVila/BtnFazenda"]
+[node name="ItemText" type="Label" parent="Campos/PopVila1/BtnFazenda"]
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 5.0
 margin_top = 5.0
@@ -824,7 +865,184 @@ text = "Fazenda"
 align = 1
 valign = 1
 
-[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila/BtnFazenda"]
+[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila1/BtnFazenda"]
+margin_left = 5.0
+margin_top = 30.0
+margin_right = 155.0
+margin_bottom = 31.0
+color = Color( 0.941176, 0, 0, 1 )
+
+[node name="PopVila2" type="WindowDialog" parent="Campos"]
+visible = true
+margin_left = 1175.0
+margin_top = 645.0
+margin_right = 1740.0
+margin_bottom = 970.0
+theme = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Titulo" type="Label" parent="Campos/PopVila2"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 25.0
+margin_top = 15.0
+margin_right = 535.0
+margin_bottom = 40.0
+text = "Melhorias"
+align = 1
+valign = 1
+
+[node name="Pagina" type="TextureButton" parent="Campos/PopVila2"]
+margin_left = 495.0
+margin_top = 15.0
+margin_right = 535.0
+margin_bottom = 35.0
+mouse_default_cursor_shape = 2
+
+[node name="BotaoProx" type="Sprite" parent="Campos/PopVila2/Pagina"]
+scale = Vector2( 0.09, 0.1 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila2"]
+margin_left = 25.0
+margin_top = 40.0
+margin_right = 535.0
+margin_bottom = 41.0
+color = Color( 0.941176, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BtnRecursos" type="Button" parent="Campos/PopVila2"]
+margin_left = 25.0
+margin_top = 55.0
+margin_right = 185.0
+margin_bottom = 305.0
+hint_tooltip = "Clique para aumentar o Limite de Recursos"
+theme = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DetalheText" type="Label" parent="Campos/PopVila2/BtnRecursos"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 35.0
+margin_right = 155.0
+margin_bottom = 245.0
+text = "Aumente o limite do armazenamento de seus recursos.
+
+Obs: O aumento será aleatório (1 ~3) para cada recurso
+
+Custo:
+8 Moedas
+4 Energias"
+align = 1
+autowrap = true
+
+[node name="ItemText" type="Label" parent="Campos/PopVila2/BtnRecursos"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 155.0
+margin_bottom = 30.0
+text = "Recursos"
+align = 1
+valign = 1
+
+[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila2/BtnRecursos"]
+margin_left = 5.0
+margin_top = 30.0
+margin_right = 155.0
+margin_bottom = 31.0
+color = Color( 0.941176, 0, 0, 1 )
+
+[node name="BtnMateriais" type="Button" parent="Campos/PopVila2"]
+margin_left = 200.0
+margin_top = 55.0
+margin_right = 360.0
+margin_bottom = 305.0
+hint_tooltip = "Clique para aumentar o Limite de Materiais"
+theme = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DetalheText" type="Label" parent="Campos/PopVila2/BtnMateriais"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 35.0
+margin_right = 155.0
+margin_bottom = 245.0
+text = "Aumente o limite do armazenamento de seus materiais.
+
+Obs: O aumento será aleatório (1 ~3) para cada material
+
+Custo:
+4 Moedas
+2 Energias"
+align = 1
+autowrap = true
+
+[node name="ItemText" type="Label" parent="Campos/PopVila2/BtnMateriais"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 155.0
+margin_bottom = 30.0
+text = "Materiais"
+align = 1
+valign = 1
+
+[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila2/BtnMateriais"]
+margin_left = 5.0
+margin_top = 30.0
+margin_right = 155.0
+margin_bottom = 31.0
+color = Color( 0.941176, 0, 0, 1 )
+
+[node name="BtnConhecimento" type="Button" parent="Campos/PopVila2"]
+margin_left = 375.0
+margin_top = 55.0
+margin_right = 535.0
+margin_bottom = 305.0
+hint_tooltip = "Clique para aumentar o Nível de Conhecimento"
+theme = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DetalheText" type="Label" parent="Campos/PopVila2/BtnConhecimento"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 35.0
+margin_right = 155.0
+margin_bottom = 245.0
+text = "Adquira conhecimento e desbloqueie:
+
+Conhecimento II - Casa
+Conhecimento III - Torre
+Conhecimento IV - Fazenda
+
+Custo:
+3 Moedas * nivel
+2 Energias * nivel"
+align = 1
+autowrap = true
+
+[node name="ItemText" type="Label" parent="Campos/PopVila2/BtnConhecimento"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 155.0
+margin_bottom = 30.0
+text = "Conhecimento"
+align = 1
+valign = 1
+
+[node name="LinhaVermelha" type="ColorRect" parent="Campos/PopVila2/BtnConhecimento"]
 margin_left = 5.0
 margin_top = 30.0
 margin_right = 155.0
@@ -833,10 +1051,10 @@ color = Color( 0.941176, 0, 0, 1 )
 
 [node name="PopForja" type="WindowDialog" parent="Campos"]
 visible = true
-margin_left = 772.0
-margin_top = 644.0
-margin_right = 1162.0
-margin_bottom = 969.0
+margin_left = 770.0
+margin_top = 645.0
+margin_right = 1160.0
+margin_bottom = 970.0
 theme = ExtResource( 12 )
 __meta__ = {
 "_edit_lock_": true
@@ -1052,9 +1270,9 @@ __meta__ = {
 
 [node name="Popup3" type="PopupDialog" parent="Tutorial"]
 margin_left = 135.0
-margin_top = 400.0
+margin_top = 345.0
 margin_right = 395.0
-margin_bottom = 520.0
+margin_bottom = 550.0
 theme = ExtResource( 13 )
 
 [node name="Label" type="Label" parent="Tutorial/Popup3"]
@@ -1062,8 +1280,10 @@ self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 5.0
 margin_top = 10.0
 margin_right = 255.0
-margin_bottom = 110.0
-text = "A última seção mostra a quantidade de construções realizadas.
+margin_bottom = 195.0
+text = "As duas últimas seções mostram o nível de conhecimento do vilarejo e a quantidade de construções realizadas.
+
+O nível de conhecimento determina queal tipo de construção que poderá ser feita.
 
 As construções estão atreladas ao objetivo selecionado e podem ser escolhidas clicando na 'Vila'."
 align = 1
@@ -1330,7 +1550,7 @@ valign = 1
 [node name="Popup8" type="PopupDialog" parent="Tutorial"]
 margin_left = 145.0
 margin_top = 50.0
-margin_right = 535.0
+margin_right = 555.0
 margin_bottom = 135.0
 theme = ExtResource( 13 )
 
@@ -1338,9 +1558,9 @@ theme = ExtResource( 13 )
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 5.0
 margin_top = 10.0
-margin_right = 385.0
+margin_right = 405.0
 margin_bottom = 75.0
-text = "A tela de seleção de construções funciona de forma bem similar a de Materiais, ou seja, apresenta o que é necessário para cada item e bloqueia a seleção conforme disponibilidade de recursos, materiais e energia."
+text = "A tela de seleção de construções possui 2 páginas e funciona de forma bem similar a de Materiais, ou seja, apresenta o que é necessário para cada item e bloqueia a seleção conforme disponibilidade de recursos, materiais e energia."
 align = 1
 valign = 1
 autowrap = true
@@ -1349,13 +1569,37 @@ __meta__ = {
 }
 
 [node name="Popup9" type="PopupDialog" parent="Tutorial"]
+margin_left = 145.0
+margin_top = 50.0
+margin_right = 705.0
+margin_bottom = 135.0
+theme = ExtResource( 13 )
+
+[node name="Label" type="Label" parent="Tutorial/Popup9"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 555.0
+margin_bottom = 60.0
+text = "A segunda tela, mostra as melhorias que podem ser feitas e poderão auxiliar no jogo.
+
+Ambas para aumentar os limites são completamente opcionais.
+A melhoria de conhecimento é necessárias para desbloquear as construções."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Popup10" type="PopupDialog" parent="Tutorial"]
 margin_left = 755.0
 margin_top = 40.0
 margin_right = 1015.0
 margin_bottom = 125.0
 theme = ExtResource( 13 )
 
-[node name="Label" type="Label" parent="Tutorial/Popup9"]
+[node name="Label" type="Label" parent="Tutorial/Popup10"]
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 5.0
 margin_top = 10.0
@@ -1369,14 +1613,14 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Popup10" type="PopupDialog" parent="Tutorial"]
+[node name="Popup11" type="PopupDialog" parent="Tutorial"]
 margin_left = 655.0
 margin_top = 390.0
 margin_right = 1015.0
 margin_bottom = 545.0
 theme = ExtResource( 13 )
 
-[node name="Label" type="Label" parent="Tutorial/Popup10"]
+[node name="Label" type="Label" parent="Tutorial/Popup11"]
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 5.0
 margin_top = 10.0
@@ -1408,12 +1652,19 @@ __meta__ = {
 [connection signal="pressed" from="Campos/BtnCarvao" to="Campos" method="_on_BtnCarvao_pressed"]
 [connection signal="pressed" from="Campos/BtnVila" to="Campos" method="_on_BtnVila_pressed"]
 [connection signal="pressed" from="Campos/BtnForja" to="Campos" method="_on_BtnForja_pressed"]
-[connection signal="popup_hide" from="Campos/PopVila" to="Campos/PopVila" method="_on_PopVila_popup_hide"]
-[connection signal="pressed" from="Campos/PopVila/BtnCasa" to="Campos" method="_on_BtnCasa_pressed"]
-[connection signal="pressed" from="Campos/PopVila/BtnMuro" to="Campos" method="_on_BtnMuro_pressed"]
-[connection signal="pressed" from="Campos/PopVila/BtnTorre" to="Campos" method="_on_BtnTorre_pressed"]
-[connection signal="pressed" from="Campos/PopVila/BtnFazenda" to="Campos" method="_on_BtnFazenda_pressed"]
-[connection signal="popup_hide" from="Campos/PopForja" to="Campos/PopForja" method="_on_PopVila_popup_hide"]
+[connection signal="mouse_entered" from="Campos/PopVila1/Pagina" to="Campos" method="_on_Pagina_mouse_entered"]
+[connection signal="mouse_exited" from="Campos/PopVila1/Pagina" to="Campos" method="_on_Pagina_mouse_exited"]
+[connection signal="pressed" from="Campos/PopVila1/Pagina" to="Campos" method="_on_Pagina_pressed"]
+[connection signal="pressed" from="Campos/PopVila1/BtnCasa" to="Campos" method="_on_BtnCasa_pressed"]
+[connection signal="pressed" from="Campos/PopVila1/BtnMuro" to="Campos" method="_on_BtnMuro_pressed"]
+[connection signal="pressed" from="Campos/PopVila1/BtnTorre" to="Campos" method="_on_BtnTorre_pressed"]
+[connection signal="pressed" from="Campos/PopVila1/BtnFazenda" to="Campos" method="_on_BtnFazenda_pressed"]
+[connection signal="mouse_entered" from="Campos/PopVila2/Pagina" to="Campos" method="_on_Pagina_mouse_entered"]
+[connection signal="mouse_exited" from="Campos/PopVila2/Pagina" to="Campos" method="_on_Pagina_mouse_exited"]
+[connection signal="pressed" from="Campos/PopVila2/Pagina" to="Campos" method="_on_Pagina_pressed"]
+[connection signal="pressed" from="Campos/PopVila2/BtnRecursos" to="Campos" method="_on_BtnRecursos_pressed"]
+[connection signal="pressed" from="Campos/PopVila2/BtnMateriais" to="Campos" method="_on_BtnMateriais_pressed"]
+[connection signal="pressed" from="Campos/PopVila2/BtnConhecimento" to="Campos" method="_on_BtnConhecimento_pressed"]
 [connection signal="pressed" from="Campos/PopForja/BtnVidro" to="Campos" method="_on_BtnVidro_pressed"]
 [connection signal="pressed" from="Campos/PopForja/BtnMoeda" to="Campos" method="_on_BtnMoeda_pressed"]
 [connection signal="mouse_entered" from="Continuar" to="Continuar" method="_on_Continuar_mouse_entered"]
@@ -1431,3 +1682,4 @@ __meta__ = {
 [connection signal="popup_hide" from="Tutorial/Popup8" to="." method="_on_Popup8_popup_hide"]
 [connection signal="popup_hide" from="Tutorial/Popup9" to="." method="_on_Popup9_popup_hide"]
 [connection signal="popup_hide" from="Tutorial/Popup10" to="." method="_on_Popup10_popup_hide"]
+[connection signal="popup_hide" from="Tutorial/Popup11" to="." method="_on_Popup11_popup_hide"]

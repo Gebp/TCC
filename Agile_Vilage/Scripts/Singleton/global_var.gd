@@ -50,3 +50,28 @@ var obj = 0
 # Tasks
 var task = []
 
+# Validadores de resultado e eventos
+var bonus_energia = 0
+var onus_energia = 0
+var encerramento = false
+var micro_eventos = 0
+var eventos_inevitaveis = 0
+var eventos_selecionaveis = 0
+var t_energia = 10
+var t_madeira = 0
+var t_pedra = 0
+var t_areia = 0
+var t_minerais = 0
+var t_carvao = 0
+var t_vidro = 0
+var t_moeda = 0
+
+# Melhorias
+var a_limite_madeira = 0
+var a_limite_pedra = 0
+var a_limite_areia = 0
+var a_limite_minerais = 0
+var a_limite_carvao = 0
+var a_limite_vidro = 0
+var a_limite_moeda = 0
+var conhecimento = 1

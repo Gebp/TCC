@@ -69,4 +69,5 @@ func _on_Executar_mouse_exited():
 	$Executar.modulate = 'ffffff'
 
 func _on_Encerrar_pressed():
+	GlobalVar.sprint -= 1
 	get_tree().change_scene("res://Telas/5-Resultado.tscn")

@@ -40,6 +40,30 @@ func _on_Reiniciar_pressed():
 	GlobalVar.obj_fazendas = 0
 	# Validador do objetivo selecionado
 	GlobalVar.obj = 0
+	# Validadores de resultado e eventos
+	GlobalVar.bonus_energia = 0
+	GlobalVar.onus_energia = 0
+	GlobalVar.encerramento = false
+	GlobalVar.micro_eventos = 0
+	GlobalVar.eventos_inevitaveis = 0
+	GlobalVar.eventos_selecionaveis = 0
+	GlobalVar.t_energia = 10
+	GlobalVar.t_madeira = 0
+	GlobalVar.t_pedra = 0
+	GlobalVar.t_areia = 0
+	GlobalVar.t_minerais = 0
+	GlobalVar.t_carvao = 0
+	GlobalVar.t_vidro = 0
+	GlobalVar.t_moeda = 0
+	# Melhorias
+	GlobalVar.a_limite_madeira = 0
+	GlobalVar.a_limite_pedra = 0
+	GlobalVar.a_limite_areia = 0
+	GlobalVar.a_limite_minerais = 0
+	GlobalVar.a_limite_carvao = 0
+	GlobalVar.a_limite_vidro = 0
+	GlobalVar.a_limite_moeda = 0
+	GlobalVar.conhecimento = 1
 	get_tree().change_scene("res://Telas/1-MenuInicial.tscn")
 
 func _on_Reiniciar_mouse_entered():

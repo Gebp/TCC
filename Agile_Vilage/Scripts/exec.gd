@@ -44,14 +44,24 @@ func eventos():
 	re_o = prob_random()
 	# eventos negativos
 	if re_o >= 45:
-		GlobalVar.limite_energia -= energia_random()
+		GlobalVar.micro_eventos += 1
+		var red_energia = energia_random()
+		var limite_anterior = GlobalVar.limite_energia
+		GlobalVar.limite_energia -= red_energia
 		if GlobalVar.limite_energia <= 0:
+			var dif = 1 - limite_anterior
 			GlobalVar.limite_energia = 1
+			GlobalVar.onus_energia += abs(dif)
+		else:
+			GlobalVar.onus_energia += red_energia
 	
 	re_b = prob_random()
 	# eventos positivos
 	if re_b >= 45:
-		GlobalVar.limite_energia += energia_random()
+		GlobalVar.micro_eventos += 1
+		var add_energia = energia_random()
+		GlobalVar.limite_energia += add_energia
+		GlobalVar.bonus_energia += add_energia
 
 # Passagem dos tutoriais
 # -----------------------
@@ -82,18 +92,23 @@ func _on_Popup6_popup_hide():
 
 func _on_Popup7_popup_hide():
 	$Tutorial/Popup8.popup()
-	$Campos/PopVila.popup_centered()
+	$Campos/PopVila1.popup_centered()
 
 func _on_Popup8_popup_hide():
 	$Tutorial/Popup9.popup()
-	$Campos/PopVila.hide()
-	$Encerrar.visible = true
+	$Campos/PopVila1.hide()
+	$Campos/PopVila2.popup_centered()
 
 func _on_Popup9_popup_hide():
-	$Encerrar.visible = false
+	$Encerrar.visible = true
 	$Tutorial/Popup10.popup()
+	$Campos/PopVila2.hide()
 
 func _on_Popup10_popup_hide():
+	$Encerrar.visible = false
+	$Tutorial/Popup11.popup()
+
+func _on_Popup11_popup_hide():
 	$Campos/Menu_lateral/T_exec.start()
 # -----------------------
 
@@ -104,4 +119,8 @@ func _on_Dia_mouse_entered():
 	$Campos/Menu_lateral/Dia.hint_tooltip = 'Dia ' + str(GlobalVar.dia) + ' de 4'
 
 func _on_Encerrar_pressed():
-	get_tree().change_scene("res://Telas/5-Resultado.tscn")
+	if GlobalVar.dia < 4:
+		GlobalVar.sprint -= 1
+		get_tree().change_scene("res://Telas/5-Resultado.tscn")
+	else:
+		get_tree().change_scene("res://Telas/5-Resultado.tscn")
