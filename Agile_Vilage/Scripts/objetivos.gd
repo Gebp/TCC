@@ -36,6 +36,7 @@ func _on_ListaObj_item_selected(index):
 		$TextObj.text = str('Quantidade inicial de energia/ Ações por dia: 10\n\n--------------------------------------------------------------------------------------------\n\nConstruções:\n\n3 casas\n\n--------------------------------------------------------------------------------------------\n\nCustos:\n\n1 Casa = 8 Madeiras + 4 Vidros + 5 Pedras + 5 Energias\n\n1 Vidro = 5 Areias + 2 Carvões + 2 Energias')
 		GlobalVar.obj_casas = 3
 		GlobalVar.task = ['Task 1', 'Task 2', 'Task 3', 'Task 4']
+		GlobalVar.pos = [[35, 495], [35, 495], [35, 495], [35, 495]]
 	if i == 1:
 		$Mensagem_inicial/TextoIntro.bbcode_text = texto_padrao + "Entretanto, durante esse período de teste, uma das famílias mais antigas e renomadas do vilarejo irá casar sua filha e pretende tornar o casamento um grande evento, além de presentear o casal com uma casa.\n\nA família do rapaz é de outra região e todos pretendem se mudar para este vilarejo logo após o casamento\n\nPara receber suporte dessas duas famílias muito influentes, construa a casa que será o presente para os noivos e uma casa para a nova família que está vindo, ambas protegidas por muros."
 		# Aconteu um casamento na vila e os pais da noiva querem fazer uma surpresa presenteando os casal com uma casa nova.
@@ -43,6 +44,7 @@ func _on_ListaObj_item_selected(index):
 		GlobalVar.obj_casas = 2
 		GlobalVar.obj_muros = 4
 		GlobalVar.task = ['Task 1', 'Task 2', 'Task 3', 'Task 4', 'Task 5', 'Task 6']
+		GlobalVar.pos = [[35, 495], [35, 495], [35, 495], [35, 495], [35, 495], [35, 495]]
 	if i == 2:
 		$Mensagem_inicial/TextoIntro.bbcode_text = texto_padrao + "Pouco tempo antes de você ser chamado e seu período de testes inciair, recebemos diversos pedidos de ajuda e reclamações da vilarejo, por conta do aumento na quantidade de invasões e saqueamentos no vilarejo\n\nSabemos, porém, que esse não é um problema exclusivo do vilarejo, mas sim um problema generalizado que tem afetado todo o reino e por conta disso, tem sido enviado para cada vilarejo um general, junto de sua família, que será responsável por gerir a segurança do local\n\nPara auxiliar esse general construa uma moradia, visto que ele ficará por tempo indeterminado, e algumas torres e muros, para que a população se sinta mais segura."
 		# A cidade vila tem crescido e properado, mas isso atraiu novos invasores por isso se tornou necessário aumentar a defesa.
@@ -51,6 +53,7 @@ func _on_ListaObj_item_selected(index):
 		GlobalVar.obj_muros = 6
 		GlobalVar.obj_torres = 2
 		GlobalVar.task = ['Task 1', 'Task 2', 'Task 3', 'Task 4', 'Task 5', 'Task 6', 'Task 7', 'Task 8']
+		GlobalVar.pos = [[35, 495], [35, 495], [35, 495], [35, 495], [35, 495], [35, 495], [35, 495], [35, 495]]
 	if i == 3:
 		$Mensagem_inicial/TextoIntro.bbcode_text = texto_padrao + "Como você sabe, o vilarejo ainda é relativamente pequeno, mas a região a sua volta possui muitos recursos a serem explorados e o solo é extremamente fértil.\n\nSabendo disso, um grande fazendeiro pretende se mudar para essas terras, para fugir do solo sem vida onde se encontra atualmente, em busca de recuperar as riquezas e o reconhecimento que possuia .Para isso, irá trazer consigo sua família e seus trabalhadores\n\nEsse fazendeiro prega muito pela segurança de seus familiares e de seus subordinados, portanto ele gostaria que alguns guardas fixos para que cuidem de suas propriedades\n\nPara ajudar esse novos fazendeiro a se estabelecer e se sentir seguro construa casas para ele e seus subordinados, vários muros e torres para que as propriedades estejam seguras e algumas fazendas, para que ele possa gerir"
 		# Um grande fazendeiro se mudou para a vila, e quer trazer sua familia e trabalhadores junto e vai precisar de onde se estabelecer.
@@ -60,6 +63,7 @@ func _on_ListaObj_item_selected(index):
 		GlobalVar.obj_torres = 3
 		GlobalVar.obj_fazendas = 2
 		GlobalVar.task = ['Task 1', 'Task 2', 'Task 3', 'Task 4', 'Task 5', 'Task 6', 'Task 7', 'Task 8', 'Task 9', 'Task 10']
+		GlobalVar.pos = [[35, 495], [35, 495], [35, 495], [35, 495], [35, 495], [35, 495], [35, 495], [35, 495], [35, 495], [35, 495]]
 
 func _on_QtdSprint_value_changed(value):
 	GlobalVar.qtd_sprint = value

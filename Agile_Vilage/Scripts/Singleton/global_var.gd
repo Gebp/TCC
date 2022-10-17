@@ -49,6 +49,7 @@ var obj = 0
 
 # Tasks
 var task = []
+var pos = []
 
 # Validadores de resultado e eventos
 var bonus_energia = 0

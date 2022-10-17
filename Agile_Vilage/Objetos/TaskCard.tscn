@@ -7,7 +7,7 @@
 extents = Vector2( 77.5, 39 )
 
 [node name="Card" type="KinematicBody2D"]
-position = Vector2( 35, 496 )
+position = Vector2( 35, 495 )
 collision_layer = 2
 input_pickable = true
 script = ExtResource( 3 )

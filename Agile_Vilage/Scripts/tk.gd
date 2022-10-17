@@ -22,10 +22,21 @@ func _input(event):
 	elif event is InputEventMouseMotion:
 		if dragging:
 			newPosition = get_viewport().get_mouse_position() - draggingDistance * dir
+			altera_pos(newPosition)
 
 func _physics_process(delta):
 	if dragging:
 		move_and_slide((newPosition - position) * Vector2(30, 30))
+
+func altera_pos(newPosition):
+	var item = $Texto.text
+	var i = 0
+	for n in GlobalVar.task:
+		if n == item:
+			break
+		else:
+			i += 1
+	GlobalVar.pos[i] = newPosition
 
 func chosen():
 	chosen = true

@@ -153,3 +153,6 @@ func eventos_selecionaveis():
 func feedback():
 	$Resultados/Feedback/Texto.bbcode_enabled = true
 	$Resultados/Feedback/Texto.bbcode_text = ''
+
+func valida_result():
+	return ''

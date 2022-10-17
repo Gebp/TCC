@@ -15,6 +15,8 @@ func _ready():
 	for task in task_cards:
 		var item = card.instance()
 		item.get_children()[-1].text = task_cards[v]
+		item.position.x = GlobalVar.pos[v][0]
+		item.position.y = GlobalVar.pos[v][1]
 		add_child(item)
 		add_task(item)
 		v += 1
