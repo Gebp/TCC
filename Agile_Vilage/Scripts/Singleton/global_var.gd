@@ -58,6 +58,7 @@ var encerramento = false
 var micro_eventos = 0
 var eventos_inevitaveis = 0
 var eventos_selecionaveis = 0
+# Validadores do total
 var t_energia = 10
 var t_madeira = 0
 var t_pedra = 0
@@ -66,6 +67,16 @@ var t_minerais = 0
 var t_carvao = 0
 var t_vidro = 0
 var t_moeda = 0
+# Validadores de completude [completo, sprint]
+var c_obj_casas = [false, 0]
+var c_obj_torres = [false, 0]
+var c_obj_muros = [false, 0]
+var c_obj_fazendas = [false, 0]
+# Quantidade de vezes para refazer
+var r_obj_casas = 0
+var r_obj_torres = 0
+var r_obj_muros = 0
+var r_obj_fazendas = 0
 
 # Melhorias
 var a_limite_madeira = 0

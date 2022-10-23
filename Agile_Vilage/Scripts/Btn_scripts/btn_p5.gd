@@ -47,6 +47,7 @@ func _on_Reiniciar_pressed():
 	GlobalVar.micro_eventos = 0
 	GlobalVar.eventos_inevitaveis = 0
 	GlobalVar.eventos_selecionaveis = 0
+	# Validadores do total
 	GlobalVar.t_energia = 10
 	GlobalVar.t_madeira = 0
 	GlobalVar.t_pedra = 0
@@ -55,6 +56,16 @@ func _on_Reiniciar_pressed():
 	GlobalVar.t_carvao = 0
 	GlobalVar.t_vidro = 0
 	GlobalVar.t_moeda = 0
+	# Validadores de completude [completo, sprint]
+	GlobalVar.c_obj_casas = [false, 0]
+	GlobalVar.c_obj_torres = [false, 0]
+	GlobalVar.c_obj_muros = [false, 0]
+	GlobalVar.c_obj_fazendas = [false, 0]
+	# Quantidade de vezes para refazer
+	GlobalVar.r_obj_casas = 0
+	GlobalVar.r_obj_torres = 0
+	GlobalVar.r_obj_muros = 0
+	GlobalVar.r_obj_fazendas = 0
 	# Melhorias
 	GlobalVar.a_limite_madeira = 0
 	GlobalVar.a_limite_pedra = 0

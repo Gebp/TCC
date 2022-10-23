@@ -8,6 +8,7 @@ var newPosition = Vector2()
 var mouse_in = false
 var chosen = false
 
+# Evento para movimentação do cartão
 func _input(event):
 	if event is InputEventMouseButton:
 		if chosen and event.is_pressed() && mouse_in:
@@ -28,6 +29,7 @@ func _physics_process(delta):
 	if dragging:
 		move_and_slide((newPosition - position) * Vector2(30, 30))
 
+# Armazena a nova posição do cartão
 func altera_pos(newPosition):
 	var item = $Texto.text
 	var i = 0

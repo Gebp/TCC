@@ -215,6 +215,11 @@ func _on_BtnCasa_pressed():
 	else:
 		$PopVila1/BtnCasa.disabled = false
 		$PopVila1/BtnCasa.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	# Valida se o objetivo foi completado e a quantidade de vezes
+	if GlobalVar.casas == GlobalVar.obj_casas and GlobalVar.c_obj_casas[0] != true:
+		GlobalVar.c_obj_casas = [true, GlobalVar.sprint]
+	elif GlobalVar.casas == GlobalVar.obj_casas and GlobalVar.c_obj_casas[0] == true:
+		GlobalVar.r_obj_casas += 1
 
 func _on_BtnMuro_pressed():
 	# 4 Pedras + 2 Madeiras + 2 Energias
@@ -236,6 +241,11 @@ func _on_BtnMuro_pressed():
 	else:
 		$PopVila1/BtnMuro.disabled = false
 		$PopVila1/BtnMuro.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	# Valida se o objetivo foi completado e a quantidade de vezes
+	if GlobalVar.muros == GlobalVar.obj_muros and GlobalVar.c_obj_muros[0] != true:
+		GlobalVar.c_obj_muros = [true, GlobalVar.sprint]
+	elif GlobalVar.muros == GlobalVar.obj_muros and GlobalVar.c_obj_muros[0] == true:
+		GlobalVar.r_obj_muros += 1
 
 func _on_BtnTorre_pressed():
 	# 12 Pedras + 6 Madeiras + 5 Vidros + 6 Energias
@@ -260,6 +270,11 @@ func _on_BtnTorre_pressed():
 	else:
 		$PopVila1/BtnTorre.disabled = false
 		$PopVila1/BtnTorre.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	# Valida se o objetivo foi completado e a quantidade de vezes
+	if GlobalVar.torres == GlobalVar.obj_torres and GlobalVar.c_obj_torres[0] != true:
+		GlobalVar.c_obj_torres = [true, GlobalVar.sprint]
+	elif GlobalVar.torres == GlobalVar.obj_torres and GlobalVar.c_obj_torres[0] == true:
+		GlobalVar.r_obj_torres += 1
 
 func _on_BtnFazenda_pressed():
 	# 12 Madeiras + 4 Vidros + 4 Pedras + 6 Energias
@@ -284,6 +299,11 @@ func _on_BtnFazenda_pressed():
 	else:
 		$PopVila1/BtnFazenda.disabled = false
 		$PopVila1/BtnFazenda.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	# Valida se o objetivo foi completado e a quantidade de vezes
+	if GlobalVar.fazendas == GlobalVar.obj_fazendas and GlobalVar.c_obj_fazendas[0] != true:
+		GlobalVar.c_obj_fazendas = [true, GlobalVar.sprint]
+	elif GlobalVar.fazendas == GlobalVar.obj_fazendas and GlobalVar.c_obj_fazendas[0] == true:
+		GlobalVar.r_obj_fazendas += 1
 
 # Botões de Melhorias
 func _on_BtnRecursos_pressed():
