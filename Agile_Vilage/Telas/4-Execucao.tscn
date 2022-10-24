@@ -1659,10 +1659,126 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Eventos" type="CanvasLayer" parent="."]
+
+[node name="PopOnus" type="WindowDialog" parent="Eventos"]
+margin_left = 175.0
+margin_top = 55.0
+margin_right = 485.0
+margin_bottom = 330.0
+theme = ExtResource( 12 )
+
+[node name="Titulo" type="Label" parent="Eventos/PopOnus"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 25.0
+margin_top = 15.0
+margin_right = 275.0
+margin_bottom = 40.0
+text = "Alerta de Destruição"
+align = 1
+valign = 1
+
+[node name="LinhaVermelha" type="ColorRect" parent="Eventos/PopOnus"]
+margin_left = 25.0
+margin_top = 40.0
+margin_right = 275.0
+margin_bottom = 41.0
+color = Color( 0.941176, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DetalheText" type="Label" parent="Eventos/PopOnus"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 25.0
+margin_top = 50.0
+margin_right = 275.0
+margin_bottom = 250.0
+text = "Notificação"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="PopBonus" type="WindowDialog" parent="Eventos"]
+margin_left = 580.0
+margin_top = 310.0
+margin_right = 890.0
+margin_bottom = 585.0
+theme = ExtResource( 12 )
+
+[node name="Titulo" type="Label" parent="Eventos/PopBonus"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 25.0
+margin_top = 15.0
+margin_right = 275.0
+margin_bottom = 40.0
+text = "Mercador Ambulante"
+align = 1
+valign = 1
+
+[node name="LinhaVermelha" type="ColorRect" parent="Eventos/PopBonus"]
+margin_left = 25.0
+margin_top = 40.0
+margin_right = 275.0
+margin_bottom = 41.0
+color = Color( 0.941176, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DetalheText" type="Label" parent="Eventos/PopBonus"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 25.0
+margin_top = 50.0
+margin_right = 275.0
+margin_bottom = 225.0
+text = "Informações de venda"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="BtnConfirma" type="Button" parent="Eventos/PopBonus"]
+margin_left = 25.0
+margin_top = 230.0
+margin_right = 140.0
+margin_bottom = 255.0
+hint_tooltip = "Clique para fazer Vidro"
+theme = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ItemText" type="Label" parent="Eventos/PopBonus/BtnConfirma"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_right = 115.0
+margin_bottom = 25.0
+text = "Aceitar"
+align = 1
+valign = 1
+
+[node name="BtnRecusa" type="Button" parent="Eventos/PopBonus"]
+margin_left = 160.0
+margin_top = 230.0
+margin_right = 275.0
+margin_bottom = 255.0
+hint_tooltip = "Clique para fazer Moeda"
+theme = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ItemText" type="Label" parent="Eventos/PopBonus/BtnRecusa"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_right = 115.0
+margin_bottom = 25.0
+text = "Recusar"
+align = 1
+valign = 1
+
 [connection signal="mouse_entered" from="Campos/Menu_lateral/Sprint" to="." method="_on_Sprint_mouse_entered"]
 [connection signal="mouse_entered" from="Campos/Menu_lateral/Dia" to="." method="_on_Dia_mouse_entered"]
-[connection signal="timeout" from="Campos/Menu_lateral/T_exec" to="Campos/Menu_lateral" method="_on_T_exec_timeout"]
 [connection signal="timeout" from="Campos/Menu_lateral/T_exec" to="Campos/Menu_lateral" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Campos/Menu_lateral/T_exec" to="Campos/Menu_lateral" method="_on_T_exec_timeout"]
 [connection signal="mouse_entered" from="Campos/Menu_lateral/Obj_btn" to="Campos/Menu_lateral" method="_on_Obj_btn_mouse_entered"]
 [connection signal="mouse_exited" from="Campos/Menu_lateral/Obj_btn" to="Campos/Menu_lateral" method="_on_Obj_btn_mouse_exited"]
 [connection signal="pressed" from="Campos/Menu_lateral/Obj_btn" to="Campos/Menu_lateral" method="_on_Obj_btn_pressed"]

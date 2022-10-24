@@ -215,6 +215,27 @@ func _on_BtnCasa_pressed():
 	else:
 		$PopVila1/BtnCasa.disabled = false
 		$PopVila1/BtnCasa.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	if GlobalVar.energia < 2 or GlobalVar.madeira < 2 or GlobalVar.pedra < 4:
+		$PopVila1/BtnMuro.hint_tooltip = 'Sem Materiais, Recursos ou Energia suficiente'
+		$PopVila1/BtnMuro.disabled = true
+		$PopVila1/BtnMuro.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+	else:
+		$PopVila1/BtnMuro.disabled = false
+		$PopVila1/BtnMuro.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	if GlobalVar.energia < 6 or GlobalVar.madeira < 6 or GlobalVar.pedra < 12 or GlobalVar.vidro < 5:
+		$PopVila1/BtnTorre.hint_tooltip = 'Sem Materiais, Recursos ou Energia suficiente'
+		$PopVila1/BtnTorre.disabled = true
+		$PopVila1/BtnTorre.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+	else:
+		$PopVila1/BtnTorre.disabled = false
+		$PopVila1/BtnTorre.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	if GlobalVar.energia < 6 or GlobalVar.madeira < 12 or GlobalVar.pedra < 4 or GlobalVar.vidro < 4:
+		$PopVila1/BtnFazenda.hint_tooltip = 'Sem Materiais, Recursos ou Energia suficiente'
+		$PopVila1/BtnFazenda.disabled = true
+		$PopVila1/BtnFazenda.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+	else:
+		$PopVila1/BtnFazenda.disabled = false
+		$PopVila1/BtnFazenda.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	# Valida se o objetivo foi completado e a quantidade de vezes
 	if GlobalVar.casas == GlobalVar.obj_casas and GlobalVar.c_obj_casas[0] != true:
 		GlobalVar.c_obj_casas = [true, GlobalVar.sprint]
@@ -234,6 +255,13 @@ func _on_BtnMuro_pressed():
 		$Menu_lateral/Construcoes/Muros.text = 'Muros: ' + str(GlobalVar.muros)
 		reduzir_energia(2)
 	# Disable automático
+	if GlobalVar.energia < 5 or GlobalVar.madeira < 8 or GlobalVar.pedra < 5 or GlobalVar.vidro < 4:
+		$PopVila1/BtnCasa.hint_tooltip = 'Sem Materiais, Recursos ou Energia suficiente'
+		$PopVila1/BtnCasa.disabled = true
+		$PopVila1/BtnCasa.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+	else:
+		$PopVila1/BtnCasa.disabled = false
+		$PopVila1/BtnCasa.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	if GlobalVar.energia < 2 or GlobalVar.madeira < 2 or GlobalVar.pedra < 4:
 		$PopVila1/BtnMuro.hint_tooltip = 'Sem Materiais, Recursos ou Energia suficiente'
 		$PopVila1/BtnMuro.disabled = true
@@ -241,6 +269,20 @@ func _on_BtnMuro_pressed():
 	else:
 		$PopVila1/BtnMuro.disabled = false
 		$PopVila1/BtnMuro.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	if GlobalVar.energia < 6 or GlobalVar.madeira < 6 or GlobalVar.pedra < 12 or GlobalVar.vidro < 5:
+		$PopVila1/BtnTorre.hint_tooltip = 'Sem Materiais, Recursos ou Energia suficiente'
+		$PopVila1/BtnTorre.disabled = true
+		$PopVila1/BtnTorre.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+	else:
+		$PopVila1/BtnTorre.disabled = false
+		$PopVila1/BtnTorre.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	if GlobalVar.energia < 6 or GlobalVar.madeira < 12 or GlobalVar.pedra < 4 or GlobalVar.vidro < 4:
+		$PopVila1/BtnFazenda.hint_tooltip = 'Sem Materiais, Recursos ou Energia suficiente'
+		$PopVila1/BtnFazenda.disabled = true
+		$PopVila1/BtnFazenda.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+	else:
+		$PopVila1/BtnFazenda.disabled = false
+		$PopVila1/BtnFazenda.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	# Valida se o objetivo foi completado e a quantidade de vezes
 	if GlobalVar.muros == GlobalVar.obj_muros and GlobalVar.c_obj_muros[0] != true:
 		GlobalVar.c_obj_muros = [true, GlobalVar.sprint]
@@ -263,6 +305,20 @@ func _on_BtnTorre_pressed():
 		$Menu_lateral/Construcoes/Torres.text = 'Torres: ' + str(GlobalVar.torres)
 		reduzir_energia(6)
 	# Disable automático
+	if GlobalVar.energia < 5 or GlobalVar.madeira < 8 or GlobalVar.pedra < 5 or GlobalVar.vidro < 4:
+		$PopVila1/BtnCasa.hint_tooltip = 'Sem Materiais, Recursos ou Energia suficiente'
+		$PopVila1/BtnCasa.disabled = true
+		$PopVila1/BtnCasa.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+	else:
+		$PopVila1/BtnCasa.disabled = false
+		$PopVila1/BtnCasa.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	if GlobalVar.energia < 2 or GlobalVar.madeira < 2 or GlobalVar.pedra < 4:
+		$PopVila1/BtnMuro.hint_tooltip = 'Sem Materiais, Recursos ou Energia suficiente'
+		$PopVila1/BtnMuro.disabled = true
+		$PopVila1/BtnMuro.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+	else:
+		$PopVila1/BtnMuro.disabled = false
+		$PopVila1/BtnMuro.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	if GlobalVar.energia < 6 or GlobalVar.madeira < 6 or GlobalVar.pedra < 12 or GlobalVar.vidro < 5:
 		$PopVila1/BtnTorre.hint_tooltip = 'Sem Materiais, Recursos ou Energia suficiente'
 		$PopVila1/BtnTorre.disabled = true
@@ -270,6 +326,13 @@ func _on_BtnTorre_pressed():
 	else:
 		$PopVila1/BtnTorre.disabled = false
 		$PopVila1/BtnTorre.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	if GlobalVar.energia < 6 or GlobalVar.madeira < 12 or GlobalVar.pedra < 4 or GlobalVar.vidro < 4:
+		$PopVila1/BtnFazenda.hint_tooltip = 'Sem Materiais, Recursos ou Energia suficiente'
+		$PopVila1/BtnFazenda.disabled = true
+		$PopVila1/BtnFazenda.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+	else:
+		$PopVila1/BtnFazenda.disabled = false
+		$PopVila1/BtnFazenda.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	# Valida se o objetivo foi completado e a quantidade de vezes
 	if GlobalVar.torres == GlobalVar.obj_torres and GlobalVar.c_obj_torres[0] != true:
 		GlobalVar.c_obj_torres = [true, GlobalVar.sprint]
@@ -292,6 +355,27 @@ func _on_BtnFazenda_pressed():
 		$Menu_lateral/Construcoes/Fazendas.text = 'Fazendas: ' + str(GlobalVar.fazendas)
 		reduzir_energia(6)
 	# Disable automático
+	if GlobalVar.energia < 5 or GlobalVar.madeira < 8 or GlobalVar.pedra < 5 or GlobalVar.vidro < 4:
+		$PopVila1/BtnCasa.hint_tooltip = 'Sem Materiais, Recursos ou Energia suficiente'
+		$PopVila1/BtnCasa.disabled = true
+		$PopVila1/BtnCasa.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+	else:
+		$PopVila1/BtnCasa.disabled = false
+		$PopVila1/BtnCasa.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	if GlobalVar.energia < 2 or GlobalVar.madeira < 2 or GlobalVar.pedra < 4:
+		$PopVila1/BtnMuro.hint_tooltip = 'Sem Materiais, Recursos ou Energia suficiente'
+		$PopVila1/BtnMuro.disabled = true
+		$PopVila1/BtnMuro.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+	else:
+		$PopVila1/BtnMuro.disabled = false
+		$PopVila1/BtnMuro.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	if GlobalVar.energia < 6 or GlobalVar.madeira < 6 or GlobalVar.pedra < 12 or GlobalVar.vidro < 5:
+		$PopVila1/BtnTorre.hint_tooltip = 'Sem Materiais, Recursos ou Energia suficiente'
+		$PopVila1/BtnTorre.disabled = true
+		$PopVila1/BtnTorre.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+	else:
+		$PopVila1/BtnTorre.disabled = false
+		$PopVila1/BtnTorre.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	if GlobalVar.energia < 6 or GlobalVar.madeira < 12 or GlobalVar.pedra < 4 or GlobalVar.vidro < 4:
 		$PopVila1/BtnFazenda.hint_tooltip = 'Sem Materiais, Recursos ou Energia suficiente'
 		$PopVila1/BtnFazenda.disabled = true
@@ -357,6 +441,23 @@ func _on_BtnRecursos_pressed():
 	else:
 		$PopVila2/BtnRecursos.disabled = false
 		$PopVila2/BtnRecursos.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	if GlobalVar.energia < 2 or GlobalVar.moeda < 4:
+		$PopVila2/BtnMateriais.hint_tooltip = 'Sem Moedas ou Energia suficiente'
+		$PopVila2/BtnMateriais.disabled = true
+		$PopVila2/BtnMateriais.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+	else:
+		$PopVila2/BtnMateriais.disabled = false
+		$PopVila2/BtnMateriais.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	if GlobalVar.energia < 2 * GlobalVar.conhecimento or GlobalVar.moeda < 3 * GlobalVar.conhecimento or GlobalVar.conhecimento == 4:
+		if GlobalVar.conhecimento < 4:
+			$PopVila2/BtnConhecimento.hint_tooltip = 'Sem Moedas ou Energia suficiente'
+		else:
+			$PopVila2/BtnConhecimento.hint_tooltip = 'Conhecimento máximo alcançado'
+		$PopVila2/BtnConhecimento.disabled = true
+		$PopVila2/BtnConhecimento.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+	else:
+		$PopVila2/BtnConhecimento.disabled = false
+		$PopVila2/BtnConhecimento.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 
 func _on_BtnMateriais_pressed():
 	# 4 Moedas + 2 Energias
@@ -380,6 +481,13 @@ func _on_BtnMateriais_pressed():
 		$Menu_lateral/Materiais/MoedaBar.value = GlobalVar.moeda
 		reduzir_energia(2)
 	# Disable automático
+	if GlobalVar.energia < 4 or GlobalVar.moeda < 8:
+		$PopVila2/BtnRecursos.hint_tooltip = 'Sem Moedas ou Energia suficiente'
+		$PopVila2/BtnRecursos.disabled = true
+		$PopVila2/BtnRecursos.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+	else:
+		$PopVila2/BtnRecursos.disabled = false
+		$PopVila2/BtnRecursos.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	if GlobalVar.energia < 2 or GlobalVar.moeda < 4:
 		$PopVila2/BtnMateriais.hint_tooltip = 'Sem Moedas ou Energia suficiente'
 		$PopVila2/BtnMateriais.disabled = true
@@ -387,6 +495,16 @@ func _on_BtnMateriais_pressed():
 	else:
 		$PopVila2/BtnMateriais.disabled = false
 		$PopVila2/BtnMateriais.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	if GlobalVar.energia < 2 * GlobalVar.conhecimento or GlobalVar.moeda < 3 * GlobalVar.conhecimento or GlobalVar.conhecimento == 4:
+		if GlobalVar.conhecimento < 4:
+			$PopVila2/BtnConhecimento.hint_tooltip = 'Sem Moedas ou Energia suficiente'
+		else:
+			$PopVila2/BtnConhecimento.hint_tooltip = 'Conhecimento máximo alcançado'
+		$PopVila2/BtnConhecimento.disabled = true
+		$PopVila2/BtnConhecimento.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+	else:
+		$PopVila2/BtnConhecimento.disabled = false
+		$PopVila2/BtnConhecimento.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 
 func _on_BtnConhecimento_pressed():
 	# 3 * nivel Moedas + 2 * nivel Energias
@@ -410,6 +528,20 @@ func _on_BtnConhecimento_pressed():
 			$PopVila2/BtnConhecimento/ItemText.text = 'Conhcimento IV'
 			$PopVila2/BtnConhecimento/DetalheText.text = 'Adquira conhecimento e desbloqueie:\n\nConhecimento II - Casa\nConhecimento III - Torre\nConhecimento IV - Fazenda\n\nCusto:\nNão há mais nada para aprender'
 	# Disable automático
+	if GlobalVar.energia < 4 or GlobalVar.moeda < 8:
+		$PopVila2/BtnRecursos.hint_tooltip = 'Sem Moedas ou Energia suficiente'
+		$PopVila2/BtnRecursos.disabled = true
+		$PopVila2/BtnRecursos.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+	else:
+		$PopVila2/BtnRecursos.disabled = false
+		$PopVila2/BtnRecursos.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	if GlobalVar.energia < 2 or GlobalVar.moeda < 4:
+		$PopVila2/BtnMateriais.hint_tooltip = 'Sem Moedas ou Energia suficiente'
+		$PopVila2/BtnMateriais.disabled = true
+		$PopVila2/BtnMateriais.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+	else:
+		$PopVila2/BtnMateriais.disabled = false
+		$PopVila2/BtnMateriais.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	if GlobalVar.energia < 2 * GlobalVar.conhecimento or GlobalVar.moeda < 3 * GlobalVar.conhecimento or GlobalVar.conhecimento == 4:
 		if GlobalVar.conhecimento < 4:
 			$PopVila2/BtnConhecimento.hint_tooltip = 'Sem Moedas ou Energia suficiente'
@@ -443,6 +575,12 @@ func _on_BtnVidro_pressed():
 	else:
 		$PopForja/BtnVidro.disabled = false
 		$PopForja/BtnVidro.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	if GlobalVar.energia < 1 or GlobalVar.minerais < 1 or GlobalVar.carvao < 2 or GlobalVar.moeda == GlobalVar.limite_moeda:
+		$PopForja/BtnMoeda.disabled = true
+		$PopForja/BtnMoeda.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+	else:
+		$PopForja/BtnMoeda.disabled = false
+		$PopForja/BtnMoeda.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 
 func _on_BtnMoeda_pressed():
 	# 1 Mineral + 2 Carvões + 1 Energia
@@ -459,6 +597,12 @@ func _on_BtnMoeda_pressed():
 		$Menu_lateral/Materiais/MoedaBar.value = GlobalVar.moeda
 		reduzir_energia(1)
 	# Disable automático
+	if GlobalVar.energia < 2 or GlobalVar.areia < 5 or GlobalVar.carvao < 2 or GlobalVar.vidro == GlobalVar.limite_vidro:
+		$PopForja/BtnVidro.disabled = true
+		$PopForja/BtnVidro.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+	else:
+		$PopForja/BtnVidro.disabled = false
+		$PopForja/BtnVidro.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 	if GlobalVar.energia < 1 or GlobalVar.minerais < 1 or GlobalVar.carvao < 2 or GlobalVar.moeda == GlobalVar.limite_moeda:
 		$PopForja/BtnMoeda.disabled = true
 		$PopForja/BtnMoeda.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN

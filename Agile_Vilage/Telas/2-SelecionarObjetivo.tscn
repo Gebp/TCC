@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Imagens/Background/Mesa.png" type="Texture" id=1]
 [ext_resource path="res://Imagens/Cards/Carta_Intro.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://styles/drop_down_list.tres" type="Theme" id=6]
 [ext_resource path="res://styles/sprint_sel.tres" type="Theme" id=7]
 [ext_resource path="res://Scripts/tutoriais/tutorial_selct.gd" type="Script" id=8]
+[ext_resource path="res://styles/scroll_obj.tres" type="Theme" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 36.5, 17.5 )
@@ -55,6 +56,7 @@ margin_left = 530.0
 margin_top = 75.0
 margin_right = 990.0
 margin_bottom = 475.0
+theme = ExtResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
