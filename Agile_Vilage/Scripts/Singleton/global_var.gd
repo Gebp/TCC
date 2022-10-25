@@ -58,6 +58,7 @@ var encerramento = false
 var micro_eventos = 0
 var eventos_inevitaveis = 0
 var eventos_selecionaveis = 0
+var ofertas_aceitas = 0
 # Validadores do total
 var t_energia = 10
 var t_madeira = 0
@@ -67,6 +68,26 @@ var t_minerais = 0
 var t_carvao = 0
 var t_vidro = 0
 var t_moeda = 0
+# Validadores do bonus
+var b_madeira = 0
+var b_pedra = 0
+var b_areia = 0
+var b_minerais = 0
+var b_carvao = 0
+var b_vidro = 0
+var b_moeda = 0
+# Validadores donus
+var o_madeira = 0
+var o_pedra = 0
+var o_areia = 0
+var o_minerais = 0
+var o_carvao = 0
+var o_vidro = 0
+var o_moeda = 0
+var o_casas = 0
+var o_torres = 0
+var o_muros = 0
+var o_fazendas = 0
 # Validadores de completude [completo, sprint]
 var c_obj_casas = [false, 0]
 var c_obj_torres = [false, 0]
@@ -87,3 +108,4 @@ var a_limite_carvao = 0
 var a_limite_vidro = 0
 var a_limite_moeda = 0
 var conhecimento = 1
+

@@ -1777,8 +1777,8 @@ valign = 1
 
 [connection signal="mouse_entered" from="Campos/Menu_lateral/Sprint" to="." method="_on_Sprint_mouse_entered"]
 [connection signal="mouse_entered" from="Campos/Menu_lateral/Dia" to="." method="_on_Dia_mouse_entered"]
-[connection signal="timeout" from="Campos/Menu_lateral/T_exec" to="Campos/Menu_lateral" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Campos/Menu_lateral/T_exec" to="Campos/Menu_lateral" method="_on_T_exec_timeout"]
+[connection signal="timeout" from="Campos/Menu_lateral/T_exec" to="Campos/Menu_lateral" method="_on_Timer_timeout"]
 [connection signal="mouse_entered" from="Campos/Menu_lateral/Obj_btn" to="Campos/Menu_lateral" method="_on_Obj_btn_mouse_entered"]
 [connection signal="mouse_exited" from="Campos/Menu_lateral/Obj_btn" to="Campos/Menu_lateral" method="_on_Obj_btn_mouse_exited"]
 [connection signal="pressed" from="Campos/Menu_lateral/Obj_btn" to="Campos/Menu_lateral" method="_on_Obj_btn_pressed"]
@@ -1820,3 +1820,5 @@ valign = 1
 [connection signal="popup_hide" from="Tutorial/Popup9" to="." method="_on_Popup9_popup_hide"]
 [connection signal="popup_hide" from="Tutorial/Popup10" to="." method="_on_Popup10_popup_hide"]
 [connection signal="popup_hide" from="Tutorial/Popup11" to="." method="_on_Popup11_popup_hide"]
+[connection signal="pressed" from="Eventos/PopBonus/BtnConfirma" to="." method="_on_BtnConfirma_pressed"]
+[connection signal="pressed" from="Eventos/PopBonus/BtnRecusa" to="." method="_on_BtnRecusa_pressed"]

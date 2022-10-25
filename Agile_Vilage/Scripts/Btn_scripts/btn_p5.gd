@@ -56,6 +56,26 @@ func _on_Reiniciar_pressed():
 	GlobalVar.t_carvao = 0
 	GlobalVar.t_vidro = 0
 	GlobalVar.t_moeda = 0
+	# Validadores do bonus
+	GlobalVar.b_madeira = 0
+	GlobalVar.b_pedra = 0
+	GlobalVar.b_areia = 0
+	GlobalVar.b_minerais = 0
+	GlobalVar.b_carvao = 0
+	GlobalVar.b_vidro = 0
+	GlobalVar.b_moeda = 0
+	# Validadores donus
+	GlobalVar.o_madeira = 0
+	GlobalVar.o_pedra = 0
+	GlobalVar.o_areia = 0
+	GlobalVar.o_minerais = 0
+	GlobalVar.o_carvao = 0
+	GlobalVar.o_vidro = 0
+	GlobalVar.o_moeda = 0
+	GlobalVar.o_casas = 0
+	GlobalVar.o_torres = 0
+	GlobalVar.o_muros = 0
+	GlobalVar.o_fazendas = 0
 	# Validadores de completude [completo, sprint]
 	GlobalVar.c_obj_casas = [false, 0]
 	GlobalVar.c_obj_torres = [false, 0]

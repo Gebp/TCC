@@ -10,6 +10,10 @@ var re_mo = RandomNumberGenerator.new() # microevento
 var re_s = RandomNumberGenerator.new() # evento selecionável
 # nivel de alteração da energia
 var re_e = RandomNumberGenerator.new()
+# Valores para os eventos de compra
+var aqu = 0 # aquisiçao
+var pag = 0 # pagamento
+var be = 0
 
 func _ready():
 	if GlobalVar.sprint == 0:
@@ -54,46 +58,141 @@ func eventos():
 	
 	if GlobalVar.sprint >= 3 and re_i >= abs(int(GlobalVar.sprint)-int(GlobalVar.dia)) and GlobalVar.dia == 1 or GlobalVar.dia == 4:
 		r.randomize()
-		var op = r.randi_range(1, 28)
+		var oe = r.randi_range(1, 28)
 		a.randomize()
 		var red = 0
-		if op < 16:
+		if oe < 16:
 			red = a.randi_range(1, 5)
 		else:
-			red = a.randi_range(1, 53
+			red = a.randi_range(1, 3)
 		# 1. Destruir Madeira
-		if GlobalVar.madeira > 0 and op == 2:
+		if GlobalVar.madeira > 0 and oe == 2:
+			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
+			GlobalVar.madeira -= red
+			if GlobalVar.madeira < 0:
+				red -= GlobalVar.madeira
+				GlobalVar.madeira = 0
+			$Eventos/PopOnus/DetalheText.text = 'Um incêndio começou e atingiu seu depósito de Madeira. ' + str(red) + ' Madeira/s perdida/s.'
+			$Campos/Menu_lateral/Recursos/MadeiraBar/Madeira.text = str(GlobalVar.madeira) + '/' + str(GlobalVar.limite_madeira)
+			$Campos/Menu_lateral/Recursos/MadeiraBar.value = GlobalVar.madeira
+			GlobalVar.o_madeira += red
 		# 2. Destruir Pedra
-		if GlobalVar.pedra > 0 and op == 4:
+		elif GlobalVar.pedra > 0 and oe == 4:
+			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
+			GlobalVar.pedra -= red
+			if GlobalVar.pedra < 0:
+				red -= GlobalVar.pedra
+				GlobalVar.pedra = 0
+			$Eventos/PopOnus/DetalheText.text = 'Um incêndio começou e atingiu seu depósito de Pedra. ' + str(red) + ' Pedra/s perdida/s.'
+			$Campos/Menu_lateral/Recursos/PedraBar/Pedra.text = str(GlobalVar.pedra) + '/' + str(GlobalVar.limite_pedra)
+			$Campos/Menu_lateral/Recursos/PedraBar.value = GlobalVar.pedra
+			GlobalVar.o_pedra += red
 		# 3. Destruir Areia
-		if GlobalVar.areia > 0 and op == 6:
+		elif GlobalVar.areia > 0 and oe == 6:
+			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
+			GlobalVar.areia -= red
+			if GlobalVar.areia < 0:
+				red -= GlobalVar.areia
+				GlobalVar.areia = 0
+			$Eventos/PopOnus/DetalheText.text = 'Um furacão atingiu o vilarejo e destruiui parte do seu depósito de Areia. ' + str(red) + ' Areia/s perdida/s.'
+			$Campos/Menu_lateral/Recursos/AreiaBar/Areia.text = str(GlobalVar.areia) + '/' + str(GlobalVar.limite_areia)
+			$Campos/Menu_lateral/Recursos/AreiaBar.value = GlobalVar.areia
+			GlobalVar.o_areia += red
 		# 4. Destruir Carvão
-		if GlobalVar.carvao > 0 and op == 8:
+		elif GlobalVar.carvao > 0 and oe == 8:
+			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
+			GlobalVar.carvao -= red
+			if GlobalVar.carvao < 0:
+				red -= GlobalVar.carvao
+				GlobalVar.carvao = 0
+			$Eventos/PopOnus/DetalheText.text = 'Um incêndio começou e atingiu seu depósito de Carvão. ' + str(red) + ' Carvão/ões perdido/s.'
+			$Campos/Menu_lateral/Recursos/CarvaoBar/Carvao.text = str(GlobalVar.carvao) + '/' + str(GlobalVar.limite_carvao)
+			$Campos/Menu_lateral/Recursos/CarvaoBar.value = GlobalVar.carvao
+			GlobalVar.o_carvao += red
 		# 5. Destruir Minerais
-		if GlobalVar.minerais > 0 and op == 10:
+		elif GlobalVar.minerais > 0 and oe == 10:
+			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
+			GlobalVar.minerais -= red
+			if GlobalVar.minerais < 0:
+				red -= GlobalVar.minerais
+				GlobalVar.minerais = 0
+			$Eventos/PopOnus/DetalheText.text = 'Um incêndio começou e atingiu seu depósito de Minérais. ' + str(red) + ' Mineral/is perdido/s.'
+			$Campos/Menu_lateral/Recursos/MineraisBar/Minerais.text = str(GlobalVar.minerais) + '/' + str(GlobalVar.limite_minerais)
+			$Campos/Menu_lateral/Recursos/MineraisBar.value = GlobalVar.minerais
+			GlobalVar.o_minerais += red
 		# 6. Destruir Vidro
-		if GlobalVar.vidro > 0 and op == 12:
+		elif GlobalVar.vidro > 0 and oe == 12:
+			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
+			GlobalVar.vidro -= red
+			if GlobalVar.vidro < 0:
+				red -= GlobalVar.vidro
+				GlobalVar.vidro = 0
+			$Eventos/PopOnus/DetalheText.text = 'Um terremoto fraco atingiu o vilarejo e seu depósito de Vidro foi atingido. ' + str(red) + ' Vidro/s perdido/s.'
+			$Campos/Menu_lateral/Materiais/VidroBar/Vidro.text = str(GlobalVar.vidro) + '/' + str(GlobalVar.limite_vidro)
+			$Campos/Menu_lateral/Materiais/VidroBar.value = GlobalVar.vidro
+			GlobalVar.o_vidro += red
 		# 7. Destruir Moeda
-		if GlobalVar.moeda > 0 and op == 14:
+		elif GlobalVar.moeda > 0 and oe == 14:
+			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
+			GlobalVar.moeda -= red
+			if GlobalVar.moeda < 0:
+				red -= GlobalVar.moeda
+				GlobalVar.moeda = 0
+			$Eventos/PopOnus/DetalheText.text = 'Um furacão atingiu o vilarejo e destruiui parte do seu depósito de Moedas. ' + str(red) + ' Moeda/s perdida/s.'
+			$Campos/Menu_lateral/Materiais/MoedaBar/Moeda.text = str(GlobalVar.moeda) + '/' + str(GlobalVar.limite_moeda)
+			$Campos/Menu_lateral/Materiais/MoedaBar.value = GlobalVar.moeda
+			GlobalVar.o_moeda += red
 		# 8. Destruir Casa
-		if GlobalVar.casas > 0 and op == 16:
+		elif GlobalVar.casas > 0 and oe == 16:
+			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
+			GlobalVar.casas -= red
+			if GlobalVar.casas < 0:
+				red -= GlobalVar.casas
+				GlobalVar.casas = 0
+			$Eventos/PopOnus/DetalheText.text = 'Um terremoto mediano atingiu o vilarejo e derrubou algumas Casaa. ' + str(red) + ' Casa/s perdida/s.'
+			$Campos/Menu_lateral/Construcoes/Casas.text = 'Casas: ' + str(GlobalVar.casas)
+			GlobalVar.o_casas += red
 		# 9. Destruir Muro
-		if GlobalVar.muros > 0 and op == 18:
+		elif GlobalVar.muros > 0 and oe == 18:
+			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
+			GlobalVar.muros -= red
+			if GlobalVar.muros < 0:
+				red -= GlobalVar.muros
+				GlobalVar.muros = 0
+			$Eventos/PopOnus/DetalheText.text = 'Um furacão atingiu o vilarejo e destruiui parte do seus Muros. ' + str(red) + ' Muro/s perdido/s.'
+			$Campos/Menu_lateral/Construcoes/Muros.text = 'Muros: ' + str(GlobalVar.muros)
+			GlobalVar.o_muros += red
 		# 10. Destruir Torre
-		if GlobalVar.torres > 0 and op == 20:
+		elif GlobalVar.torres > 0 and oe == 20:
+			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
+			GlobalVar.torres -= red
+			if GlobalVar.torres < 0:
+				red -= GlobalVar.torres
+				GlobalVar.torres = 0
+			$Eventos/PopOnus/DetalheText.text = 'Um terremoto forte atingiu o vilarejo e derrubou algumas Torres. ' + str(red) + ' Torre/s perdida/s.'
+			$Campos/Menu_lateral/Construcoes/Torres.text = 'Torres: ' + str(GlobalVar.torres)
+			GlobalVar.o_torres += red
 		# 12. Destruir Fazenda
-		if GlobalVar.fazendas > 0 and op == 22:
+		elif GlobalVar.fazendas > 0 and oe == 22:
+			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
+			GlobalVar.fazendas -= red
+			if GlobalVar.fazendas < 0:
+				red -= GlobalVar.fazendas
+				GlobalVar.fazendas = 0
+			$Eventos/PopOnus/DetalheText.text = 'Um incêndio começou e algumas Fazendas. ' + str(red) + ' Fazenda/s perdida/s.'
+			$Campos/Menu_lateral/Construcoes/Fazendas.text = 'Fazendas: ' + str(GlobalVar.fazendas)
+			GlobalVar.o_fazendas += red
 	
 	re_mb = prob_random()
 	re_s = prob_random()
@@ -106,29 +205,101 @@ func eventos():
 	
 	if GlobalVar.sprint >= 3 and re_s >= abs(int(GlobalVar.sprint)-int(GlobalVar.dia)) and GlobalVar.dia == 1 or GlobalVar.dia == 4:
 		r.randomize()
-		var op = r.randi_range(1, 14)
+		be = r.randi_range(1, 14)
 		a.randomize()
-		var red = a.randi_range(1, 5)
+		aqu = a.randi_range(2, 10)
+		pag = a.randi_range(3, 12) # em moedas
 		# 1. Vender Madeira
-		if op == 2:
-			
-			$Eventos/PopBonus/DetalheText.text = ''
+		if be == 2:
+			GlobalVar.eventos_selecionaveis += 1
+			$Eventos/PopBonus/DetalheText.text = 'O Mercador está oferecendo ' + str(aqu) + ' Madeiras por ' + str(pag) + ' Moedas.'
 			$Eventos/PopBonus.popup()
 		# 2. Vender Pedra
-		if op == 4:
+		elif be == 4:
+			GlobalVar.eventos_selecionaveis += 1
+			$Eventos/PopBonus/DetalheText.text = 'O Mercador está oferecendo ' + str(aqu) + ' Pedras por ' + str(pag) + ' Moedas.'
 			$Eventos/PopBonus.popup()
 		# 3. Vender Areia
-		if op == 6:
+		elif be == 6:
+			GlobalVar.eventos_selecionaveis += 1
+			$Eventos/PopBonus/DetalheText.text = 'O Mercador está oferecendo ' + str(aqu) + ' Areias por ' + str(pag) + ' Moedas.'
 			$Eventos/PopBonus.popup()
 		# 4. Vender Carvao
-		if op == 8:
+		elif be == 8:
+			GlobalVar.eventos_selecionaveis += 1
+			$Eventos/PopBonus/DetalheText.text = 'O Mercador está oferecendo ' + str(aqu) + ' Carvões por ' + str(pag) + ' Moedas.'
 			$Eventos/PopBonus.popup()
 		# 5. Vender Minerais
-		if op == 10:
+		elif be == 10:
+			GlobalVar.eventos_selecionaveis += 1
+			$Eventos/PopBonus/DetalheText.text = 'O Mercador está oferecendo ' + str(aqu) + ' Minerais por ' + str(pag) + ' Moedas.'
 			$Eventos/PopBonus.popup()
 		# 6. Vender Vidro
-		if op == 12:
+		elif be == 12:
+			GlobalVar.eventos_selecionaveis += 1
+			$Eventos/PopBonus/DetalheText.text = 'O Mercador está oferecendo ' + str(aqu) + ' Vidros por ' + str(pag) + ' Moedas.'
 			$Eventos/PopBonus.popup()
+		if GlobalVar.moeda - pag >= 0:
+			$Eventos/PopBonus/BtnConfirma.disabled = false
+			$Eventos/PopBonus/BtnConfirma.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+		else:
+			$Eventos/PopBonus/BtnConfirma.hint_tooltip = 'Sem Moedas suficientes'
+			$Eventos/PopBonus/BtnConfirma.disabled = true
+			$Eventos/PopBonus/BtnConfirma.mouse_default_cursor_shape = Control.CURSOR_FORBIDDEN
+
+func _on_BtnConfirma_pressed():
+	if GlobalVar.moeda - pag >= 0:
+		# 1. Vender Madeira
+		if be == 2:
+			GlobalVar.madeira += aqu
+			if GlobalVar.madeira > GlobalVar.limite_madeira:
+				GlobalVar.madeira = GlobalVar.limite_madeira
+			$Campos/Menu_lateral/Recursos/MadeiraBar/Madeira.text = str(GlobalVar.madeira) + '/' + str(GlobalVar.limite_madeira)
+			$Campos/Menu_lateral/Recursos/MadeiraBar.value = GlobalVar.madeira
+		# 2. Vender Pedra
+		elif be == 4:
+			GlobalVar.pedra += aqu
+			if GlobalVar.pedra > GlobalVar.limite_pedra:
+				GlobalVar.pedra = GlobalVar.limite_pedra
+			$Campos/Menu_lateral/Recursos/PedraBar/Pedra.text = str(GlobalVar.pedra) + '/' + str(GlobalVar.limite_pedra)
+			$Campos/Menu_lateral/Recursos/PedraBar.value = GlobalVar.pedra
+		# 3. Vender Areia
+		elif be == 6:
+			GlobalVar.areia += aqu
+			if GlobalVar.areia > GlobalVar.limite_areia:
+				GlobalVar.areia = GlobalVar.limite_areia
+			$Campos/Menu_lateral/Recursos/AreiaBar/Areia.text = str(GlobalVar.areia) + '/' + str(GlobalVar.limite_areia)
+			$Campos/Menu_lateral/Recursos/AreiaBar.value = GlobalVar.areia
+		# 4. Vender Carvao
+		elif be == 8:
+			GlobalVar.carvao += aqu
+			if GlobalVar.carvao > GlobalVar.limite_carvao:
+				GlobalVar.carvao = GlobalVar.limite_carvao
+			$Campos/Menu_lateral/Recursos/CarvaoBar/Carvao.text = str(GlobalVar.carvao) + '/' + str(GlobalVar.limite_carvao)
+			$Campos/Menu_lateral/Recursos/CarvaoBar.value = GlobalVar.carvao
+		# 5. Vender Minerais
+		elif be == 10:
+			GlobalVar.minerais += aqu
+			if GlobalVar.minerais > GlobalVar.limite_minerais:
+				GlobalVar.minerais = GlobalVar.limite_minerais
+			$Campos/Menu_lateral/Recursos/MineraisBar/Minerais.text = str(GlobalVar.minerais) + '/' + str(GlobalVar.limite_minerais)
+			$Campos/Menu_lateral/Recursos/MineraisBar.value = GlobalVar.minerais
+		# 6. Vender Vidro
+		elif be == 12:
+			GlobalVar.vidro += aqu
+			if GlobalVar.vidro > GlobalVar.limite_vidro:
+				GlobalVar.vidro = GlobalVar.limite_vidro
+			$Campos/Menu_lateral/Materiais/VidroBar/Vidro.text = str(GlobalVar.vidro) + '/' + str(GlobalVar.limite_vidro)
+			$Campos/Menu_lateral/Materiais/VidroBar.value = GlobalVar.vidro
+		GlobalVar.ofertas_aceitas += 1
+		GlobalVar.b_moeda += pag
+		GlobalVar.moeda -= pag
+		$Campos/Menu_lateral/Materiais/MoedaBar/Moeda.text = str(GlobalVar.moeda) + '/' + str(GlobalVar.limite_moeda)
+		$Campos/Menu_lateral/Materiais/MoedaBar.value = GlobalVar.moeda
+		$Eventos/PopBonus.hide()
+
+func _on_BtnRecusa_pressed():
+	$Eventos/PopBonus.hide()
 
 # Passagem dos tutoriais
 # -----------------------

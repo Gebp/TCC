@@ -113,7 +113,7 @@ func materiais():
 # Exposição dos eventos do jogo
 func events():
 	$Resultados/Eventos/Texto.bbcode_enabled = true
-	$Resultados/Eventos/Texto.bbcode_text = '[center]-- Ações realizadas --[/center]\n\n' + str(acoes()) + '[center]-- Eventos --[/center]\n\nTotal: ' + str(GlobalVar.micro_eventos + GlobalVar.eventos_inevitaveis + GlobalVar.eventos_selecionaveis) + '\n\n[center]-- Eventos de Energia --[/center]\n\nQtd de alterações no limite de energia: ' + str(GlobalVar.micro_eventos) + '\n\nEnergia Adicionada: ' + str(GlobalVar.bonus_energia) + '\nEnergia Reduzida: ' + str(GlobalVar.onus_energia) + '\nVariação de Energia: ' + str(GlobalVar.bonus_energia - GlobalVar.onus_energia) + '\n\n[center]-- Eventos de Inevitáveis --[/center]\n\nQtd de Atrasos: ' + str(GlobalVar.eventos_inevitaveis) + str(eventos_inevitaveis()) + '\n\n[center]-- Eventos de Seleção --[/center]\n\nQtd de Auxílios: ' + str(GlobalVar.eventos_selecionaveis) + str(eventos_selecionaveis())
+	$Resultados/Eventos/Texto.bbcode_text = '[center]-- Ações realizadas --[/center]\n\n' + str(acoes()) + '[center]-- Eventos --[/center]\n\nTotal: ' + str(GlobalVar.micro_eventos + GlobalVar.eventos_inevitaveis + GlobalVar.eventos_selecionaveis) + '\n\n[center]-- Eventos de Energia --[/center]\n\nQtd de alterações no limite de energia: ' + str(GlobalVar.micro_eventos) + '\n\nEnergia Adicionada: ' + str(GlobalVar.bonus_energia) + '\nEnergia Reduzida: ' + str(GlobalVar.onus_energia) + '\nVariação de Energia: ' + str(GlobalVar.bonus_energia - GlobalVar.onus_energia) + '\n\n[center]-- Eventos de Inevitáveis --[/center]\n\nQtd de Atrasos: ' + str(GlobalVar.eventos_inevitaveis) + str(eventos_inevitaveis()) + '\n[center]-- Eventos de Seleção --[/center]\n\nQtd de Auxílios: ' + str(GlobalVar.eventos_selecionaveis) + str(eventos_selecionaveis())
 
 # Validações das ações realizadas pelo jogador
 func acoes():
@@ -169,10 +169,54 @@ func acoes():
 	return 'Recursos coletados:\n' + str(coleta) + '\n\nMateriais criados:\n' + str(criacao) + '\nMelhorias realizadas:\n' + str(melhoria) + '\n\n'
 
 func eventos_inevitaveis():
-	return ''
+	var e_i = ''
+	
+	if GlobalVar.o_madeira > 0:
+		e_i += 'Madeiras perdidas: ' + str(GlobalVar.o_madeira) + '\n'
+	if GlobalVar.o_pedra > 0:
+		e_i += 'Pedras perdidas: ' + str(GlobalVar.o_pedra) + '\n'
+	if GlobalVar.o_areia > 0:
+		e_i += 'Areias perdidas: ' + str(GlobalVar.o_areia) + '\n'
+	if GlobalVar.o_minerais > 0:
+		e_i += 'Minerais perdidos: ' + str(GlobalVar.o_minerais) + '\n'
+	if GlobalVar.o_carvao > 0:
+		e_i += 'Carvões perdidos: ' + str(GlobalVar.o_carvao) + '\n'
+	if GlobalVar.o_vidro > 0:
+		e_i += 'Vidros perdidos: ' + str(GlobalVar.o_vidro) + '\n'
+	if GlobalVar.o_moeda > 0:
+		e_i += 'Moedas perdidas: ' + str(GlobalVar.o_moeda) + '\n'
+	if GlobalVar.o_casas > 0:
+		e_i += 'Casas destruídas: ' + str(GlobalVar.o_casas) + '\n'
+	if GlobalVar.o_torres > 0:
+		e_i += 'Torres destruídas: ' + str(GlobalVar.o_torres) + '\n'
+	if GlobalVar.o_muros > 0:
+		e_i += 'Muros destruídas: ' + str(GlobalVar.o_muros) + '\n'
+	if GlobalVar.o_fazendas > 0:
+		e_i += 'Fazendas destruídas: ' + str(GlobalVar.o_fazendas) + '\n'
+	if e_i == '':
+		e_i = 'Não houve nenhum empecilho'
+	
+	return '\n\n' + e_i
 
 func eventos_selecionaveis():
-	return ''
+	var e_s = ''
+	
+	if GlobalVar.b_madeira > 0:
+		e_s += 'Madeiras compradas: ' + str(GlobalVar.b_madeira) + '\n'
+	if GlobalVar.b_pedra > 0:
+		e_s += 'Pedras compradas: ' + str(GlobalVar.b_pedra) + '\n'
+	if GlobalVar.b_areia > 0:
+		e_s += 'Areias compradas: ' + str(GlobalVar.b_areia) + '\n'
+	if GlobalVar.b_minerais > 0:
+		e_s += 'Minerais comprados: ' + str(GlobalVar.b_minerais) + '\n'
+	if GlobalVar.b_carvao > 0:
+		e_s += 'Carvões comprados: ' + str(GlobalVar.b_carvao) + '\n'
+	if GlobalVar.b_vidro > 0:
+		e_s += 'Vidros comprados: ' + str(GlobalVar.b_vidro) + '\n'
+	if e_s == '':
+		e_s = 'Nenhum recurso ou material comprado'
+	
+	return '\n\nOfertas aceitas: ' + str(GlobalVar.ofertas_aceitas) + '\n\n' + e_s + '\n\nTotal gasto: ' + str(GlobalVar.b_moeda)
 
 # Análise dos resultados
 func feedback():
