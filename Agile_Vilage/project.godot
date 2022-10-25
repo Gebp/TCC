@@ -27,6 +27,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GlobalVar="*res://Scripts/Singleton/global_var.gd"
+BackgroundMusic="*res://Objetos/BackgroundMusic.tscn"
 
 [physics]
 

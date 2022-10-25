@@ -1,6 +1,7 @@
 extends Node
 
 func _ready():
+	BackgroundMusic.parar()
 	if GlobalVar.tutorial:
 		$Objetivo/Iniciar_proj/BotaoProx.visible = true
 		$Tutorial/Popup0.popup_centered()

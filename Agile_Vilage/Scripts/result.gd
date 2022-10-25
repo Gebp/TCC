@@ -27,6 +27,7 @@ var pn = 0
 var fim_real = 0
 
 func _ready():
+	BackgroundMusic.parar()
 	info_proj()
 	events()
 	feedback()

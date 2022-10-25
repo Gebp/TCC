@@ -1192,6 +1192,122 @@ text = "Encerrar"
 align = 1
 valign = 1
 
+[node name="Eventos" type="CanvasLayer" parent="."]
+
+[node name="PopOnus" type="WindowDialog" parent="Eventos"]
+margin_left = 175.0
+margin_top = 55.0
+margin_right = 485.0
+margin_bottom = 255.0
+theme = ExtResource( 12 )
+
+[node name="Titulo" type="Label" parent="Eventos/PopOnus"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 25.0
+margin_top = 15.0
+margin_right = 275.0
+margin_bottom = 40.0
+text = "Notificação de Perda"
+align = 1
+valign = 1
+
+[node name="LinhaVermelha" type="ColorRect" parent="Eventos/PopOnus"]
+margin_left = 25.0
+margin_top = 40.0
+margin_right = 275.0
+margin_bottom = 41.0
+color = Color( 0.941176, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DetalheText" type="Label" parent="Eventos/PopOnus"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 25.0
+margin_top = 50.0
+margin_right = 275.0
+margin_bottom = 185.0
+text = "Informações da perda"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="PopBonus" type="WindowDialog" parent="Eventos"]
+margin_left = 580.0
+margin_top = 310.0
+margin_right = 890.0
+margin_bottom = 535.0
+theme = ExtResource( 12 )
+
+[node name="Titulo" type="Label" parent="Eventos/PopBonus"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 25.0
+margin_top = 15.0
+margin_right = 275.0
+margin_bottom = 40.0
+text = "Mercador Ambulante"
+align = 1
+valign = 1
+
+[node name="LinhaVermelha" type="ColorRect" parent="Eventos/PopBonus"]
+margin_left = 25.0
+margin_top = 40.0
+margin_right = 275.0
+margin_bottom = 41.0
+color = Color( 0.941176, 0, 0, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DetalheText" type="Label" parent="Eventos/PopBonus"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 25.0
+margin_top = 50.0
+margin_right = 275.0
+margin_bottom = 180.0
+text = "Informações de auxílio e custo"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="BtnConfirma" type="Button" parent="Eventos/PopBonus"]
+margin_left = 25.0
+margin_top = 190.0
+margin_right = 140.0
+margin_bottom = 215.0
+hint_tooltip = "Clique para fazer Vidro"
+theme = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ItemText" type="Label" parent="Eventos/PopBonus/BtnConfirma"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_right = 115.0
+margin_bottom = 25.0
+text = "Aceitar"
+align = 1
+valign = 1
+
+[node name="BtnRecusa" type="Button" parent="Eventos/PopBonus"]
+margin_left = 160.0
+margin_top = 190.0
+margin_right = 275.0
+margin_bottom = 215.0
+hint_tooltip = "Clique para fazer Moeda"
+theme = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ItemText" type="Label" parent="Eventos/PopBonus/BtnRecusa"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_right = 115.0
+margin_bottom = 25.0
+text = "Recusar"
+align = 1
+valign = 1
+
 [node name="Tutorial" type="CanvasLayer" parent="."]
 
 [node name="Popup0" type="PopupDialog" parent="Tutorial"]
@@ -1234,7 +1350,7 @@ text = "No menu ao lado, estão presentes todos os pontos relevantes sobre o pro
 Aqui, as primeiras informações indicadas são o número da Sprint, o dia da Sprint e o tempo restante para executar as atividades diárias.
 Lembre-se que, neste jogo, cada Sprint possui 4 dias.
 
-Logo abaixo está apresentada a Energia, que sao os 'Pontos de Ação' do jogo, utilizada para a coleta dos recuros e para confecção de materiais e construções. Ao início de cada novo dia, a quantidade de Energia é reposta completamente."
+Logo abaixo está apresentada a Energia, que são os 'Pontos de Ação' do jogo, utilizada para a coleta dos recuros e para confecção de materiais e construções. Ao início de cada novo dia, a quantidade de Energia é reposta completamente."
 align = 1
 valign = 1
 autowrap = true
@@ -1659,121 +1775,32 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Eventos" type="CanvasLayer" parent="."]
+[node name="Popup12" type="PopupDialog" parent="Tutorial"]
+margin_left = 1100.0
+margin_top = 390.0
+margin_right = 1510.0
+margin_bottom = 625.0
+theme = ExtResource( 13 )
 
-[node name="PopOnus" type="WindowDialog" parent="Eventos"]
-margin_left = 175.0
-margin_top = 55.0
-margin_right = 485.0
-margin_bottom = 330.0
-theme = ExtResource( 12 )
-
-[node name="Titulo" type="Label" parent="Eventos/PopOnus"]
+[node name="Label" type="Label" parent="Tutorial/Popup12"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 25.0
-margin_top = 15.0
-margin_right = 275.0
-margin_bottom = 40.0
-text = "Alerta de Destruição"
-align = 1
-valign = 1
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 405.0
+margin_bottom = 230.0
+text = "Ao longo dessa etapa, sempre que houver uma mudança de dia, ou ao iniciar uma Sprint, pode ocorrer um Evento.
 
-[node name="LinhaVermelha" type="ColorRect" parent="Eventos/PopOnus"]
-margin_left = 25.0
-margin_top = 40.0
-margin_right = 275.0
-margin_bottom = 41.0
-color = Color( 0.941176, 0, 0, 1 )
-__meta__ = {
-"_edit_lock_": true
-}
+Eventos são acontecimentos que alteram o fluxo do projeto e há três tipos:
 
-[node name="DetalheText" type="Label" parent="Eventos/PopOnus"]
-self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 25.0
-margin_top = 50.0
-margin_right = 275.0
-margin_bottom = 250.0
-text = "Notificação"
+1. Micro-eventos: São alterações no limite de energia, aumentando, ou reduzindo a disponibilidade de ações por dia.
+2. Eventos invitáveis: São os empecilhos que podem surgir, reduzindo a quantidade de recursos ou materiais disponíveis.
+3. Eventos selecionáveis: São auxílios que podem aparecer, aumentando a quantidade de recursos ou materiais disponíveis, todos exigem uma troca monetária."
 align = 1
 valign = 1
 autowrap = true
-
-[node name="PopBonus" type="WindowDialog" parent="Eventos"]
-margin_left = 580.0
-margin_top = 310.0
-margin_right = 890.0
-margin_bottom = 585.0
-theme = ExtResource( 12 )
-
-[node name="Titulo" type="Label" parent="Eventos/PopBonus"]
-self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 25.0
-margin_top = 15.0
-margin_right = 275.0
-margin_bottom = 40.0
-text = "Mercador Ambulante"
-align = 1
-valign = 1
-
-[node name="LinhaVermelha" type="ColorRect" parent="Eventos/PopBonus"]
-margin_left = 25.0
-margin_top = 40.0
-margin_right = 275.0
-margin_bottom = 41.0
-color = Color( 0.941176, 0, 0, 1 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="DetalheText" type="Label" parent="Eventos/PopBonus"]
-self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 25.0
-margin_top = 50.0
-margin_right = 275.0
-margin_bottom = 225.0
-text = "Informações de venda"
-align = 1
-valign = 1
-autowrap = true
-
-[node name="BtnConfirma" type="Button" parent="Eventos/PopBonus"]
-margin_left = 25.0
-margin_top = 230.0
-margin_right = 140.0
-margin_bottom = 255.0
-hint_tooltip = "Clique para fazer Vidro"
-theme = SubResource( 8 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="ItemText" type="Label" parent="Eventos/PopBonus/BtnConfirma"]
-self_modulate = Color( 0, 0, 0, 1 )
-margin_right = 115.0
-margin_bottom = 25.0
-text = "Aceitar"
-align = 1
-valign = 1
-
-[node name="BtnRecusa" type="Button" parent="Eventos/PopBonus"]
-margin_left = 160.0
-margin_top = 230.0
-margin_right = 275.0
-margin_bottom = 255.0
-hint_tooltip = "Clique para fazer Moeda"
-theme = SubResource( 8 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="ItemText" type="Label" parent="Eventos/PopBonus/BtnRecusa"]
-self_modulate = Color( 0, 0, 0, 1 )
-margin_right = 115.0
-margin_bottom = 25.0
-text = "Recusar"
-align = 1
-valign = 1
 
 [connection signal="mouse_entered" from="Campos/Menu_lateral/Sprint" to="." method="_on_Sprint_mouse_entered"]
 [connection signal="mouse_entered" from="Campos/Menu_lateral/Dia" to="." method="_on_Dia_mouse_entered"]
@@ -1808,6 +1835,8 @@ valign = 1
 [connection signal="mouse_exited" from="Continuar" to="Continuar" method="_on_Continuar_mouse_exited"]
 [connection signal="pressed" from="Continuar" to="Continuar" method="_on_Continuar_pressed"]
 [connection signal="pressed" from="Encerrar" to="." method="_on_Encerrar_pressed"]
+[connection signal="pressed" from="Eventos/PopBonus/BtnConfirma" to="." method="_on_BtnConfirma_pressed"]
+[connection signal="pressed" from="Eventos/PopBonus/BtnRecusa" to="." method="_on_BtnRecusa_pressed"]
 [connection signal="popup_hide" from="Tutorial/Popup0" to="." method="_on_Popup0_popup_hide"]
 [connection signal="popup_hide" from="Tutorial/Popup1" to="." method="_on_Popup1_popup_hide"]
 [connection signal="popup_hide" from="Tutorial/Popup2" to="." method="_on_Popup2_popup_hide"]
@@ -1820,5 +1849,4 @@ valign = 1
 [connection signal="popup_hide" from="Tutorial/Popup9" to="." method="_on_Popup9_popup_hide"]
 [connection signal="popup_hide" from="Tutorial/Popup10" to="." method="_on_Popup10_popup_hide"]
 [connection signal="popup_hide" from="Tutorial/Popup11" to="." method="_on_Popup11_popup_hide"]
-[connection signal="pressed" from="Eventos/PopBonus/BtnConfirma" to="." method="_on_BtnConfirma_pressed"]
-[connection signal="pressed" from="Eventos/PopBonus/BtnRecusa" to="." method="_on_BtnRecusa_pressed"]
+[connection signal="popup_hide" from="Tutorial/Popup12" to="." method="_on_Popup12_popup_hide"]

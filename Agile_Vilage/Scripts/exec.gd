@@ -58,7 +58,7 @@ func eventos():
 	
 	if GlobalVar.sprint >= 3 and re_i >= abs(int(GlobalVar.sprint)-int(GlobalVar.dia)) and GlobalVar.dia == 1 or GlobalVar.dia == 4:
 		r.randomize()
-		var oe = r.randi_range(1, 28)
+		var oe = r.randi_range(1, 36)
 		a.randomize()
 		var red = 0
 		if oe < 16:
@@ -66,7 +66,7 @@ func eventos():
 		else:
 			red = a.randi_range(1, 3)
 		# 1. Destruir Madeira
-		if GlobalVar.madeira > 0 and oe == 2:
+		if GlobalVar.madeira > 0 and oe == 3:
 			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
 			GlobalVar.madeira -= red
@@ -78,7 +78,7 @@ func eventos():
 			$Campos/Menu_lateral/Recursos/MadeiraBar.value = GlobalVar.madeira
 			GlobalVar.o_madeira += red
 		# 2. Destruir Pedra
-		elif GlobalVar.pedra > 0 and oe == 4:
+		elif GlobalVar.pedra > 0 and oe == 6:
 			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
 			GlobalVar.pedra -= red
@@ -90,7 +90,7 @@ func eventos():
 			$Campos/Menu_lateral/Recursos/PedraBar.value = GlobalVar.pedra
 			GlobalVar.o_pedra += red
 		# 3. Destruir Areia
-		elif GlobalVar.areia > 0 and oe == 6:
+		elif GlobalVar.areia > 0 and oe == 9:
 			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
 			GlobalVar.areia -= red
@@ -102,7 +102,7 @@ func eventos():
 			$Campos/Menu_lateral/Recursos/AreiaBar.value = GlobalVar.areia
 			GlobalVar.o_areia += red
 		# 4. Destruir Carvão
-		elif GlobalVar.carvao > 0 and oe == 8:
+		elif GlobalVar.carvao > 0 and oe == 12:
 			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
 			GlobalVar.carvao -= red
@@ -114,7 +114,7 @@ func eventos():
 			$Campos/Menu_lateral/Recursos/CarvaoBar.value = GlobalVar.carvao
 			GlobalVar.o_carvao += red
 		# 5. Destruir Minerais
-		elif GlobalVar.minerais > 0 and oe == 10:
+		elif GlobalVar.minerais > 0 and oe == 15:
 			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
 			GlobalVar.minerais -= red
@@ -126,7 +126,7 @@ func eventos():
 			$Campos/Menu_lateral/Recursos/MineraisBar.value = GlobalVar.minerais
 			GlobalVar.o_minerais += red
 		# 6. Destruir Vidro
-		elif GlobalVar.vidro > 0 and oe == 12:
+		elif GlobalVar.vidro > 0 and oe == 18:
 			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
 			GlobalVar.vidro -= red
@@ -138,7 +138,7 @@ func eventos():
 			$Campos/Menu_lateral/Materiais/VidroBar.value = GlobalVar.vidro
 			GlobalVar.o_vidro += red
 		# 7. Destruir Moeda
-		elif GlobalVar.moeda > 0 and oe == 14:
+		elif GlobalVar.moeda > 0 and oe == 21:
 			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
 			GlobalVar.moeda -= red
@@ -150,7 +150,7 @@ func eventos():
 			$Campos/Menu_lateral/Materiais/MoedaBar.value = GlobalVar.moeda
 			GlobalVar.o_moeda += red
 		# 8. Destruir Casa
-		elif GlobalVar.casas > 0 and oe == 16:
+		elif GlobalVar.casas > 0 and oe == 24:
 			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
 			GlobalVar.casas -= red
@@ -161,7 +161,7 @@ func eventos():
 			$Campos/Menu_lateral/Construcoes/Casas.text = 'Casas: ' + str(GlobalVar.casas)
 			GlobalVar.o_casas += red
 		# 9. Destruir Muro
-		elif GlobalVar.muros > 0 and oe == 18:
+		elif GlobalVar.muros > 0 and oe == 27:
 			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
 			GlobalVar.muros -= red
@@ -172,7 +172,7 @@ func eventos():
 			$Campos/Menu_lateral/Construcoes/Muros.text = 'Muros: ' + str(GlobalVar.muros)
 			GlobalVar.o_muros += red
 		# 10. Destruir Torre
-		elif GlobalVar.torres > 0 and oe == 20:
+		elif GlobalVar.torres > 0 and oe == 30:
 			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
 			GlobalVar.torres -= red
@@ -183,7 +183,7 @@ func eventos():
 			$Campos/Menu_lateral/Construcoes/Torres.text = 'Torres: ' + str(GlobalVar.torres)
 			GlobalVar.o_torres += red
 		# 12. Destruir Fazenda
-		elif GlobalVar.fazendas > 0 and oe == 22:
+		elif GlobalVar.fazendas > 0 and oe == 33:
 			GlobalVar.eventos_inevitaveis += 1
 			$Eventos/PopOnus.popup()
 			GlobalVar.fazendas -= red
@@ -205,37 +205,37 @@ func eventos():
 	
 	if GlobalVar.sprint >= 3 and re_s >= abs(int(GlobalVar.sprint)-int(GlobalVar.dia)) and GlobalVar.dia == 1 or GlobalVar.dia == 4:
 		r.randomize()
-		be = r.randi_range(1, 14)
+		be = r.randi_range(1, 28)
 		a.randomize()
 		aqu = a.randi_range(2, 10)
-		pag = a.randi_range(3, 12) # em moedas
+		pag = a.randi_range(3, 8) # em moedas
 		# 1. Vender Madeira
-		if be == 2:
+		if be == 4:
 			GlobalVar.eventos_selecionaveis += 1
 			$Eventos/PopBonus/DetalheText.text = 'O Mercador está oferecendo ' + str(aqu) + ' Madeiras por ' + str(pag) + ' Moedas.'
 			$Eventos/PopBonus.popup()
 		# 2. Vender Pedra
-		elif be == 4:
+		elif be == 8:
 			GlobalVar.eventos_selecionaveis += 1
 			$Eventos/PopBonus/DetalheText.text = 'O Mercador está oferecendo ' + str(aqu) + ' Pedras por ' + str(pag) + ' Moedas.'
 			$Eventos/PopBonus.popup()
 		# 3. Vender Areia
-		elif be == 6:
+		elif be == 12:
 			GlobalVar.eventos_selecionaveis += 1
 			$Eventos/PopBonus/DetalheText.text = 'O Mercador está oferecendo ' + str(aqu) + ' Areias por ' + str(pag) + ' Moedas.'
 			$Eventos/PopBonus.popup()
 		# 4. Vender Carvao
-		elif be == 8:
+		elif be == 16:
 			GlobalVar.eventos_selecionaveis += 1
 			$Eventos/PopBonus/DetalheText.text = 'O Mercador está oferecendo ' + str(aqu) + ' Carvões por ' + str(pag) + ' Moedas.'
 			$Eventos/PopBonus.popup()
 		# 5. Vender Minerais
-		elif be == 10:
+		elif be == 20:
 			GlobalVar.eventos_selecionaveis += 1
 			$Eventos/PopBonus/DetalheText.text = 'O Mercador está oferecendo ' + str(aqu) + ' Minerais por ' + str(pag) + ' Moedas.'
 			$Eventos/PopBonus.popup()
 		# 6. Vender Vidro
-		elif be == 12:
+		elif be == 24:
 			GlobalVar.eventos_selecionaveis += 1
 			$Eventos/PopBonus/DetalheText.text = 'O Mercador está oferecendo ' + str(aqu) + ' Vidros por ' + str(pag) + ' Moedas.'
 			$Eventos/PopBonus.popup()
@@ -250,42 +250,42 @@ func eventos():
 func _on_BtnConfirma_pressed():
 	if GlobalVar.moeda - pag >= 0:
 		# 1. Vender Madeira
-		if be == 2:
+		if be == 4:
 			GlobalVar.madeira += aqu
 			if GlobalVar.madeira > GlobalVar.limite_madeira:
 				GlobalVar.madeira = GlobalVar.limite_madeira
 			$Campos/Menu_lateral/Recursos/MadeiraBar/Madeira.text = str(GlobalVar.madeira) + '/' + str(GlobalVar.limite_madeira)
 			$Campos/Menu_lateral/Recursos/MadeiraBar.value = GlobalVar.madeira
 		# 2. Vender Pedra
-		elif be == 4:
+		elif be == 8:
 			GlobalVar.pedra += aqu
 			if GlobalVar.pedra > GlobalVar.limite_pedra:
 				GlobalVar.pedra = GlobalVar.limite_pedra
 			$Campos/Menu_lateral/Recursos/PedraBar/Pedra.text = str(GlobalVar.pedra) + '/' + str(GlobalVar.limite_pedra)
 			$Campos/Menu_lateral/Recursos/PedraBar.value = GlobalVar.pedra
 		# 3. Vender Areia
-		elif be == 6:
+		elif be == 12:
 			GlobalVar.areia += aqu
 			if GlobalVar.areia > GlobalVar.limite_areia:
 				GlobalVar.areia = GlobalVar.limite_areia
 			$Campos/Menu_lateral/Recursos/AreiaBar/Areia.text = str(GlobalVar.areia) + '/' + str(GlobalVar.limite_areia)
 			$Campos/Menu_lateral/Recursos/AreiaBar.value = GlobalVar.areia
 		# 4. Vender Carvao
-		elif be == 8:
+		elif be == 16:
 			GlobalVar.carvao += aqu
 			if GlobalVar.carvao > GlobalVar.limite_carvao:
 				GlobalVar.carvao = GlobalVar.limite_carvao
 			$Campos/Menu_lateral/Recursos/CarvaoBar/Carvao.text = str(GlobalVar.carvao) + '/' + str(GlobalVar.limite_carvao)
 			$Campos/Menu_lateral/Recursos/CarvaoBar.value = GlobalVar.carvao
 		# 5. Vender Minerais
-		elif be == 10:
+		elif be == 20:
 			GlobalVar.minerais += aqu
 			if GlobalVar.minerais > GlobalVar.limite_minerais:
 				GlobalVar.minerais = GlobalVar.limite_minerais
 			$Campos/Menu_lateral/Recursos/MineraisBar/Minerais.text = str(GlobalVar.minerais) + '/' + str(GlobalVar.limite_minerais)
 			$Campos/Menu_lateral/Recursos/MineraisBar.value = GlobalVar.minerais
 		# 6. Vender Vidro
-		elif be == 12:
+		elif be == 24:
 			GlobalVar.vidro += aqu
 			if GlobalVar.vidro > GlobalVar.limite_vidro:
 				GlobalVar.vidro = GlobalVar.limite_vidro
@@ -347,7 +347,15 @@ func _on_Popup10_popup_hide():
 	$Tutorial/Popup11.popup()
 
 func _on_Popup11_popup_hide():
+	$Tutorial/Popup12.popup_centered()
+	$Eventos/PopBonus.popup()
+	$Eventos/PopOnus.popup()
+
+func _on_Popup12_popup_hide():
+	$Eventos/PopBonus.hide()
+	$Eventos/PopOnus.hide()
 	$Campos/Menu_lateral/T_exec.start()
+
 # -----------------------
 
 func _on_Sprint_mouse_entered():
