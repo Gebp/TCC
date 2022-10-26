@@ -19,7 +19,7 @@ var fazendas_e = 0
 var obj_t = 0
 var obj_c = 0
 # Validador do parcial
-var obj_p = obj_t / 2
+var obj_p = 0
 # Pontos Positivos e Pontos Negativos
 var pp = 0
 var pn = 0
@@ -296,9 +296,11 @@ func desempenho():
 	var desempenho_obj = ''
 	var consideracoes_obj = ''
 	
+	obj_p = obj_t / 2
 	if obj_t % 2 != 0:
 		obj_p = int(obj_p) + 1
-	
+	print(obj_c)
+	print(obj_p)
 	if obj_c == obj_t:
 		desempenho_obj = 'Perfeito'
 		consideracoes_obj = 'Você conseguiu cumprir todos os objetivos deixando todos os aldeiões, seus clientes, felizes e satisfeitos com o seu trabalho.\n\nApesar da entrega ter sido feita em sua completude, avalie fatores menores que podem ter feito você ter alguma dificuldade, como a desconsideração com os empecilhos, ou priorizações mal executadas, faça os ajustes necessários e continue sempre melhorando.\n'
