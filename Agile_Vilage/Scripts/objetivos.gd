@@ -35,6 +35,9 @@ func _on_ListaObj_item_selected(index):
 		# A vila tem progredido bem e muitos cidadões estão tem se mudando para ca como responsável da vila voce perceu beu que precisava criar maias casas.
 		$TextObj.text = str('Quantidade inicial de energia/ Ações por dia: 10\nDias por Sprint: 4\nNível de conhecimento inicial: 1\n\n--------------------------------------------------------------------------------------------\n\nConstruções:\n\n3 casas\n\n--------------------------------------------------------------------------------------------\n\nCustos:\n\n1 Casa = 8 Madeiras + 4 Vidros + 5 Pedras + 5 Energias + Conhecimento nível 2\n\n1 Nível de Conhecimento = 3 Moedas * nível de conhecimento atual + 2 Energias * nível de conhecimento atual\n\n1 Vidro = 5 Areias + 2 Carvões + 2 Energias\n1 Moeda = 1 Mineral + 2 Carvões')
 		GlobalVar.obj_casas = 3
+		GlobalVar.obj_muros = 0
+		GlobalVar.obj_torres = 0
+		GlobalVar.obj_fazendas = 0
 		GlobalVar.task = ['Atinja o nível de conhecimento 2', 'Faça 3 moedas para adquirir conhecimento', 'Colete 24 madeiras para as casas', 'Colete 15 pedras para as casas', 'Faça 12 vidros para as casas', 'Melhore o limite de recursos 4 vezes', 'Faça 12 moedas para aumentar o limite de recursos']
 		for t in GlobalVar.task:
 			GlobalVar.pos.append([35, 495])
@@ -44,6 +47,8 @@ func _on_ListaObj_item_selected(index):
 		$TextObj.text = str('Quantidade inicial de energia/ Ações por dia: 10\nDias por Sprint: 4\nNível de conhecimento inicial: 1\n\n--------------------------------------------------------------------------------------------\n\nConstruções:\n\n4 muros\n2 casas\n\n--------------------------------------------------------------------------------------------\n\nCustos:\n\n1 1 Muro = 4 Pedras + 2 Madeiras + 2 Energias + Conhecimento nível 1\nCasa = 8 Madeiras + 4 vidros + 5 Pedras + 5 Energias + Conhecimento nível 2\n\n1 Nível de Conhecimento = 3 Moedas * nível de conhecimento atual + 2 Energias * nível de conhecimento atual\n\n1 Vidro = 5 Areias + 2 Carvões + 2 Energias\n1 Moeda = 1 Mineral + 2 Carvões')
 		GlobalVar.obj_casas = 2
 		GlobalVar.obj_muros = 4
+		GlobalVar.obj_torres = 0
+		GlobalVar.obj_fazendas = 0
 		GlobalVar.task = ['Atinja o nível de conhecimento 2', 'Faça 3 moedas para adquirir conhecimento', 'Colete 16 madeiras para as casas', 'Colete 10 pedras para as casas', 'Faça 8 vidros para as casas', 'Colete 8 pedras para os muros 1 e 2', 'Colete 4 madeiras para os muros 1 e 2', 'Colete 8 pedras para os muros 3 e 4', 'Colete 4 madeiras para os muros 3 e 4']
 		for t in GlobalVar.task:
 			GlobalVar.pos.append([35, 495])
@@ -54,6 +59,7 @@ func _on_ListaObj_item_selected(index):
 		GlobalVar.obj_casas = 1
 		GlobalVar.obj_muros = 6
 		GlobalVar.obj_torres = 2
+		GlobalVar.obj_fazendas = 0
 		GlobalVar.task = ['Atinja o nível de conhecimento 3', 'Faça 9 moedas para adquirir conhecimento', 'Colete 8 madeiras para a casa', 'Colete 5 pedras para as casa', 'Faça 4 vidros para a casa', 'Colete 12 pedras para os muros 1, 2 e 3', 'Colete 6 madeiras para os muros 1, 2 e 3', 'Colete 12 pedras para os muros 4, 5 e 6', 'Colete 6 madeiras para os muros 4, 5 e 6', 'Colete 24 pedras para para as torres', 'Colete 12 madeiras para para as torres', 'Faça 10 vidros para as torres', 'Melhore o limite de recursos 4 vezes', 'Faça 12 moedas para aumentar o limite de recursos']
 		for t in GlobalVar.task:
 			GlobalVar.pos.append([35, 495])

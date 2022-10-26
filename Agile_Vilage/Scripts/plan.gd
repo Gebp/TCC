@@ -5,7 +5,6 @@ var tasks = []
 var task_cards = GlobalVar.task
 
 func _ready():
-	BackgroundMusic.tocar()
 	if GlobalVar.sprint == 0:
 		$Encerrar.visible = false
 		$Encerrar.disabled = true

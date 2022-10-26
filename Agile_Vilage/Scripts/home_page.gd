@@ -1,7 +1,6 @@
 extends Node2D
 
 func _ready():
-	BackgroundMusic.tocar()
 	$CheckBox.pressed = GlobalVar.tutorial
 
 func _on_CheckBox_pressed():

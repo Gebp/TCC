@@ -97,7 +97,7 @@ func materiais():
 	energia += 2 * vidro
 	# Conhecimento = 3 Moedas * Conhecimento + 2 Energias * Conhecimento
 	var n = 1
-	while n <= conhecimento:
+	while n <= conhecimento - 1:
 		moedas += 3 * n
 		energia += 2 * n
 		n += 1
@@ -353,13 +353,10 @@ func previsao_sprint():
 			else:
 				previsao = 'Insuficiente'
 				consideracoes_P = 'Você apresentou baixa capacidade de identificar a quantidade de Sprints necessárias para a realização do projeto, a previsão se mostrou muito incorreta e muito além do necessário, apesar de ter completado todos os objetivos propostos e, por conta disso, enecerrado de forma antecipada.\n\nUma dica é reavaliar a dificuldade do projeto e o tamanho do escopo, pode ser que não tenham sido necessárias tantas Sprints quanto foi planejado, outro ponto de atenção são os empecilhos identificados, alguns deles podem não ser tão grandiosos quanto foi pensado inicialmente, não havendo necessidade de reservar tanto tempo para correção de possíveis problemas.\n'
-		elif sprint - dif_sprint - fim_real <= 2:
+		elif sprint - dif_sprint - fim_real <= 5:
 			if dif_sprint <= 2:
 				previsao = 'Mediana'
 				consideracoes_P = 'Você apresentou boa capacidade de identificar a quantidade de Sprints necessárias para a realização do projeto, mas previu um prazo extra mais extenso que o adequado, decidindo encerrar de forma antecipada, visto que tudo já havia sido entregue conforme o planejado.\n\nUma dica para melhorar a previsão é reavaliar as necessidades do projeto, para identificar se algo não foi considerado de forma incorreta, e revisar quais empecilhos foram identificados que poderiam atrapalhar o andamento do projeto, mas podem ser resolvidos de forma rápida, sem a necessidade de um tempo dedicado para correção.\n'
-			else:
-				previsao = 'Insuficiente'
-				consideracoes_P = 'Você apresentou baixa capacidade de identificar a quantidade de Sprints necessárias para a realização do projeto, a previsão se mostrou muito incorreta e muito além do necessário, apesar de ter completado todos os objetivos propostos e, por conta disso, enecerrado de forma antecipada.\n\nUma dica é reavaliar a dificuldade do projeto e o tamanho do escopo, pode ser que não tenham sido necessárias tantas Sprints quanto foi planejado, outro ponto de atenção são os empecilhos identificados, alguns deles podem não ser tão grandiosos quanto foi pensado inicialmente, não havendo necessidade de reservar tanto tempo para correção de possíveis problemas.\n'
 		else:
 			previsao = 'Insuficiente'
 			consideracoes_P = 'Você apresentou baixa capacidade de identificar a quantidade de Sprints necessárias para a realização do projeto, a previsão se mostrou muito incorreta e muito além do necessário, apesar de ter completado todos os objetivos propostos e, por conta disso, enecerrado de forma antecipada.\n\nUma dica é reavaliar a dificuldade do projeto e o tamanho do escopo, pode ser que não tenham sido necessárias tantas Sprints quanto foi planejado, outro ponto de atenção são os empecilhos identificados, alguns deles podem não ser tão grandiosos quanto foi pensado inicialmente, não havendo necessidade de reservar tanto tempo para correção de possíveis problemas.\n'

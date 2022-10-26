@@ -56,7 +56,7 @@ func eventos():
 		else:
 			GlobalVar.onus_energia += red_energia
 	
-	if GlobalVar.sprint >= 3 and re_i >= abs(int(GlobalVar.sprint)-int(GlobalVar.dia)) and GlobalVar.dia == 1 or GlobalVar.dia == 4:
+	if GlobalVar.sprint >= 2 and re_i >= abs(int(GlobalVar.sprint)-int(GlobalVar.dia)):
 		r.randomize()
 		var oe = r.randi_range(1, 36)
 		a.randomize()
@@ -157,7 +157,7 @@ func eventos():
 			if GlobalVar.casas < 0:
 				red -= GlobalVar.casas
 				GlobalVar.casas = 0
-			$Eventos/PopOnus/DetalheText.text = 'Um terremoto mediano atingiu o vilarejo e derrubou algumas Casaa. ' + str(red) + ' Casa/s perdida/s.'
+			$Eventos/PopOnus/DetalheText.text = 'Um terremoto mediano atingiu o vilarejo e derrubou algumas Casas. ' + str(red) + ' Casa/s perdida/s.'
 			$Campos/Menu_lateral/Construcoes/Casas.text = 'Casas: ' + str(GlobalVar.casas)
 			GlobalVar.o_casas += red
 		# 9. Destruir Muro
@@ -203,7 +203,7 @@ func eventos():
 		GlobalVar.limite_energia += add_energia
 		GlobalVar.bonus_energia += add_energia
 	
-	if GlobalVar.sprint >= 3 and re_s >= abs(int(GlobalVar.sprint)-int(GlobalVar.dia)) and GlobalVar.dia == 1 or GlobalVar.dia == 4:
+	if GlobalVar.sprint >= 2 and re_s >= abs(int(GlobalVar.sprint)-int(GlobalVar.dia)):
 		r.randomize()
 		be = r.randi_range(1, 28)
 		a.randomize()

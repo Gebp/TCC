@@ -55,7 +55,7 @@ text = "Texto da intro."
 margin_left = 530.0
 margin_top = 75.0
 margin_right = 990.0
-margin_bottom = 475.0
+margin_bottom = 525.0
 theme = ExtResource( 9 )
 __meta__ = {
 "_edit_lock_": true
